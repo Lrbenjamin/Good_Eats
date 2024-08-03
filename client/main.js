@@ -1,2 +1,2 @@
-import "./assets/css/tailwind.css";
+import "./src/assets/tailwind.css";
 var rellax = new Rellax(".rellax");
