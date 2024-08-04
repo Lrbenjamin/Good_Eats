@@ -9,7 +9,7 @@ return  <footer className="padding-top: 4000px; relative bg-black pt-32 backdrop
                 <div className="grid gap-8 mb-6 lg:mb-16 md:grid-cols-2">
                     <div className="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
                         <a href="#">
-                            <img className="w-full rounded-lg sm:rounded-none sm:rounded-l-lg" src="./src/public/images/projects/caleb.png" alt="Caleb Photo"></img>
+                            <img className="w-full rounded-lg sm:rounded-none sm:rounded-l-lg" src="../../../../public/images/caleb.png" alt="Caleb Png"></img>
                         </a>
                         <div className="p-5">
                             <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -28,7 +28,7 @@ return  <footer className="padding-top: 4000px; relative bg-black pt-32 backdrop
                     </div>
                     <div className="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
                         <a href="#">
-                            <img className="w-full rounded-lg sm:rounded-none sm:rounded-l-lg" src="./src/public/images/projects/logan.jpg" alt="Jese Avatar"></img>
+                            <img className="w-full rounded-lg sm:rounded-none sm:rounded-l-lg" src="../../../../public/images/logan.jpg" alt="Logan Png"></img>
                         </a>
                         <div className="p-5">
                             <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -47,7 +47,7 @@ return  <footer className="padding-top: 4000px; relative bg-black pt-32 backdrop
                     </div>
                     <div className="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
                         <a href="#">
-                            <img className="w-full rounded-lg sm:rounded-none sm:rounded-l-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png" alt="Michael Avatar"></img>
+                            <img className="w-full rounded-lg sm:rounded-none sm:rounded-l-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gouch.png" alt="Damien Png"></img>
                         </a>
                         <div className="p-5">
                             <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -66,7 +66,7 @@ return  <footer className="padding-top: 4000px; relative bg-black pt-32 backdrop
                     </div>
                     <div className="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
                         <a href="#">
-                            <img className="w-full rounded-lg sm:rounded-none sm:rounded-l-lg" src="./src/public/images/projects/annie.png" alt="Sofia Avatar"></img>
+                            <img className="w-full rounded-lg sm:rounded-none sm:rounded-l-lg" src="../../../../public/images/annie.png" alt="Annie Png"></img>
                         </a>
                         <div className="p-5">
                             <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
