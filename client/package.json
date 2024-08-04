@@ -23,12 +23,8 @@
   "main": "main.js",
   "keywords": [
     "tailwindcss",
-    "tailus",
-    "boilerplate",
     "html",
-    "vite",
-    "agency",
-    "template"
+    "vite"
   ],
   "author": "Caleb W",
   "dependencies": {
