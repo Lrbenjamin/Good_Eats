@@ -39,7 +39,7 @@ const Donate = () => {
             </div>
         </div>
     </section>
-    <section id="approach" className="relative z-10 bg-black pb-20 pt-20 md:sticky md:top-12">
+    <section id="approach" className="relative z-10 bg-black pb-20 pt-20 md:sticky md:top-36">
         <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-6 2xl:px-0">
             <div className="flex">
                 <div className="w-full">
@@ -67,8 +67,8 @@ const Donate = () => {
             </div>
         </div>
     </section>
-    <section id="approach" className="relative z-10 bg-black py-20 md:sticky md:top-12">
-        <a href="/pages/project.html" className="block bg-gradient-to-b from-transparent to-white/10 py-32">
+    <section id="approach" className="relative z-10 bg-black md:sticky md:top-12">
+        <a href="/pages/project.html" className="block bg-gradient-to-b from-transparent to-white/10 py-24">
             <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-6 2xl:px-0">
                 <div className="flex">
                     <div className="w-full">
