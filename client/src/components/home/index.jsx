@@ -10,7 +10,7 @@ const Home = () => {
         };
     }, []); // Empty dependency array ensures the effect runs only once after initial render
 
-    return ( <main className="background relative">
+    return (<main className="background relative">
         <section id="home" className="relative flex min-h-screen items-center">
             <div aria-hidden="true" className="absolute inset-0 z-[1] bg-gradient-to-b from-black/10 via-black/20 to-black"></div>
             <img src="../../../../public/images/background.jpg" className="fixed inset-0 h-full w-full object-cover" alt="Restaurant Aesthetic" width="4160" height="6240" />
@@ -91,7 +91,7 @@ const Home = () => {
         </section>
         <section id="work" className=" relative z-10 bg-black pb-20 lg:pt-0">
             <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-6 xl:pb-96 2xl:px-0 " >
-                <div data-rellax-speed="-3" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" className="rellax flex flex-wrap items-center gap-6" style={{width:"fit-content"}}>
+                <div data-rellax-speed="-3" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" className="rellax flex flex-wrap items-center gap-6" style={{ width: "fit-content" }}>
                     <h2 className="text-7xl font-bold text-white xl:text-8xl">Near You</h2>
                     <span className="h-max rounded-full border border-white/40 px-2 py-1 text-xs tracking-wider text-white mr-0">4 Restaurants</span>
                 </div>
@@ -151,111 +151,111 @@ const Home = () => {
                 </a>
             </div>
         </section>
-        
+
         <footer className="padding-top: 4000px; relative bg-black pt-32 backdrop-opacity-0">
-    <section id="about" className="relative z-10 bg-black pb-20 pt-32 md:pb-0 md:pt-0 lg:pb-0">
-        <section>
-        <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
- 
-  <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-    <div>
-      <div class="relative overflow-hidden transition duration-300 transform rounded shadow-lg lg:hover:-translate-y-2 hover:shadow-2xl">
-        <img class="object-cover w-full h-56 md:h-64 xl:h-80" src="../../../public/images/caleb.png" alt="Caleb.png" />
-        <div class="absolute inset-0 flex flex-col justify-center px-5 py-4 text-center transition-opacity duration-300 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
-          <p class="mb-1 text-lg font-bold text-gray-100">Caleb Warford</p>
-          <p class="mb-4 text-xs text-gray-100">Web Developer</p>
-          <p class="mb-4 text-xs tracking-wide text-gray-400">
-            Vincent Van Gogh’s most popular painting, The Starry Night.
-          </p>
-          <div class="flex items-center justify-center space-x-3">
-          <a href="#" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" /></svg>
-                                    </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div>
-      <div class="relative overflow-hidden transition duration-300 transform rounded shadow-lg lg:hover:-translate-y-2 hover:shadow-2xl">
-        <img class="object-cover w-full h-56 md:h-64 xl:h-80" src="../../../public/images/logan.jpg" alt="Logan.jpg" />
-        <div class="absolute inset-0 flex flex-col justify-center px-5 py-4 text-center transition-opacity duration-300 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
-          <p class="mb-1 text-lg font-bold text-gray-100">Logan Benjamin</p>
-          <p class="mb-4 text-xs text-gray-100">Web Developer</p>
-          <p class="mb-4 text-xs tracking-wide text-gray-400">
-            Chuck Norris saved me from a burning building as a child.
-          </p>
-          <div class="flex items-center justify-center space-x-3">
-          <a href="#" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" /></svg>
-                                    </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div>
-      <div class="relative overflow-hidden transition duration-300 transform rounded shadow-lg lg:hover:-translate-y-2 hover:shadow-2xl">
-        <img class="object-cover w-full h-56 md:h-64 xl:h-80" src="../../../public/images/annie.png" alt="Annie" />
-        <div class="absolute inset-0 flex flex-col justify-center px-5 py-4 text-center transition-opacity duration-300 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
-          <p class="mb-1 text-lg font-bold text-gray-100">Annie Schalnat</p>
-          <p class="mb-4 text-xs text-gray-100">Web Developer</p>
-          <p class="mb-4 text-xs tracking-wide text-gray-400">
-            Apple pie macaroon toffee jujubes pie tart cookie caramels.
-          </p>
-          <div class="flex items-center justify-center space-x-3">
-          <a href="#" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" /></svg>
-                                    </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div>
-      <div class="relative overflow-hidden transition duration-300 transform rounded shadow-lg lg:hover:-translate-y-2 hover:shadow-2xl">
-        <img class="object-cover w-full h-56 md:h-64 xl:h-80" src="https://images.pexels.com/photos/3747435/pexels-photo-3747435.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" alt="Damien.jpg" />
-        <div class="absolute inset-0 flex flex-col justify-center px-5 py-4 text-center transition-opacity duration-300 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
-          <p class="mb-1 text-lg font-bold text-gray-100">Damien Mendoza</p>
-          <p class="mb-4 text-xs text-gray-100">Web Developer</p>
-          <p class="mb-4 text-xs tracking-wide text-gray-400">
-            Lorizzle ipsum bling bling sit amizzle, consectetuer adipiscing elit.
-          </p>
-          <div class="flex items-center justify-center space-x-3">
-          <a href="#" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
-                                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" /></svg>
-                                    </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-        </section>
-    </section>
-    <div className="mx-auto max-w-7xl px-6 pb-12 lg:px-12 xl:px-6 2xl:px-0">
-        <div className="mt-12 md:mt-16 lg:mt-24">
-            <div className="space-y-8 md:space-y-12">
-                <nav>
-                    <ul className="flex flex-wrap gap-6 text-sm uppercase tracking-wider text-white">
-                        <li>
-                            <a href="#home">Home</a>
-                        </li>
-                        <li>
-                            <a href="#services">How To</a>
-                        </li>
-                        <li>
-                            <a href="#work">Near You</a>
-                        </li>
-                        <li>
-                            <a className="block w-max" href="#about">About Us</a>
-                        </li>
-                    </ul>
-                </nav>
+            <section id="about" className="relative z-10 bg-black pb-20 pt-32 md:pb-0 md:pt-0 lg:pb-0">
+                <section>
+                    <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+                        <h2 className="text-7xl font-bold text-white xl:text-8xl">Our Team</h2>
+                        <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+                            <div>
+                                <div class="relative overflow-hidden transition duration-300 transform rounded shadow-lg lg:hover:-translate-y-2 hover:shadow-2xl">
+                                    <img class="object-cover w-full h-56 md:h-64 xl:h-80" src="../../../public/images/caleb.png" alt="Caleb.png" />
+                                    <div class="absolute inset-0 flex flex-col justify-center px-5 py-4 text-center transition-opacity duration-300 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
+                                        <p class="mb-1 text-lg font-bold text-gray-100">Caleb Warford</p>
+                                        <p class="mb-4 text-xs text-gray-100">Web Developer</p>
+                                        <p class="mb-4 text-xs tracking-wide text-gray-400">
+                                            Vincent Van Gogh’s most popular painting, The Starry Night.
+                                        </p>
+                                        <div class="flex items-center justify-center space-x-3">
+                                            <a href="https://github.com/Rinovi" className="text-gray-300 hover:text-white dark:hover:text-white">
+                                                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" /></svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="relative overflow-hidden transition duration-300 transform rounded shadow-lg lg:hover:-translate-y-2 hover:shadow-2xl">
+                                    <img class="object-cover w-full h-56 md:h-64 xl:h-80" src="../../../public/images/logan.jpg" alt="Logan.jpg" />
+                                    <div class="absolute inset-0 flex flex-col justify-center px-5 py-4 text-center transition-opacity duration-300 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
+                                        <p class="mb-1 text-lg font-bold text-gray-100">Logan Benjamin</p>
+                                        <p class="mb-4 text-xs text-gray-100">Web Developer</p>
+                                        <p class="mb-4 text-xs tracking-wide text-gray-400">
+                                            Chuck Norris saved me from a burning building as a child.
+                                        </p>
+                                        <div class="flex items-center justify-center space-x-3">
+                                            <a href="https://github.com/Lrbenjamin" className="text-gray-300 hover:text-white dark:hover:text-white">
+                                                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" /></svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="relative overflow-hidden transition duration-300 transform rounded shadow-lg lg:hover:-translate-y-2 hover:shadow-2xl">
+                                    <img class="object-cover w-full h-56 md:h-64 xl:h-80" src="../../../public/images/annie.png" alt="Annie" />
+                                    <div class="absolute inset-0 flex flex-col justify-center px-5 py-4 text-center transition-opacity duration-300 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
+                                        <p class="mb-1 text-lg font-bold text-gray-100">Annie Schalnat</p>
+                                        <p class="mb-4 text-xs text-gray-100">Web Developer</p>
+                                        <p class="mb-4 text-xs tracking-wide text-gray-400">
+                                            Apple pie macaroon toffee jujubes pie tart cookie caramels.
+                                        </p>
+                                        <div class="flex items-center justify-center space-x-3">
+                                            <a href="https://github.com/fairybones" className="text-gray-300 hover:text-white dark:hover:text-white">
+                                                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" /></svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="relative overflow-hidden transition duration-300 transform rounded shadow-lg lg:hover:-translate-y-2 hover:shadow-2xl">
+                                    <img class="object-cover w-full h-56 md:h-64 xl:h-80" src="https://images.pexels.com/photos/3747435/pexels-photo-3747435.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" alt="Damien.jpg" />
+                                    <div class="absolute inset-0 flex flex-col justify-center px-5 py-4 text-center transition-opacity duration-300 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
+                                        <p class="mb-1 text-lg font-bold text-gray-100">Damien Mendoza</p>
+                                        <p class="mb-4 text-xs text-gray-100">Web Developer</p>
+                                        <p class="mb-4 text-xs tracking-wide text-gray-400">
+                                            Lorizzle ipsum bling bling sit amizzle, consectetuer adipiscing elit.
+                                        </p>
+                                        <div class="flex items-center justify-center space-x-3">
+                                            <a href="https://github.com/DMendoza013" className="text-gray-300 hover:text-white dark:hover:text-white">
+                                                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" /></svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <div className="mx-auto max-w-7xl px-6 pb-12 lg:px-12 xl:px-6 2xl:px-0">
+                <div className="mt-12 md:mt-16 lg:mt-24">
+                    <div className="space-y-8 md:space-y-12">
+                        <nav>
+                            <ul className="flex flex-wrap gap-6 text-sm uppercase tracking-wider text-white">
+                                <li>
+                                    <a href="#home">Home</a>
+                                </li>
+                                <li>
+                                    <a href="#services">How To</a>
+                                </li>
+                                <li>
+                                    <a href="#work">Near You</a>
+                                </li>
+                                <li>
+                                    <a className="block w-max" href="#about">About Us</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</footer>
+        </footer>
     </main>
-    
-    );   
+
+    );
 };
 
 
