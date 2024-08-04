@@ -1,5 +1,16 @@
-function Donate () {
-    return <main className="relative overflow-hidden">
+import React, { useEffect } from 'react';
+import Rellax from 'rellax';
+
+const Donate = () => {
+    useEffect(() => {
+        const rellax = new Rellax('.rellax');
+
+        return () => {
+            rellax.destroy(); // Clean up Rellax instance when component unmounts
+        };
+    }, []); // Empty dependency array ensures the effect runs only once after initial render
+
+    return ( <main className="relative overflow-hidden">
     <section id="introduction" className="relative top-0 z-10 bg-black pb-20 pt-20 md:sticky">
         <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-6 2xl:px-0">
             <div className="flex">
@@ -72,6 +83,6 @@ function Donate () {
     </section>
 </main>
 
-
-}
+);
+};
 export default Donate

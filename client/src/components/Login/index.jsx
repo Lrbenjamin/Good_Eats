@@ -33,8 +33,7 @@ function Login () {
             <a href="/signup" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Create Account</a>
           </p>
         </div>
-      </div><script type="module" src="./main.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+      </div>
 </main>
 
 

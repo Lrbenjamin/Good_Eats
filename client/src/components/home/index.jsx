@@ -1,5 +1,16 @@
-function Home() {
-    return <main className="background relative">
+import React, { useEffect } from 'react';
+import Rellax from 'rellax';
+
+const Home = () => {
+    useEffect(() => {
+        const rellax = new Rellax('.rellax');
+
+        return () => {
+            rellax.destroy(); // Clean up Rellax instance when component unmounts
+        };
+    }, []); // Empty dependency array ensures the effect runs only once after initial render
+
+    return ( <main className="background relative">
         <section id="home" className="relative flex min-h-screen items-center">
             <div aria-hidden="true" className="absolute inset-0 z-[1] bg-gradient-to-b from-black/10 via-black/20 to-black"></div>
             <img src="/src/public/images/projects/background.jpg" className="fixed inset-0 h-full w-full object-cover" alt="Restaurant Aesthetic" width="4160" height="6240" />
@@ -141,8 +152,9 @@ function Home() {
             </div>
         </section>
     </main>
-    
-}
+    );   
+};
+
 
 export default Home
 

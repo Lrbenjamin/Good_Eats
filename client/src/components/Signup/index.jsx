@@ -37,8 +37,6 @@ function Signup() {
         </div>
       </div>
 </main>
-<script type="module" src="./main.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
 </body>
 }
 export default Signup
