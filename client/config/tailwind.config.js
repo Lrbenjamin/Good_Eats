@@ -5,7 +5,7 @@ module.exports = {
     content: ["index.html", "./pages/**/*.{js,jsx,ts,tsx,vue,html}"],
     presets: [],
     safelist: ["toggled"],
-    darkMode: "class", // or 'class'
+    darkMode: "className", // or 'className'
     theme: {
         screens: {
             sm: "640px",

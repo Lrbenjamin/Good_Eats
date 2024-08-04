@@ -1,6 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
-import { Switch } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Home from '../components/Home';
 import Profile from '../components/Profile';
 import Signup from '../components/Signup';
@@ -10,14 +9,14 @@ import Donate from '../components/Donate';
 
 const MainContent = () => {
   return (
-    <Switch>
-      <Route exact path="/" component={Home} />
-      <Route path="/login" component={Login} />
-      <Route path="/signup" component={Signup} />
-      <Route path="/profile/:profileId" component={Profile} />
-      <Route path="/donate" component={Donate} />
-      <Route component={ErrorPage} />
-    </Switch>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/profile/:profileId" element={<Profile />} />
+      <Route path="/donate" element={<Donate />} />
+      <Route path="*" element={<ErrorPage />} />
+    </Routes>
   );
 };
 
