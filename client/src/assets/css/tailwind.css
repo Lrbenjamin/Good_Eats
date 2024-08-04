@@ -6,3 +6,9 @@ body {
     font-family: "Jost", sans-serif;
     @apply overflow-x-hidden;
 }
+
+@keyframes loop {
+    to {
+        offset-distance: 100%;
+    }
+}
