@@ -67,7 +67,7 @@ function Donate () {
                 </div>
             </div>
         </a>
-        <script type="module" src="./main.js"></script>
+        {/* <script type="module" src="./main.js"></script> */}
 <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
     </section>
 </main>
