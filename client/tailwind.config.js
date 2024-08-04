@@ -2,7 +2,11 @@
 const plugin = require("tailwindcss/plugin");
 
 module.exports = {
-    content: ["index.html", "./pages/**/*.{js,jsx,ts,tsx,vue,html}"],
+    content: [
+        "index.html",
+        "./pages/**/*.{js,jsx,ts,tsx,vue,html}",
+        "./src/components/**/*.{js,jsx,ts,tsx}", // Include component files
+    ],
     presets: [],
     safelist: ["toggled"],
     darkMode: "className", // or 'className'
