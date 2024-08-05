@@ -83,7 +83,7 @@ function Store() {
                                 <h3 className="text-xs font-light uppercase tracking-widest text-white">User's Store Rating</h3>
                                 <ul className="relative z-20 mt-4 space-y-2 font-light text-white">
                                     <li>
-                                        <a href="" target="_blank">4.5</a>
+                                        <a href="" target="_blank">4</a>
                                     </li>
                                 </ul>
                             </div>
@@ -101,7 +101,7 @@ function Store() {
                                 <h3 className="text-xs font-light uppercase tracking-widest text-white">User's Store Rating</h3>
                                 <ul className="relative z-20 mt-4 space-y-2 font-light text-white">
                                     <li>
-                                        <a href="" target="_blank">4.5</a>
+                                        <a href="" target="_blank">3</a>
                                     </li>
                                 </ul>
                             </div>
