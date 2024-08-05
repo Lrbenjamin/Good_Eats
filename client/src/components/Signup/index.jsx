@@ -1,8 +1,8 @@
 function Signup() {
-  return <body className="bg-black selection:bg-white/10">
-      <header className="fixed top-0 z-20 w-full">
+  return <body className="bg-black min-h-screen selection:bg-white/10">
+      <header className="flex justify-center fixed top-0 z-20 w-full">
     <nav className="2lg:px-12 mx-auto max-w-7xl px-6 py-12 lg:px-12 xl:px-6 2xl:px-0">
-            <div className="flex items-center justify-between">
+            <div className="flex items-center ">
             <div
                 class="border-[--ui-light-border-color] relative border-[length:var(--border-width)] [--border-width:calc(var(--border)*1px)] [--border:1] [--glow:60] [--hue:179] [--lightness:55%] dark:[--lightness:14%] [--opacity:1] [--radius:24] [--saturation:78%] dark:[--saturation:97%] [--speed:2]">
                 <div>
@@ -22,16 +22,16 @@ function Signup() {
             </div>
         </nav>
 </header>
-    <main className="relative overflow-hidden">
-      <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+    <main className="">
+      <div className="flex flex-col justify-center items-center min-h-screen px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-white">Sign in to your account</h2>
+          <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-white">Create Your Account</h2>
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
           <form id="loginForm" className="space-y-6">
             <div>
-              <label htmlFor="email" className="block text-sm font-medium leading-6 text-white">Email address</label>
+              <label htmlFor="email" className="block text-sm font-medium leading-6 text-white">Username</label>
               <div className="mt-2">
                 <input id="email" name="email" type="email" autoComplete="email" required className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></input>
               </div>
@@ -47,13 +47,13 @@ function Signup() {
             </div>
 
             <div>
-              <button type="submit" className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign in</button>
+              <button type="submit" className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Create Account</button>
             </div>
           </form>
 
           <p className="mt-10 text-center text-sm text-gray-500">
-            Not a member?
-            <a href="/signup" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Create Account</a>
+            Already a member?
+            <a href="/login" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Sign In</a>
           </p>
         </div>
       </div>
