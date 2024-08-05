@@ -1,5 +1,5 @@
 function Store() {
-    return <main>    <section className=" bg-gradient-to-b from-black via-black/80 to-black pt-32 backdrop-blur-3xl lg:pb-32 lg:pt-0">
+    return <main>   
 
         <header className="fixed top-0 z-20 w-full">
             <nav className="2lg:px-12 mx-auto max-w-7xl px-6 py-12 lg:px-12 xl:px-6 2xl:px-0">
@@ -20,7 +20,8 @@ function Store() {
                     </div>
                 </div>
             </nav>
-        </header>
+        </header> 
+        <section className=" bg-gradient-to-b from-black via-black/80 to-black pt-32 backdrop-blur-3xl lg:pb-32 lg:pt-0">
         <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-6 2xl:px-0">
             <div className="flex flex-wrap items-center gap-6">
                 <h2 className="text-7xl font-bold text-white xl:text-8xl">Store Name</h2>
