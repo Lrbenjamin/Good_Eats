@@ -10,7 +10,7 @@ function Profile() {
         {
             id: 2,
             name: "Burger King",
-            rating: 4,
+            rating: 5,
             message: "I love burgers"
         },
         {
