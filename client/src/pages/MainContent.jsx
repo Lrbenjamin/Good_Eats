@@ -6,6 +6,7 @@ import Signup from '../components/Signup';
 import Login from '../components/Login';
 import ErrorPage from '../components/ErrorPage';
 import Donate from '../components/Donate';
+import Store from '../components/Store';
 
 const MainContent = () => {
   return (
@@ -14,6 +15,7 @@ const MainContent = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/profile/:profileId" element={<Profile />} />
+      <Route path="/store/:storeId" element={<Store />} />
       <Route path="/donate" element={<Donate />} />
       <Route path="*" element={<ErrorPage />} />
     </Routes>

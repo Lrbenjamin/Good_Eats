@@ -144,7 +144,7 @@ const Home = () => {
                 </form>
             </div>
             <div className="relative mt-20 gap-20 gap-x-6 space-y-20 sm:grid sm:grid-cols-2 sm:space-y-0 md:mt-72 lg:mt-60">
-                <a href="https://github.com/fairybones/Project2-DreamThreads" data-rellax-speed="0" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" data-rellax-tablet-speed="0" className="rellax group col-span-2 lg:col-span-1">
+                <a href="/store/:storeId" data-rellax-speed="0" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" data-rellax-tablet-speed="0" className="rellax group col-span-2 lg:col-span-1">
                     <div className="relative before:absolute before:inset-0 before:origin-top before:bg-gradient-to-t before:from-black/5 before:opacity-50 before:backdrop-grayscale before:transition before:duration-500 group-hover:before:origin-bottom group-hover:before:scale-y-0">
                         <img className="transition duration-500" src="../../../../public/images/planetpizza.jpg" alt="gild cover" width="2000" height="1333" />
                     </div>
@@ -153,7 +153,7 @@ const Home = () => {
                         <span className="h-max rounded-full border border-white/30 px-2 py-1 text-xs tracking-wider text-white">4.3</span>
                     </div>
                 </a>
-                <a href="https://github.com/Rinovi/Trending-Titles" data-rellax-speed="1" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" data-rellax-tablet-speed="0" className="rellax group block">
+                <a href="/store/:storeId" data-rellax-speed="1" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" data-rellax-tablet-speed="0" className="rellax group block">
                     <div className="relative before:absolute before:inset-0 before:origin-top before:bg-gradient-to-t before:from-black/5 before:opacity-50 before:backdrop-grayscale before:transition before:duration-500 group-hover:before:origin-bottom group-hover:before:scale-y-0">
                         <img className="transition duration-500" src="../../../../public/images/bk.jpg" alt="project description" width="1380" height="920" />
                     </div>
@@ -162,7 +162,7 @@ const Home = () => {
                         <span className="h-max rounded-full border border-white/30 px-2 py-1 text-xs tracking-wider text-white">4.0</span>
                     </div>
                 </a>
-                <a href="" data-rellax-speed="0" data-rellax-xs-speed="-1" data-rellax-mobile-speed="0" data-rellax-tablet-speed="0" className="rellax group block">
+                <a href="/store/:storeId" data-rellax-speed="0" data-rellax-xs-speed="-1" data-rellax-mobile-speed="0" data-rellax-tablet-speed="0" className="rellax group block">
                     <div className="relative before:absolute before:inset-0 before:origin-top before:bg-gradient-to-t before:from-black/5 before:opacity-50 before:backdrop-grayscale before:transition before:duration-500 group-hover:before:origin-bottom group-hover:before:scale-y-0">
                         <img className="transition duration-500" src="../../../../public/images/mcD.jpg" alt="project description" width="826" height="826" />
                     </div>
@@ -171,7 +171,7 @@ const Home = () => {
                         <span className="h-max rounded-full border border-white/30 px-2 py-1 text-xs tracking-wider text-white">4.6</span>
                     </div>
                 </a>
-                <a href="https://github.com/Rinovi/Weather-Dashboard" data-rellax-speed="1" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" data-rellax-tablet-speed="0" className="rellax group col-span-2 block lg:col-span-1">
+                <a href="/store/:storeId" data-rellax-speed="1" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" data-rellax-tablet-speed="0" className="rellax group col-span-2 block lg:col-span-1">
                     <div className="relative before:absolute before:inset-0 before:origin-top before:bg-gradient-to-t before:from-black/5 before:opacity-50 before:backdrop-grayscale before:transition before:duration-500 group-hover:before:origin-bottom group-hover:before:scale-y-0">
                         <img className="transition duration-500" src="../../../../public/images/CC.webp" alt="project description" width="1380" height="1380" />
                     </div>
