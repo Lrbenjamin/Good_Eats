@@ -2,27 +2,6 @@ const { Schema, model, Types } = require('mongoose');
 // import helper function to format date
 const formatDate = require('../utils/formatDate');
 
-// contact info for business reviewed
-const businessSchema = new Schema({
-    businessId: {
-        type: Schema.Types.ObjectId,
-        default: () => new Types.ObjectId(),
-    },
-    name: { type: String, required: true },
-    zipcode: {
-        type: String,
-        required: true,
-        validate: {
-            validator: function(v) {
-                return /^\d{5}(?:[-\s]\d{4})?$/.test(v);
-            },
-            message: props => `${props.value} is not a valid zipcode, please try again.`
-        }
-    },
-    website: { type: String },
-    // phone number ?
-});
-
 const reviewSchema = new Schema({
     reviewId: {
         type: Schema.Types.ObjectId,
@@ -74,3 +53,6 @@ const reviewSchema = new Schema({
 // initialize model & export
 const Review = model('Review', reviewSchema);
 module.exports = Review;
+
+
+// https://mongoosejs.com/docs/geojson.html

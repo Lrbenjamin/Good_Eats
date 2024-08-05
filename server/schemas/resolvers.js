@@ -62,8 +62,8 @@ const resolvers = {
             return { token, user };
         },
         login: async (parent, { email, password }) => {
-            // find user by provided email (unique!)
-            const user = await User.findOne({ email });
+            // find user by provided email or username (unique!)
+            const user = await User.findOne({ $or: [{ email: email }, { username: username }]});
             // check that user exists in db
             if (!user) {
                 throw AuthenticationError('No email found, sign up now!');
