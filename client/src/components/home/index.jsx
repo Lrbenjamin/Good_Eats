@@ -242,7 +242,7 @@ const Home = () => {
                             </div>
                             <div>
                                 <div class="relative overflow-hidden transition duration-300 transform rounded shadow-lg lg:hover:-translate-y-2 hover:shadow-2xl">
-                                    <img class="object-cover w-full h-56 md:h-64 xl:h-80" src="https://images.pexels.com/photos/3747435/pexels-photo-3747435.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260" alt="Damien.jpg" />
+                                    <img class="object-cover w-full h-56 md:h-64 xl:h-80" src="../../../public/images/damien.png" alt="Damien.jpg" />
                                     <div class="absolute inset-0 flex flex-col justify-center px-5 py-4 text-center transition-opacity duration-300 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
                                         <p class="mb-1 text-lg font-bold text-gray-100">Damien Mendoza</p>
                                         <p class="mb-4 text-xs text-gray-100">Web Developer</p>

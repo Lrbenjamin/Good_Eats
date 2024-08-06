@@ -65,6 +65,7 @@ function Store() {
                             <div>
                                 <h3 className="text-xs font-light uppercase tracking-widest text-white">Store Address</h3>
                                 <p className="mt-4 text-white">625 W. McKellips Rd. Mesa, AZ</p>
+                                <p className="mt-4 text-white">85201</p>
                             </div>
                             <div className="mt-16">
                                 <h3 className="text-xs font-light uppercase tracking-widest text-white">Contact Info</h3>
