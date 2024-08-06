@@ -11,6 +11,37 @@ const Home = () => {
     }, []); // Empty dependency array ensures the effect runs only once after initial render
 
     return (<main className="background relative">
+        <header className="fixed top-0 z-20 w-full">
+    <nav className="2lg:px-12 mx-auto max-w-7xl px-6 py-12 lg:px-12 xl:px-6 2xl:px-0">
+            <div className="flex items-center justify-between">
+            <div
+                class="border-[--ui-light-border-color] relative border-[length:var(--border-width)] [--border-width:calc(var(--border)*1px)] [--border:1] [--glow:60] [--hue:179] [--lightness:55%] dark:[--lightness:14%] [--opacity:1] [--radius:24] [--saturation:78%] dark:[--saturation:97%] [--speed:2]">
+                <div>
+                    <p class="text-2xl tracking-widest text-white">Good Eats</p>
+                </div>
+                <span
+                    class="glow absolute inset-[calc(var(--border-width)*-1)] rounded-[--card-border-radius] border-[length:var(--border-width)] border-transparent ![mask-clip:padding-box,_border-box] ![mask-composite:intersect] [mask:linear-gradient(transparent,transparent),linear-gradient(white,white)]">
+                    <span
+                        class="absolute inline-block aspect-square h-5 bg-[radial-gradient(circle_at_right,hsl(0_0%_0%/0),transparent_50%),radial-gradient(circle_at_right,hsl(var(--hue)_var(--saturation)_var(--lightness,50%)/1)_50%,transparent)] dark:bg-[radial-gradient(circle_at_right,hsl(0_0%_100%/0.75),transparent_50%),radial-gradient(circle_at_right,hsl(var(--hue)_var(--saturation)_var(--lightness,50%)/1)_50%,transparent)] opacity-[var(--opacity)] [animation:loop_3s_infinite_linear] [offset-anchor:calc(var(--anchor)*1%)_50%] [offset-path:rect(0_100%_100%_0_round_calc(var(--glow)*1px))]"></span>
+                </span>
+            </div>
+                <div className="flex">
+                    <a href="/" className="ml-4 relative py-1.5 text-white before:absolute before:inset-0 before:origin-bottom before:scale-y-[.03] before:bg-white/60 before:transition before:duration-300 hover:before:scale-y-100 hover:before:scale-x-125 hover:before:bg-white/10">
+                        <span className="relative">Home</span>
+                    </a>
+                    <a href="/profile/:profileId" className="ml-4 relative py-1.5 text-white before:absolute before:inset-0 before:origin-bottom before:scale-y-[.03] before:bg-white/60 before:transition before:duration-300 hover:before:scale-y-100 hover:before:scale-x-125 hover:before:bg-white/10">
+                        <span className="relative">Profile</span>
+                    </a>
+                    <a href="/donate" className="ml-4 relative py-1.5 text-white before:absolute before:inset-0 before:origin-bottom before:scale-y-[.03] before:bg-white/60 before:transition before:duration-300 hover:before:scale-y-100 hover:before:scale-x-125 hover:before:bg-white/10">
+                        <span className="relative">Donate</span>
+                    </a>
+                    <a href="/login" className="ml-4 relative py-1.5 text-white before:absolute before:inset-0 before:origin-bottom before:scale-y-[.03] before:bg-white/60 before:transition before:duration-300 hover:before:scale-y-100 hover:before:scale-x-125 hover:before:bg-white/10">
+                        <span className="relative">Sign Out</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+</header>
         <section id="home" className="relative flex min-h-screen items-center">
             <div aria-hidden="true" className="absolute inset-0 z-[1] bg-gradient-to-b from-black/10 via-black/20 to-black"></div>
             <img src="../../../../public/images/background.jpg" className="fixed inset-0 h-full w-full object-cover" alt="Restaurant Aesthetic" width="4160" height="6240" />
@@ -113,7 +144,7 @@ const Home = () => {
                 </form>
             </div>
             <div className="relative mt-20 gap-20 gap-x-6 space-y-20 sm:grid sm:grid-cols-2 sm:space-y-0 md:mt-72 lg:mt-60">
-                <a href="https://github.com/fairybones/Project2-DreamThreads" data-rellax-speed="0" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" data-rellax-tablet-speed="0" className="rellax group col-span-2 lg:col-span-1">
+                <a href="/store/:storeId" data-rellax-speed="0" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" data-rellax-tablet-speed="0" className="rellax group col-span-2 lg:col-span-1">
                     <div className="relative before:absolute before:inset-0 before:origin-top before:bg-gradient-to-t before:from-black/5 before:opacity-50 before:backdrop-grayscale before:transition before:duration-500 group-hover:before:origin-bottom group-hover:before:scale-y-0">
                         <img className="transition duration-500" src="../../../../public/images/planetpizza.jpg" alt="gild cover" width="2000" height="1333" />
                     </div>
@@ -122,7 +153,7 @@ const Home = () => {
                         <span className="h-max rounded-full border border-white/30 px-2 py-1 text-xs tracking-wider text-white">4.3</span>
                     </div>
                 </a>
-                <a href="https://github.com/Rinovi/Trending-Titles" data-rellax-speed="1" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" data-rellax-tablet-speed="0" className="rellax group block">
+                <a href="/store/:storeId" data-rellax-speed="1" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" data-rellax-tablet-speed="0" className="rellax group block">
                     <div className="relative before:absolute before:inset-0 before:origin-top before:bg-gradient-to-t before:from-black/5 before:opacity-50 before:backdrop-grayscale before:transition before:duration-500 group-hover:before:origin-bottom group-hover:before:scale-y-0">
                         <img className="transition duration-500" src="../../../../public/images/bk.jpg" alt="project description" width="1380" height="920" />
                     </div>
@@ -131,7 +162,7 @@ const Home = () => {
                         <span className="h-max rounded-full border border-white/30 px-2 py-1 text-xs tracking-wider text-white">4.0</span>
                     </div>
                 </a>
-                <a href="" data-rellax-speed="0" data-rellax-xs-speed="-1" data-rellax-mobile-speed="0" data-rellax-tablet-speed="0" className="rellax group block">
+                <a href="/store/:storeId" data-rellax-speed="0" data-rellax-xs-speed="-1" data-rellax-mobile-speed="0" data-rellax-tablet-speed="0" className="rellax group block">
                     <div className="relative before:absolute before:inset-0 before:origin-top before:bg-gradient-to-t before:from-black/5 before:opacity-50 before:backdrop-grayscale before:transition before:duration-500 group-hover:before:origin-bottom group-hover:before:scale-y-0">
                         <img className="transition duration-500" src="../../../../public/images/mcD.jpg" alt="project description" width="826" height="826" />
                     </div>
@@ -140,7 +171,7 @@ const Home = () => {
                         <span className="h-max rounded-full border border-white/30 px-2 py-1 text-xs tracking-wider text-white">4.6</span>
                     </div>
                 </a>
-                <a href="https://github.com/Rinovi/Weather-Dashboard" data-rellax-speed="1" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" data-rellax-tablet-speed="0" className="rellax group col-span-2 block lg:col-span-1">
+                <a href="/store/:storeId" data-rellax-speed="1" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" data-rellax-tablet-speed="0" className="rellax group col-span-2 block lg:col-span-1">
                     <div className="relative before:absolute before:inset-0 before:origin-top before:bg-gradient-to-t before:from-black/5 before:opacity-50 before:backdrop-grayscale before:transition before:duration-500 group-hover:before:origin-bottom group-hover:before:scale-y-0">
                         <img className="transition duration-500" src="../../../../public/images/CC.webp" alt="project description" width="1380" height="1380" />
                     </div>
