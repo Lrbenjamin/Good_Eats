@@ -1,15 +1,22 @@
-import React, { useEffect } from 'react';
-import Rellax from 'rellax';
-
-const Home = () => {
-    useEffect(() => {
-        const rellax = new Rellax('.rellax');
-
-        return () => {
-            rellax.destroy(); // Clean up Rellax instance when component unmounts
-        };
-    }, []); // Empty dependency array ensures the effect runs only once after initial render
-
+import Restaurant from './restaurant';
+function Home() {
+    const data = [
+        {
+            id: 1,
+            name: "Pizza Planet",
+            rating: 4
+        },
+        {
+            id: 2,
+            name: "Burger King",
+            rating: 5
+        },
+        {
+            id: 3,
+            name: "Pizza Planet 2",
+            rating: 4
+        },
+    ]
     return (<main className="background relative">
         <header className="fixed top-0 z-20 w-full">
     <nav className="2lg:px-12 mx-auto max-w-7xl px-6 py-12 lg:px-12 xl:px-6 2xl:px-0">
@@ -122,13 +129,15 @@ const Home = () => {
         </section>
         <section id="work" className=" relative z-10 bg-black pb-20 lg:pt-0">
             <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-6 xl:pb-96 2xl:px-0 " >
-                <div data-rellax-speed="-3" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" className="rellax flex flex-wrap items-center gap-6" style={{ width: "fit-content" }}>
+               
+                
+            </div>
+ <div className="z-200 mx-auto max-w-7xl px-6 lg:px-12 xl:px-6 2xl:px-0 mt-8">
+            <div data-rellax-speed="-3" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" className="rellax flex flex-wrap items-center gap-6" style={{ width: "fit-content" }}>
                     <h2 className="text-7xl font-bold text-white xl:text-8xl">Near You</h2>
                     <span className="h-max rounded-full border border-white/40 px-2 py-1 text-xs tracking-wider text-white mr-0">4 Restaurants</span>
                 </div>
-            </div>
-
-            <div className="z-200 mx-auto max-w-7xl px-6 lg:px-12 xl:px-6 2xl:px-0 mt-8">
+                
                 <form action="" className="space-y-8 md:w-1/2 md:mr-0 md:ml-auto">
                     <div>
                         <label htmlFor="zipcode" className="tracking-wide text-white">Zipcode</label>
@@ -144,15 +153,9 @@ const Home = () => {
                 </form>
             </div>
             <div className="relative mt-20 gap-20 gap-x-6 space-y-20 sm:grid sm:grid-cols-2 sm:space-y-0 md:mt-72 lg:mt-60">
-                <a href="/store/:storeId" data-rellax-speed="0" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" data-rellax-tablet-speed="0" className="rellax group col-span-2 lg:col-span-1">
-                    <div className="relative before:absolute before:inset-0 before:origin-top before:bg-gradient-to-t before:from-black/5 before:opacity-50 before:backdrop-grayscale before:transition before:duration-500 group-hover:before:origin-bottom group-hover:before:scale-y-0">
-                        <img className="transition duration-500" src="../../../../public/images/planetpizza.jpg" alt="gild cover" width="2000" height="1333" />
-                    </div>
-                    <div className="flex items-center justify-between p-4">
-                        <h3 className="text-2xl font-normal text-white">Pizza Planet</h3>
-                        <span className="h-max rounded-full border border-white/30 px-2 py-1 text-xs tracking-wider text-white">4.3</span>
-                    </div>
-                </a>
+            {data.map(item => (
+                            <Restaurant {...item}key={item.id} />
+                        ))}
                 <a href="/store/:storeId" data-rellax-speed="1" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" data-rellax-tablet-speed="0" className="rellax group block">
                     <div className="relative before:absolute before:inset-0 before:origin-top before:bg-gradient-to-t before:from-black/5 before:opacity-50 before:backdrop-grayscale before:transition before:duration-500 group-hover:before:origin-bottom group-hover:before:scale-y-0">
                         <img className="transition duration-500" src="../../../../public/images/bk.jpg" alt="project description" width="1380" height="920" />
@@ -160,24 +163,6 @@ const Home = () => {
                     <div className="flex items-center justify-between p-4">
                         <h3 className="text-2xl font-normal text-white">Kurger Bing</h3>
                         <span className="h-max rounded-full border border-white/30 px-2 py-1 text-xs tracking-wider text-white">4.0</span>
-                    </div>
-                </a>
-                <a href="/store/:storeId" data-rellax-speed="0" data-rellax-xs-speed="-1" data-rellax-mobile-speed="0" data-rellax-tablet-speed="0" className="rellax group block">
-                    <div className="relative before:absolute before:inset-0 before:origin-top before:bg-gradient-to-t before:from-black/5 before:opacity-50 before:backdrop-grayscale before:transition before:duration-500 group-hover:before:origin-bottom group-hover:before:scale-y-0">
-                        <img className="transition duration-500" src="../../../../public/images/mcD.jpg" alt="project description" width="826" height="826" />
-                    </div>
-                    <div className="flex items-center justify-between p-4">
-                        <h3 className="text-2xl font-normal text-white">MacDaniels</h3>
-                        <span className="h-max rounded-full border border-white/30 px-2 py-1 text-xs tracking-wider text-white">4.6</span>
-                    </div>
-                </a>
-                <a href="/store/:storeId" data-rellax-speed="1" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" data-rellax-tablet-speed="0" className="rellax group col-span-2 block lg:col-span-1">
-                    <div className="relative before:absolute before:inset-0 before:origin-top before:bg-gradient-to-t before:from-black/5 before:opacity-50 before:backdrop-grayscale before:transition before:duration-500 group-hover:before:origin-bottom group-hover:before:scale-y-0">
-                        <img className="transition duration-500" src="../../../../public/images/CC.webp" alt="project description" width="1380" height="1380" />
-                    </div>
-                    <div className="flex items-center justify-between p-4">
-                        <h3 className="text-2xl font-normal text-white">Chicken's Church</h3>
-                        <span className="h-max rounded-full border border-white/30 px-2 py-1 text-xs tracking-wider text-white">3.7</span>
                     </div>
                 </a>
             </div>
