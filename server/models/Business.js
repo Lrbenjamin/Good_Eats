@@ -17,8 +17,9 @@ const businessSchema = new Schema({
             message: props => `${props.value} is not a valid zipcode, please try again.`
         }
     },
-    website: { type: String },
-    // phone number ?
+    // website: { type: String },
+    address: { type: String },
+    contact: { type: String },
 });
 
 // initialize model & export

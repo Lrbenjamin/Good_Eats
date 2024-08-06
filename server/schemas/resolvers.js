@@ -53,9 +53,9 @@ const resolvers = {
                 { new: true },
             );
         },
-        addBusiness: async (parent, { name, zipcode, website }) => {
-            return Business.create({ name, zipcode, website });
-        },
+        // addBusiness: async (parent, { name, zipcode, website }) => {
+        //     return Business.create({ name, zipcode, website });
+        // },
         addUser: async (parent, { username, firstName, email, password }) => {
             const user = await User.create({ username, firstName, email, password })
             const token = signToken(user);
@@ -92,9 +92,9 @@ const resolvers = {
         deleteUser: async (parent, { userId }) => {
             return User.findOneAndDelete({ _id: userId });
         },
-        deleteBusiness: async (parent, { businessId }) => {
-            return Business.findOneAndDelete({ _id: businessId });
-        },
+        // deleteBusiness: async (parent, { businessId }) => {
+        //     return Business.findOneAndDelete({ _id: businessId });
+        // },
     },
 };
 

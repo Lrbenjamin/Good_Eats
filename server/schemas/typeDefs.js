@@ -51,7 +51,6 @@ const typeDefs = `
     type Mutation {
         addReview(username: String!, businessId: String!, text: String!): Review
         addComment(reviewId: ID!, username: String! commentText: String!): Review
-        addBusiness(name: String!, zipcode: String!, website: String!): Business
         addUser(username: String!, firstName: String, email: String!, password: String!): Auth
         login(email: String!, password: String!): Auth
         deleteReview(reviewId: ID!): Review
@@ -60,6 +59,7 @@ const typeDefs = `
         deleteBusiness(businessID: ID!): Business
     }
 `
+// addBusiness(name: String!, zipcode: String!, website: String!): Business
 // comments OPT
 // needs logic to calc radius
 
