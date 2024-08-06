@@ -109,19 +109,19 @@ const Donate = () => {
             </div>
         </section>
         <section id="approach" className="relative z-10 bg-black md:sticky md:top-12">
-            <a href="/pages/project.html" className="block bg-gradient-to-b from-transparent to-white/10 py-24">
-                <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-6 2xl:px-0">
-                    <div className="flex">
-                        <div className="w-full">
-                            <span className="mx-auto block h-max w-max rounded-full border border-white/40 px-2 py-1 text-xs tracking-wider text-white">Click Here</span>
-                            <h2 id="donate" className="text-center text-7xl font-bold text-white xl:text-8xl">Donate Now</h2>
+                <a href="https://buy.stripe.com/test_cN2aGQ4bG8Dc1uo3cc" className="block bg-gradient-to-b from-transparent to-white/10 py-24">
+                    <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-6 2xl:px-0">
+                        <div className="flex">
+                            <div className="w-full">
+                                <span className="mx-auto block h-max w-max rounded-full border border-white/40 px-2 py-1 text-xs tracking-wider text-white">Click Here</span>
+                                <h2 id="donate" className="text-center text-7xl font-bold text-white xl:text-8xl">Donate Now</h2>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </a>
-            {/* <script type="module" src="./main.js"></script> */}
-            <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
-        </section>
+                </a>
+                {/* <script type="module" src="./main.js"></script> */}
+                <script src="https://cdn.jsdelivr.net/gh/dixonandmoe/rellax@master/rellax.min.js"></script>
+            </section>
     </main>
 
     );
