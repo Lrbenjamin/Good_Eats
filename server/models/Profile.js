@@ -2,9 +2,6 @@ const { Schema, model } = require("mongoose");
 // encrypt password before saving to db
 const bcrypt = require("bcrypt");
 
-// import businessSchema
-const { businessSchema } = require("./Business");
-
 const userSchema = new Schema(
   {
     userId: {

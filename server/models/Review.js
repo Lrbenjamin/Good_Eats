@@ -15,7 +15,7 @@ const reviewSchema = new Schema(
       max: 5,
       required: true,
     },
-    // business: businessSchema,
+    // store: StoreSchema,
     text: {
       type: String,
       required: true,
