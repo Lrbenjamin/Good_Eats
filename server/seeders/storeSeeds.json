@@ -1,0 +1,37 @@
+[
+    {
+        "name": "The Arrogant Butcher",
+        "zipcode": "85004",
+        "website": "https://www.thearrogantbutcher.com",
+        "address": "2 E Jefferson St #150",
+        "contact": "https://www.thearrogantbutcher.com/contact"
+    },
+    {
+        "name": "The Vig",
+        "zipcode": "85003",
+        "website": "https://www.thevig.us/",
+        "address": " 606 N 4th Ave",
+        "contact": "https://www.thevig.us/contact"
+    },
+    {
+        "name": "Palma",
+        "zipcode": "85004",
+        "website": "https://www.palmaphx.com",
+        "address": "903 N 2nd St",
+        "contact": "hello@palmaphx.com"
+    },
+    {
+        "name": "Chico Malo",
+        "zipcode": "85003",
+        "website": "https://www.chicomalo.com/",
+        "address": "50 W Jefferson St Suite 100",
+        "contact": ""
+    },
+    {
+        "name": "Adams Table",
+        "zipcode": "85003",
+        "website": "https://www.eatatadams.com/",
+        "address": "50 W Jefferson St",
+        "contact": "https://www.eatatadams.com/contact"
+    }
+]
