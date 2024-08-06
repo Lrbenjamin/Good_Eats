@@ -22,7 +22,8 @@ const typeDefs = `
         zipcode: String
         website: String
         address: String
-        Contact: String
+        contact: String
+        reviews: [Review]
     }
     
     type User {
