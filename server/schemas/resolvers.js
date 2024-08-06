@@ -39,6 +39,7 @@ const resolvers = {
     Mutation: {
         addReview: async (parent, { username, rating, businessId, text }) => {
             const review = await Review.create({ 
+                // db assigns id
                 username, rating, business: businessId, text });
                 // link to user profile
             await User.findOneAndUpdate(

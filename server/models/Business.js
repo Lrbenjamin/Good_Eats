@@ -24,3 +24,5 @@ const businessSchema = new Schema({
 // initialize model & export
 const Business = model('Business', businessSchema);
 module.exports = Business;
+
+// https://mongoosejs.com/docs/geojson.html
