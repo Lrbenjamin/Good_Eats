@@ -3,13 +3,6 @@ import Review from '../Review';
 function Store() {
     const data = [
         {
-            storeId: 1,
-            address: "625 W. Pizza Rd",
-            zipcode: "85207",
-            contact: "480-440-3213",
-            rating: 4,
-        },
-        {
             id: 2,
             rating: 5,
             message: "I love burgers"
