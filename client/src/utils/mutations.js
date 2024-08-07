@@ -36,7 +36,7 @@ export const ADD_REVIEW = gql`
 `;
 
 export const EDIT_REVIEW = gql`
-  mutation EditReview($reviewId: ID!, $rating: Float!, $text: String!) {
+  mutation editReview($reviewId: ID!, $rating: Float!, $text: String!) {
     editReview(reviewId: $reviewId, rating: $rating, text: $text) {
       _id
       rating
@@ -48,7 +48,7 @@ export const EDIT_REVIEW = gql`
 `;
 
 export const DELETE_REVIEW = gql`
-  mutation DeleteReview($reviewId: ID!) {
+  mutation deleteReview($reviewId: ID!) {
     deleteReview(reviewId: $reviewId) {
       _id
       rating

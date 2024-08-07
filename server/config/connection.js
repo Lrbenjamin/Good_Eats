@@ -1,7 +1,17 @@
 const mongoose = require('mongoose');
 
-mongoose.connect(
-    process.env.MONGODB_URI || 'mongodb+srv://admin:admin@clusty.dxahynu.mongodb.net/?retryWrites=true&w=majority&appName=clusty'
-);
+const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/mydatabase';
 
-module.exports = mongoose.connection;
+const options = {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  // Add any other relevant options here
+};
+
+mongoose.connect(uri, options)
+  .then(() => {
+    console.log('Connected to MongoDB');
+  })
+  .catch((error) => {
+    console.error('Error connecting to MongoDB:', error);
+  });

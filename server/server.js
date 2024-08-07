@@ -1,9 +1,9 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const path = require('path');
 const { ApolloServer } = require('apollo-server-express');
 const { authMiddleware } = require('./utils/Auth');
 const { typeDefs, resolvers } = require('./schemas');
-const db = require('./config/connection');
 
 const PORT = process.env.PORT || 3001;
 
@@ -31,7 +31,7 @@ const startApolloServer = async () => {
     });
   }
 
-  db.once('open', () => {
+  mongoose.connection.once('open', () => {
     app.listen(PORT, () => {
       console.log(`Express server running on port ${PORT}!`);
     });
