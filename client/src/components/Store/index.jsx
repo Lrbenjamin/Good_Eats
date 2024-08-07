@@ -1,5 +1,5 @@
 import Review from '../Review';
-import StoreInfo from '../storeInfo';
+// import StoreInfo from '../storeInfo';
 function Store() {
     const data = [
         {
@@ -69,9 +69,9 @@ function Store() {
                                 </button>
                             </form>
                         </div>
-                        {data.map(item => (
+                        {/* {data.map(item => (
                             <StoreInfo {...item} key={item.id} />
-                        ))}
+                        ))} */}
                     </div>
                 </div>
             </div>
