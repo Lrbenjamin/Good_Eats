@@ -48,28 +48,28 @@ function Profile() {
                 </div>
                 <div className="mt-24">
                     <div className="grid gap-6 border-t border-white/30 pt-24 lg:grid-cols-3 lg:gap-24">
-                        <div class="lg:col-span-2">
-                            <form action="" class="mx-auto space-y-8 md:w-3/4">
-                                <div class="grid gap-8 sm:grid-cols-2 sm:gap-4">
+                        <div className="lg:col-span-2">
+                            <form action="" className="mx-auto space-y-8 md:w-3/4">
+                                <div className="grid gap-8 sm:grid-cols-2 sm:gap-4">
                                     <div>
-                                        <label for="firstname" class="tracking-wide text-white">First name</label>
-                                        <input type="text" id="fistname" name="fistname" autocomplete="name" placeholder="Your first name" class="mt-3 w-full border border-white/20 bg-transparent px-4 py-3 text-white/70 outline-none focus:ring-1 focus:ring-primary" />
+                                        <label htmlFor="firstname" className="tracking-wide text-white">First name</label>
+                                        <input type="text" id="fistname" name="fistname" autoComplete="name" placeholder="Your first name" className="mt-3 w-full border border-white/20 bg-transparent px-4 py-3 text-white/70 outline-none focus:ring-1 focus:ring-primary" />
                                     </div>
                                     <div>
-                                        <label for="lastname" class="tracking-wide text-white">Last name</label>
-                                        <input type="text" id="lastname" name="lastname" autocomplete="family-name" placeholder="Your last name" class="mt-3 w-full border border-white/20 bg-transparent px-4 py-3 text-white/70 outline-none focus:ring-1 focus:ring-primary" />
+                                        <label htmlFor="lastname" className="tracking-wide text-white">Last name</label>
+                                        <input type="text" id="lastname" name="lastname" autoComplete="family-name" placeholder="Your last name" className="mt-3 w-full border border-white/20 bg-transparent px-4 py-3 text-white/70 outline-none focus:ring-1 focus:ring-primary" />
                                     </div>
                                 </div>
                                 <div>
-                                    <label for="email" class="tracking-wide text-white">Mail address</label>
-                                    <input type="email" id="email" name="email" placeholder="Your mail address" class="mt-3 w-full border border-white/20 bg-transparent px-4 py-3 text-white/70 outline-none focus:ring-1 focus:ring-primary" />
+                                    <label htmlFor="email" className="tracking-wide text-white">Mail address</label>
+                                    <input type="email" id="email" name="email" placeholder="Your mail address" className="mt-3 w-full border border-white/20 bg-transparent px-4 py-3 text-white/70 outline-none focus:ring-1 focus:ring-primary" />
                                 </div>
                                 <div>
-                                    <label for="message" class="tracking-wide text-white">Your message</label>
-                                    <textarea name="message" id="message" cols="30" rows="6" placeholder="Your message" class="mt-3 w-full border border-white/20 bg-transparent px-4 py-3 text-white/70 outline-none focus:ring-1 focus:ring-primary"></textarea>
+                                    <label htmlFor="message" className="tracking-wide text-white">Your message</label>
+                                    <textarea name="message" id="message" cols="30" rows="6" placeholder="Your message" className="mt-3 w-full border border-white/20 bg-transparent px-4 py-3 text-white/70 outline-none focus:ring-1 focus:ring-primary"></textarea>
                                 </div>
-                                <button type="submit" class="group ml-auto flex h-12 w-auto items-center overflow-hidden bg-white px-5 transition-all duration-300 hover:bg-primary">
-                                    <span class="relative uppercase tracking-wide text-black group-hover:text-white"> Send message </span>
+                                <button type="submit" className="group ml-auto flex h-12 w-auto items-center overflow-hidden bg-white px-5 transition-all duration-300 hover:bg-primary">
+                                    <span className="relative uppercase tracking-wide text-black group-hover:text-white"> Send message </span>
                                 </button>
                             </form>
                         </div>
