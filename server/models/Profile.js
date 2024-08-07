@@ -1,4 +1,4 @@
-const { Schema, model } = require("mongoose");
+const { Schema, model, Types } = require("mongoose");
 // encrypt password before saving to db
 const bcrypt = require("bcrypt");
 
@@ -32,9 +32,9 @@ const userSchema = new Schema(
     password: {
       type: String,
       required: true,
-      unique: true,
+      unique: false,
       match: [
-        new RegExp("^(?=.*[A-Za-z])(?=.*d)[A-Za-zd]{8,}$"),
+        new RegExp("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$"),
         "Password must include letters, number(s) and be at least 8 characters",
       ],
     },
