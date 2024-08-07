@@ -18,7 +18,7 @@ function Login () {
     const token = mutation.data.login.token;
     AUTH.login(token)
     } catch(e) {
-      console.log(e);
+      console.log(error);
     }
   };
 
@@ -33,7 +33,7 @@ function Login () {
 
 
   return (
-  <body className="bg-black min-h-screen selection:bg-white/10">
+  <div className="bg-black min-h-screen selection:bg-white/10">
   <header className="flex justify-center fixed top-0 z-20 w-full">
     <nav className="2lg:px-12 mx-auto max-w-7xl px-6 py-12 lg:px-12 xl:px-6 2xl:px-0">
       <div className="flex items-center justify-between">
@@ -112,6 +112,6 @@ function Login () {
     </div>
   </div>
 </main>
-</body> )
+</div> )
 }
 export default Login
