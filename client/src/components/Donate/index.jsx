@@ -67,10 +67,10 @@ const Donate = () => {
             <div className="xl:px-6">
                 <div className="grid grid-cols-2 gap-3 md:gap-6">
                     <div className="relative before:absolute before:inset-0 before:origin-top before:bg-gradient-to-t before:from-black/5 before:opacity-50 before:backdrop-grayscale before:transition before:duration-500 hover:before:origin-bottom hover:before:scale-y-0">
-                        <img className="transition duration-500" src="../../../../public/images/restaurant1.webp" alt="Restaurant Owners" width="1380" height="1380" />
+                        <img className="transition duration-500" src="../../../../images/restaurant1.webp" alt="Restaurant Owners" width="1380" height="1380" />
                     </div>
                     <div data-rellax-speed="-2" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" className="rellax relative before:absolute before:inset-0 before:origin-top before:bg-gradient-to-t before:from-black/5 before:opacity-50 before:backdrop-grayscale before:transition before:duration-500 hover:before:origin-bottom hover:before:scale-y-0">
-                        <img className="h-full w-full object-cover transition duration-500" src="../../../../public/images/restaurant2.webp" alt="Restaurant 50th Anniversary" width="2000" height="1333" />
+                        <img className="h-full w-full object-cover transition duration-500" src="../../../../images/restaurant2.webp" alt="Restaurant 50th Anniversary" width="2000" height="1333" />
                     </div>
                 </div>
             </div>
@@ -100,10 +100,10 @@ const Donate = () => {
             <div className="xl:px-6">
                 <div className="grid grid-cols-2 gap-3 md:gap-6">
                     <div className="relative before:absolute before:inset-0 before:origin-top before:bg-gradient-to-t before:from-black/5 before:opacity-50 before:backdrop-grayscale before:transition before:duration-500 hover:before:origin-bottom hover:before:scale-y-0">
-                        <img className="transition duration-500" src="../../../../public/images/restaurant3.jpg" alt="Father Daughter" width="1380" height="1380" />
+                        <img className="transition duration-500" src="../../../../images/restaurant3.jpg" alt="Father Daughter" width="1380" height="1380" />
                     </div>
                     <div data-rellax-speed="-2" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" className="rellax relative before:absolute before:inset-0 before:origin-top before:bg-gradient-to-t before:from-black/5 before:opacity-50 before:backdrop-grayscale before:transition before:duration-500 hover:before:origin-bottom hover:before:scale-y-0">
-                        <img className="h-full w-full object-cover transition duration-500" src="../../../../public/images/restaurant4.jpg" alt="Husband Wife" width="2000" height="1333" />
+                        <img className="h-full w-full object-cover transition duration-500" src="../../../../images/restaurant4.jpg" alt="Husband Wife" width="2000" height="1333" />
                     </div>
                 </div>
             </div>

@@ -51,7 +51,7 @@ function Home() {
 </header>
         <section id="home" className="relative flex min-h-screen items-center">
             <div aria-hidden="true" className="absolute inset-0 z-[1] bg-gradient-to-b from-black/10 via-black/20 to-black"></div>
-            <img src="../../../../public/images/background.jpg" className="fixed inset-0 h-full w-full object-cover" alt="Restaurant Aesthetic" width="4160" height="6240" />
+            <img src="../../../../images/background.jpg" className="fixed inset-0 h-full w-full object-cover" alt="Restaurant Aesthetic" width="4160" height="6240" />
             <div className="relative z-10 mx-auto max-w-7xl px-6 pb-40 pt-60 lg:px-12 xl:px-6 2xl:px-0">
                 <div className="pb-12 media-h:md:pb-32 media-h:lg:pb-12 xl:pb-12">
                     <h1 data-rellax-speed="-3" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" className="rellax text-6xl font-bold text-white sm:text-8xl md:text-9xl xl:leading-tight">Local Restuarants</h1>
@@ -158,7 +158,7 @@ function Home() {
                         ))}
                 <a href="/store/:storeId" data-rellax-speed="1" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" data-rellax-tablet-speed="0" className="rellax group block">
                     <div className="relative before:absolute before:inset-0 before:origin-top before:bg-gradient-to-t before:from-black/5 before:opacity-50 before:backdrop-grayscale before:transition before:duration-500 group-hover:before:origin-bottom group-hover:before:scale-y-0">
-                        <img className="transition duration-500" src="../../../../public/images/bk.jpg" alt="project description" width="1380" height="920" />
+                        <img className="transition duration-500" src="../../../../images/bk.jpg" alt="project description" width="1380" height="920" />
                     </div>
                     <div className="flex items-center justify-between p-4">
                         <h3 className="text-2xl font-normal text-white">Kurger Bing</h3>
@@ -176,7 +176,7 @@ function Home() {
                         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
                             <div>
                                 <div className="relative overflow-hidden transition duration-300 transform rounded shadow-lg lg:hover:-translate-y-2 hover:shadow-2xl">
-                                    <img className="object-cover w-full h-56 md:h-64 xl:h-80" src="../../../public/images/caleb.png" alt="Caleb.png" />
+                                    <img className="object-cover w-full h-56 md:h-64 xl:h-80" src="../../../images/caleb.png" alt="Caleb.png" />
                                     <div className="absolute inset-0 flex flex-col justify-center px-5 py-4 text-center transition-opacity duration-300 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
                                         <p className="mb-1 text-lg font-bold text-gray-100">Caleb Warford</p>
                                         <p className="mb-4 text-xs text-gray-100">Web Developer</p>
@@ -193,7 +193,7 @@ function Home() {
                             </div>
                             <div>
                                 <div className="relative overflow-hidden transition duration-300 transform rounded shadow-lg lg:hover:-translate-y-2 hover:shadow-2xl">
-                                    <img className="object-cover w-full h-56 md:h-64 xl:h-80" src="../../../public/images/logan.jpg" alt="Logan.jpg" />
+                                    <img className="object-cover w-full h-56 md:h-64 xl:h-80" src="../../../images/logan.jpg" alt="Logan.jpg" />
                                     <div className="absolute inset-0 flex flex-col justify-center px-5 py-4 text-center transition-opacity duration-300 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
                                         <p className="mb-1 text-lg font-bold text-gray-100">Logan Benjamin</p>
                                         <p className="mb-4 text-xs text-gray-100">Web Developer</p>
@@ -210,7 +210,7 @@ function Home() {
                             </div>
                             <div>
                                 <div className="relative overflow-hidden transition duration-300 transform rounded shadow-lg lg:hover:-translate-y-2 hover:shadow-2xl">
-                                    <img className="object-cover w-full h-56 md:h-64 xl:h-80" src="../../../public/images/annie.png" alt="Annie" />
+                                    <img className="object-cover w-full h-56 md:h-64 xl:h-80" src="../../../images/annie.png" alt="Annie" />
                                     <div className="absolute inset-0 flex flex-col justify-center px-5 py-4 text-center transition-opacity duration-300 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
                                         <p className="mb-1 text-lg font-bold text-gray-100">Annie Schalnat</p>
                                         <p className="mb-4 text-xs text-gray-100">Web Developer</p>
@@ -227,7 +227,7 @@ function Home() {
                             </div>
                             <div>
                                 <div className="relative overflow-hidden transition duration-300 transform rounded shadow-lg lg:hover:-translate-y-2 hover:shadow-2xl">
-                                    <img className="object-cover w-full h-56 md:h-64 xl:h-80" src="../../../public/images/damien.png" alt="Damien.jpg" />
+                                    <img className="object-cover w-full h-56 md:h-64 xl:h-80" src="../../../images/damien.png" alt="Damien.jpg" />
                                     <div className="absolute inset-0 flex flex-col justify-center px-5 py-4 text-center transition-opacity duration-300 bg-black bg-opacity-75 opacity-0 hover:opacity-100">
                                         <p className="mb-1 text-lg font-bold text-gray-100">Damien Mendoza</p>
                                         <p className="mb-4 text-xs text-gray-100">Web Developer</p>
