@@ -1,4 +1,4 @@
-import { User, Review, Store } from '../models'; // Use relative path as needed
+const { User, Review, Store } = require('../models'); // Use CommonJS require
 
 const resolvers = {
   Query: {
@@ -32,4 +32,4 @@ const resolvers = {
   },
 };
 
-export { resolvers };
+module.exports = resolvers; // Use CommonJS export

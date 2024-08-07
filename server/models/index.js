@@ -1,5 +1,5 @@
-const User = require("./Profile");
-const Review = require("./Review");
-const Store = require("./Store");
+const Store = require('./Store');
+const User = require('./Profile');
+const Review = require('./Review');
 
-module.exports = { User, Review, Store };
+module.exports = { Store, User, Review };

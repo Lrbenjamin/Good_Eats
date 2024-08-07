@@ -1,28 +1,31 @@
-const { Schema, model } = require("mongoose");
-const formatDate = require("../utils/formatDate");
+const mongoose = require('mongoose');
+const formatDate = require('../utils/formatDate'); // Adjust path if necessary
 
-const reviewSchema = new Schema(
-  {
+const { Schema, model } = mongoose;
+
+// Define the review schema
+const reviewSchema = new Schema({
     rating: {
-      type: Schema.Types.Decimal128,
-      min: 1,
-      max: 5,
-      required: true,
+        type: Schema.Types.Decimal128,
+        min: 1,
+        max: 5,
+        required: true,
     },
     text: {
-      type: String,
-      required: true,
-      maxLength: 500,
+        type: String,
+        required: true,
+        maxLength: 500,
     },
     username: { type: String, required: true },
     createdAt: {
-      type: Date,
-      default: Date.now,
-      get: (createdAtVal) => formatDate(createdAtVal),
+        type: Date,
+        default: Date.now,
+        get: (createdAtVal) => formatDate(createdAtVal),
     },
-  },
-  { toJSON: { getters: true } }
-);
+}, { toJSON: { getters: true } });
 
-const Review = model("Review", reviewSchema);
-module.exports = Review;
+// Create the Review model
+const Review = model('Review', reviewSchema);
+
+// Export the Review model
+module.exports = Review; // Use CommonJS export

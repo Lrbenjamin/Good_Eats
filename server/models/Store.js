@@ -1,6 +1,7 @@
-const { Schema, model } = require('mongoose');
+const mongoose = require('mongoose');
+const { Schema, model } = mongoose;
 
-// contact info for business reviewed
+// Define the Store schema
 const StoreSchema = new Schema({
     name: { type: String, required: true },
     zipcode: {
@@ -18,7 +19,8 @@ const StoreSchema = new Schema({
     contact: { type: String },
 });
 
+// Create the Store model
 const Store = model('Store', StoreSchema);
-module.exports = Store;
 
-// https://mongoosejs.com/docs/geojson.html
+// Export the Store model
+module.exports = Store;
