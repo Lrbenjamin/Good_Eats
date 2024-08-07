@@ -1,11 +1,7 @@
-const { Schema, model, Types } = require('mongoose');
+const { Schema, model } = require('mongoose');
 
 // contact info for business reviewed
 const StoreSchema = new Schema({
-    storeId: {
-        type: Schema.Types.ObjectId,
-        default: () => new Types.ObjectId(),
-    },
     name: { type: String, required: true },
     zipcode: {
         type: String,
@@ -22,8 +18,7 @@ const StoreSchema = new Schema({
     contact: { type: String },
 });
 
-// initialize model & export
-const Store = model('store', StoreSchema);
+const Store = model('Store', StoreSchema);
 module.exports = Store;
 
 // https://mongoosejs.com/docs/geojson.html
