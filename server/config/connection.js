@@ -3,14 +3,8 @@ const mongoose = require('mongoose');
 // MongoDB connection URI
 const uri = process.env.MONGODB_URI || 'mongodb+srv://admin:admin@clusty.dxahynu.mongodb.net/?retryWrites=true&w=majority&appName=clusty';
 
-const options = {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  // Add any other relevant options here
-};
-
 // Connect to MongoDB
-mongoose.connect(uri, options)
+mongoose.connect(uri)
   .then(() => {
     console.log('Connected to MongoDB');
   })
