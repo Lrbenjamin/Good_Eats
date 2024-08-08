@@ -20,8 +20,8 @@ export const LOGIN = gql`
 `;
 
 export const ADD_REVIEW = gql`
-  mutation addReview($rating: Int!, $text: String!) {
-    addReview(rating: $rating, text: $text) {
+  mutation AddReview($storeId: ID!, $rating: Int!, $text: String!) {
+    addReview(storeId: $storeId, rating: $rating, text: $text) {
       _id
       createdAt
       rating

@@ -3,7 +3,10 @@ const { Schema, model } = mongoose;
 
 // Define the Store schema
 const StoreSchema = new Schema({
-    name: { type: String, required: true },
+    name: { 
+        type: String, 
+        required: true 
+    },
     zipcode: {
         type: String,
         required: true,
@@ -14,10 +17,20 @@ const StoreSchema = new Schema({
             message: props => `${props.value} is not a valid zipcode, please try again.`
         }
     },
-    website: { type: String },
-    address: { type: String },
-    contact: { type: String },
-});
+    website: { 
+        type: String 
+    },
+    address: { 
+        type: String 
+    },
+    contact: { 
+        type: String 
+    },
+    reviews: [{ 
+        type: Schema.Types.ObjectId, 
+        ref: 'Review' 
+    }] // Added field to reference Review model
+}, { timestamps: true }); // Optionally, add timestamps for createdAt and updatedAt
 
 // Create the Store model
 const Store = model('Store', StoreSchema);

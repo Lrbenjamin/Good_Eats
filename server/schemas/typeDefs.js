@@ -31,7 +31,7 @@ const typeDefs = gql`
   type Review {
     _id: ID
     rating: Int
-    store: Store
+    store: Store  # Optionally include this if you want to link back to the store
     text: String
     username: String
     createdAt: String
@@ -47,7 +47,7 @@ const typeDefs = gql`
   type Mutation {
     addUser(username: String!, password: String!): Auth
     login(username: String!, password: String!): Auth
-    addReview(rating: Int!, text: String!): Review
+    addReview(storeId: ID!, rating: Int!, text: String!): Review  # Added storeId to mutation
     editReview(reviewId: ID!, rating: Int!, text: String!): Review
     deleteReview(reviewId: ID!): Review
     logout: Message
