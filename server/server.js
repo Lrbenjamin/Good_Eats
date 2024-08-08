@@ -1,49 +1,42 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const path = require('path');
-// import ApolloServer class & express middleware
-const { ApolloServer } = require('@apollo/server');
-const { expressMiddleware } = require('@apollo/server/express4');
-// import JWT authentication
+const { ApolloServer } = require('apollo-server-express');
 const { authMiddleware } = require('./utils/Auth');
-
-// import the two parts of our GraphQL schema
-const { typeDefs, resolvers } = require('./schemas');
-
+const typeDefs = require('./schemas/typeDefs'); 
+const resolvers = require('./schemas/resolvers');
+require('./config/connection');
 const PORT = process.env.PORT || 3001;
+
 const server = new ApolloServer({
-  typeDefs, resolvers
+  typeDefs,
+  resolvers,
+  context: authMiddleware // Include authMiddleware in the context of ApolloServer
 });
 
-// import mongoDB connection
-const db = require('./config/connection');
-
-// initialize application
 const app = express();
 
-// new instance of ApolloServer using GraphQL schema
 const startApolloServer = async () => {
   await server.start();
 
-  // middleware 
   app.use(express.urlencoded({ extended: false }));
   app.use(express.json());
-  app.use('/graphql', expressMiddleware(server, {
-    context: authMiddleware
-  }));
+
+  server.applyMiddleware({ app, path: '/graphql' }); // Apply Apollo Server middleware to the Express app at '/graphql'
 
   if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '../client/dist')));
 
     app.get('*', (req, res) => {
       res.sendFile(path.join(__dirname, '../client/dist/index.html'));
-  })};
+    });
+  }
 
-  db.once('open', () => {
+  mongoose.connection.once('open', () => {
     app.listen(PORT, () => {
       console.log(`Express server running on port ${PORT}!`);
     });
   });
 };
 
-// call async function to start the server
 startApolloServer();

@@ -5,7 +5,6 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-// import Header from './components/Header';
 import MainContent from './pages/MainContent';
 import React from 'react';
 
@@ -35,14 +34,11 @@ const client = new ApolloClient({
 
 function App() {
   return (
-    <>
-      <ApolloProvider client={client}>
-        <div className="content">
-          {/* <Header /> */}
-          <MainContent />
-        </div>
-      </ApolloProvider>
-    </>
+    <ApolloProvider client={client}>
+      <div className="content">
+        <MainContent />
+      </div>
+    </ApolloProvider>
   );
 }
 

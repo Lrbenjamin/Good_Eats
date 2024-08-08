@@ -5,20 +5,20 @@ import { LOGIN } from "../../utils/mutations";
 import AUTH from "../../utils/auth";
 
 function Login () {
-  const [formState, setFormState] = useState({ email: '', password: ' '})
+  const [formState, setFormState] = useState({ username: '', password: ' '})
   const [login, {error}] = useMutation(LOGIN)
 
   const handleFormSubmit = async(event) => {
     event.preventDefault();
     try {
     const mutation = await login({
-      variables: {email: formState.email, password: formState.password},
+      variables: {username: formState.username, password: formState.password},
     });
 
     const token = mutation.data.login.token;
     AUTH.login(token)
     } catch(e) {
-      console.log(e);
+      console.log(error);
     }
   };
 
@@ -33,7 +33,7 @@ function Login () {
 
 
   return (
-  <body className="bg-black min-h-screen selection:bg-white/10">
+  <div className="bg-black min-h-screen selection:bg-white/10">
   <header className="flex justify-center fixed top-0 z-20 w-full">
     <nav className="2lg:px-12 mx-auto max-w-7xl px-6 py-12 lg:px-12 xl:px-6 2xl:px-0">
       <div className="flex items-center justify-between">
@@ -65,15 +65,15 @@ function Login () {
     <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
       <form id="loginForm" className="space-y-6" onSubmit={handleFormSubmit}>
         <div>
-          <label htmlFor="email" className="block text-sm font-medium leading-6 text-white">Username</label>
+          <label htmlFor="username" className="block text-sm font-medium leading-6 text-white">Username</label>
           <div className="mt-2">
             <input 
-              id="email" 
-              name="email" 
-              type="email" 
-              autoComplete="email" 
+              id="username" 
+              name="username" 
+              type="username" 
+              autoComplete="username" 
               required
-              value={formState.email}
+              value={formState.username}
               onChange={handleChange} 
               className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></input>
           </div>
@@ -112,6 +112,6 @@ function Login () {
     </div>
   </div>
 </main>
-</body> )
+</div> )
 }
 export default Login

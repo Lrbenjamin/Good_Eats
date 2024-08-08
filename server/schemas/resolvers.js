@@ -1,109 +1,112 @@
-const { User, Review, Store } = require("../models");
-// set up JWT for login authentication
-const { signToken, AuthenticationError } = require("../utils/Auth");
+const { User, Review, Store } = require('../models'); // Use CommonJS require
+const { generateToken } = require('../utils/Auth'); 
 
 const resolvers = {
   Query: {
-    // include business contact info
-    reviews: async () => {
-      return Review.find().populate("store");
+    getAllStores: async () => {
+      const allStores = await Store.find();
+      return allStores;
     },
-    review: async (parent, { reviewId }) => {
-      return Review.findOne({ _id: reviewId }).populate("store");
+    getStore: async (parent, { storeId }) => {
+      try {
+        const store = await Store.findById(storeId);
+      return store;
+      } catch (err) {
+        console.log(err);
+        return null
+      }
     },
-    stores: async () => {
-      return Store.find();
+    getReviewsForStore: async (parent, { storeId }) => {
+      const reviews = await Review.find({ store: storeId });
+      return reviews;
     },
-    store: async (parent, { storeId }) => {
-      return Store.findOne({ _id: storeId });
-    },
-    // include all user reviews
-    users: async () => {
-      return User.find().populate("reviews");
-    },
-    userProfile: async (parent, { username }) => {
-      return User.find().populate("reviews");
-    },
-    // include business info with reviews
-    reviewsByUser: async (parent, { username }) => {
-      return User.find({ username }).populate("store");
-    },
-    // only include reviews matching zipcode given
-    reviewsByZipcode: async (parent, { zipcode }) => {
-      return Review.find().populate({
-        path: "store",
-        match: { zipcode: zipcode },
-      });
+    getReviewsByUser: async (parent, { username }) => {
+      const reviews = await Review.find({ username });
+      return reviews;
     },
   },
   Mutation: {
-    addReview: async (parent, { username, rating, storeId, text }) => {
-      const review = await Review.create({
-        // db assigns id
-        username,
-        rating,
-        store: storeId,
-        text,
-      });
-      // link to user profile
-      await User.findOneAndUpdate(
-        { username: username },
-        { $addToSet: { reviews: review._id } }
-      );
-    },
-    addComment: async (parent, { reviewId, username, commentText }) => {
-      return Review.findOneAndUpdate(
-        { _id: reviewId },
-        { $addToSet: { comments: { username, commentText } } },
-        { new: true }
-      );
-    },
-    // addBusiness: async (parent, { name, zipcode, website }) => {
-    //     return Business.create({ name, zipcode, website });
-    // },
-    addUser: async (parent, { username, firstName, email, password }) => {
-      const user = await User.create({ username, firstName, email, password });
-      const token = signToken(user);
-      // return user with jwt token for easy auth
-      return { token, user };
-    },
-    login: async (parent, { email, password }) => {
-      // find user by provided email or username (unique!)
-      const user = await User.findOne({
-        $or: [{ email: email }, { username: username }],
-      });
-      // check that user exists in db
-      if (!user) {
-        throw AuthenticationError("No email found, sign up now!");
+    addUser: async (parent, { username, password }) => {
+      if (!username || !password) {
+        throw new Error('Username and password are required');
       }
-      // if exists, run isCorrectPassword method
-      const correctPw = await user.isCorrectPassword(password);
-
-      if (!correctPw) {
-        throw new AuthenticationError("Your password is incorrect.");
+    
+      try {
+        const newUser = await User.create({ username, password });
+        const token = generateToken(newUser);
+        return { token, user: newUser };
+      } catch (error) {
+        console.error('Error creating user:', error);
+        throw new Error('Failed to create user');
       }
-      // if email & password check out, sign in with a jwt
-      const token = signToken(user);
-      // return Auth object with token & user info
-      return { token, user };
     },
-    deleteReview: async (parent, { reviewId }) => {
-      return Review.findOneAndDelete({ _id: reviewId });
+    addReview: async (parent, { rating, text }, context) => {
+      try {
+        // Logic to create a new review with the provided rating, text, username, and createdAt
+        const newReview = await Review.create({ 
+          rating, 
+          text, 
+          username:  context.user.username});
+        return newReview;
+      } catch (error) {
+        throw new Error('Failed to add review');
+      }
     },
-    deleteComment: async (parent, { reviewId, commentId }) => {
-      return Review.findOneAndUpdate(
-        { _id: reviewId },
-        { $pull: { comments: { _id: commentId } } },
-        { new: true }
-      );
-    },
-    deleteUser: async (parent, { userId }) => {
-      return User.findOneAndDelete({ _id: userId });
-    },
-    // deleteBusiness: async (parent, { businessId }) => {
-    //     return Business.findOneAndDelete({ _id: businessId });
-    // },
   },
+  // login: async (_, { username, password }) => {
+  //   try {
+  //     // Logic to find the user by username and password
+  //     const user = await User.findOne({ username, password });
+  //     if (!user) {
+  //       throw new Error('Invalid credentials');
+  //     }
+  //     // Generate a token for the user
+  //     const token = generateToken(user);
+  //     return { token, user: { _id: user._id } };
+  //   } catch (error) {
+  //     throw new Error('Failed to log in');
+  //   }
+  // },
+
+  // editReview: async (parent, { reviewId, rating, text }, context) => {
+  //   try {
+  //     // Find the review by ID
+  //     const review = await Review.findById(reviewId);
+  //     if (!review) {
+  //       throw new Error('Review not found');
+  //     }
+  //     // Update the review with new rating and text
+  //     review.rating = rating;
+  //     review.text = text;
+  //     await review.save();
+  //     return review;
+  //   } catch (error) {
+  //     throw new Error('Failed to edit review');
+  //   }
+  // },
+  // deleteReview: async (parent, { reviewId }, context) => {
+  //   try {
+  //     // Find the review by ID
+  //     const review = await Review.findById(reviewId);
+  //     if (!review) {
+  //       throw new Error('Review not found');
+  //     }
+  //     // Delete the review
+  //     await review.remove();
+  //     return review;
+  //   } catch (error) {
+  //     throw new Error('Failed to delete review');
+  //   }
+  // },
+  //   logout: async (parent, args, context) => {
+  //     try {
+  //       // Perform logout actions, such as clearing the user's session or token
+  //       // You can add your logout logic here
+  //       return { message: 'User logged out successfully' };
+  //     } catch (error) {
+  //       throw new Error('Failed to log out');
+  //     }
+  //   }
 };
 
-module.exports = resolvers;
+module.exports = resolvers; // Use CommonJS export

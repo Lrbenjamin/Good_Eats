@@ -1,22 +1,47 @@
-import Review from './Review';
+import Review from '../Review';
+import StoreInfo from '../storeInfo';
+import { useQuery, useMutation } from '@apollo/client';
+import { GET_STORE } from '../../utils/queries';
+import { useParams } from 'react-router';
+import { ADD_REVIEW } from '../../utils/mutations';
+
 function Store() {
-    const data = [
-        {
-            id: 1,
-            rating: 4,
-            message: "I love pizza"
-        },
-        {
-            id: 2,
-            rating: 5,
-            message: "I love burgers"
-        },
-        {
-            id: 3,
-            rating: 3,
-            message: "I love pizza with a Z"
-        },
-    ]
+    const params = useParams()
+
+    console.log(params.storeId)
+
+    const {loading, data} = useQuery(GET_STORE, {
+        variables: {
+            "storeId": params.storeId
+        }
+    })
+
+    const [addReview] = useMutation(ADD_REVIEW)
+
+
+    const storeData = data?.getStore
+
+    async function submitReview (event) {
+        event.preventDefault();
+
+        // mutation for adding Review
+        await addReview({
+            variables: {
+                rating: "",
+                text: ""
+            }
+        }) 
+
+    }
+
+    if(loading) {
+        return (
+            <>
+            <h1>Still loading, please wait....</h1>
+            </>
+        )
+    }
+
     return <main>
 
         <header className="fixed top-0 z-20 w-full">
@@ -42,15 +67,15 @@ function Store() {
         <section className=" bg-gradient-to-b from-black via-black/80 to-black pt-32 backdrop-blur-3xl lg:pb-32 lg:pt-0">
             <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-6 2xl:px-0">
                 <div className="flex flex-wrap items-center gap-6">
-                    <h2 className="text-7xl font-bold text-white xl:text-8xl">Store Name</h2>
+                    <h2 className="text-7xl font-bold text-white xl:text-8xl">{storeData.name}</h2>
                 </div>
                 <div className="mt-24">
                     <div className="grid gap-6 border-t border-white/30 pt-24 lg:grid-cols-3 lg:gap-24">
                         <div className="lg:col-span-2">
-                            <form action="" className="mx-auto space-y-8 md:w-3/4">
+                            <form onSubmit={submitReview} className="mx-auto space-y-8 md:w-3/4">
                                 <div>
-                                    <label htmlFor="email" className="tracking-wide text-white">Your Rating</label>
-                                    <input type="email" id="email" name="email" placeholder="Your rating 1-5" className="mt-3 w-full border border-white/20 bg-transparent px-4 py-3 text-white/70 outline-none focus:ring-1 focus:ring-primary" />
+                                    <label htmlFor="username" className="tracking-wide text-white">Your Rating</label>
+                                    <input type="username" id="username" name="username" placeholder="Your rating 1-5" className="mt-3 w-full border border-white/20 bg-transparent px-4 py-3 text-white/70 outline-none focus:ring-1 focus:ring-primary" />
                                 </div>
                                 <div>
                                     <label htmlFor="message" className="tracking-wide text-white">Your Message (optional)</label>
@@ -61,31 +86,7 @@ function Store() {
                                 </button>
                             </form>
                         </div>
-                        <div className="mt-8 border border-white/30 p-8 sm:p-12">
-                            <div>
-                                <h3 className="text-xs font-light uppercase tracking-widest text-white">Store Address</h3>
-                                <p className="mt-4 text-white">625 W. McKellips Rd. Mesa, AZ</p>
-                            </div>
-                            <div className="mt-16">
-                                <h3 className="text-xs font-light uppercase tracking-widest text-white">Contact Info</h3>
-                                <ul className="relative z-20 mt-4 space-y-2 font-light text-white">
-                                    <li>
-                                        <a href="tel:+243000000000">Phone ------ 480-586-1525</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className="mt-16">
-                                <h3 className="text-xs font-light uppercase tracking-widest text-white">Store Rating</h3>
-                                <ul className="relative z-20 mt-4 space-y-2 font-light text-white">
-                                    <li>
-                                        <a href="" target="_blank">4.5</a>
-                                    </li>
-                                </ul>
-                                <a data-rellax-speed="1" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" href="#storeReviews" className="rellax relative inline-block py-1.5 text-white before:absolute before:inset-0 before:origin-bottom before:scale-y-[.03] before:bg-white/60 before:transition before:duration-300 hover:before:scale-y-100 hover:before:scale-x-125 hover:before:bg-white/10">
-                                    <span className="relative">See Reviews</span>
-                                </a>
-                            </div>
-                        </div>
+                            <StoreInfo {...storeData} key={storeData._id} />
                     </div>
                 </div>
             </div>
@@ -97,9 +98,9 @@ function Store() {
                 </div>
                 <div className="mt-24">
                     <div className="grid gap-6 border-t border-white/30 pt-24 lg:grid-cols-3 lg:gap-24">
-                        {data.map(item => (
+                        {/* {data.map(item => (
                             <Review {...item} key={item.id} />
-                        ))}
+                        ))} */}
                     </div>
                 </div>
             </div>

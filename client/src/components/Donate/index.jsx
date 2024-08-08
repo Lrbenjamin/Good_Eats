@@ -15,14 +15,14 @@ const Donate = () => {
             <nav className="2lg:px-12 mx-auto max-w-7xl px-6 py-12 lg:px-12 xl:px-6 2xl:px-0">
                 <div className="flex items-center justify-between">
                     <div
-                        class="border-[--ui-light-border-color] relative border-[length:var(--border-width)] [--border-width:calc(var(--border)*1px)] [--border:1] [--glow:60] [--hue:179] [--lightness:55%] dark:[--lightness:14%] [--opacity:1] [--radius:24] [--saturation:78%] dark:[--saturation:97%] [--speed:2]">
+                        className="border-[--ui-light-border-color] relative border-[length:var(--border-width)] [--border-width:calc(var(--border)*1px)] [--border:1] [--glow:60] [--hue:179] [--lightness:55%] dark:[--lightness:14%] [--opacity:1] [--radius:24] [--saturation:78%] dark:[--saturation:97%] [--speed:2]">
                         <div>
-                            <p class="text-2xl tracking-widest text-white">Good Eats</p>
+                            <p className="text-2xl tracking-widest text-white">Good Eats</p>
                         </div>
                         <span
-                            class="glow absolute inset-[calc(var(--border-width)*-1)] rounded-[--card-border-radius] border-[length:var(--border-width)] border-transparent ![mask-clip:padding-box,_border-box] ![mask-composite:intersect] [mask:linear-gradient(transparent,transparent),linear-gradient(white,white)]">
+                            className="glow absolute inset-[calc(var(--border-width)*-1)] rounded-[--card-border-radius] border-[length:var(--border-width)] border-transparent ![mask-clip:padding-box,_border-box] ![mask-composite:intersect] [mask:linear-gradient(transparent,transparent),linear-gradient(white,white)]">
                             <span
-                                class="absolute inline-block aspect-square h-5 bg-[radial-gradient(circle_at_right,hsl(0_0%_0%/0),transparent_50%),radial-gradient(circle_at_right,hsl(var(--hue)_var(--saturation)_var(--lightness,50%)/1)_50%,transparent)] dark:bg-[radial-gradient(circle_at_right,hsl(0_0%_100%/0.75),transparent_50%),radial-gradient(circle_at_right,hsl(var(--hue)_var(--saturation)_var(--lightness,50%)/1)_50%,transparent)] opacity-[var(--opacity)] [animation:loop_3s_infinite_linear] [offset-anchor:calc(var(--anchor)*1%)_50%] [offset-path:rect(0_100%_100%_0_round_calc(var(--glow)*1px))]"></span>
+                                className="absolute inline-block aspect-square h-5 bg-[radial-gradient(circle_at_right,hsl(0_0%_0%/0),transparent_50%),radial-gradient(circle_at_right,hsl(var(--hue)_var(--saturation)_var(--lightness,50%)/1)_50%,transparent)] dark:bg-[radial-gradient(circle_at_right,hsl(0_0%_100%/0.75),transparent_50%),radial-gradient(circle_at_right,hsl(var(--hue)_var(--saturation)_var(--lightness,50%)/1)_50%,transparent)] opacity-[var(--opacity)] [animation:loop_3s_infinite_linear] [offset-anchor:calc(var(--anchor)*1%)_50%] [offset-path:rect(0_100%_100%_0_round_calc(var(--glow)*1px))]"></span>
                         </span>
                     </div>
                     <div className="flex">
@@ -67,10 +67,10 @@ const Donate = () => {
             <div className="xl:px-6">
                 <div className="grid grid-cols-2 gap-3 md:gap-6">
                     <div className="relative before:absolute before:inset-0 before:origin-top before:bg-gradient-to-t before:from-black/5 before:opacity-50 before:backdrop-grayscale before:transition before:duration-500 hover:before:origin-bottom hover:before:scale-y-0">
-                        <img className="transition duration-500" src="../../../../public/images/restaurant1.webp" alt="Restaurant Owners" width="1380" height="1380" />
+                        <img className="transition duration-500" src="../../../../images/restaurant1.webp" alt="Restaurant Owners" width="1380" height="1380" />
                     </div>
                     <div data-rellax-speed="-2" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" className="rellax relative before:absolute before:inset-0 before:origin-top before:bg-gradient-to-t before:from-black/5 before:opacity-50 before:backdrop-grayscale before:transition before:duration-500 hover:before:origin-bottom hover:before:scale-y-0">
-                        <img className="h-full w-full object-cover transition duration-500" src="../../../../public/images/restaurant2.webp" alt="Restaurant 50th Anniversary" width="2000" height="1333" />
+                        <img className="h-full w-full object-cover transition duration-500" src="../../../../images/restaurant2.webp" alt="Restaurant 50th Anniversary" width="2000" height="1333" />
                     </div>
                 </div>
             </div>
@@ -100,10 +100,10 @@ const Donate = () => {
             <div className="xl:px-6">
                 <div className="grid grid-cols-2 gap-3 md:gap-6">
                     <div className="relative before:absolute before:inset-0 before:origin-top before:bg-gradient-to-t before:from-black/5 before:opacity-50 before:backdrop-grayscale before:transition before:duration-500 hover:before:origin-bottom hover:before:scale-y-0">
-                        <img className="transition duration-500" src="../../../../public/images/restaurant3.jpg" alt="Father Daughter" width="1380" height="1380" />
+                        <img className="transition duration-500" src="../../../../images/restaurant3.jpg" alt="Father Daughter" width="1380" height="1380" />
                     </div>
                     <div data-rellax-speed="-2" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" className="rellax relative before:absolute before:inset-0 before:origin-top before:bg-gradient-to-t before:from-black/5 before:opacity-50 before:backdrop-grayscale before:transition before:duration-500 hover:before:origin-bottom hover:before:scale-y-0">
-                        <img className="h-full w-full object-cover transition duration-500" src="../../../../public/images/restaurant4.jpg" alt="Husband Wife" width="2000" height="1333" />
+                        <img className="h-full w-full object-cover transition duration-500" src="../../../../images/restaurant4.jpg" alt="Husband Wife" width="2000" height="1333" />
                     </div>
                 </div>
             </div>

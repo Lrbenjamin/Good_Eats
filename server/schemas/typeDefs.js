@@ -1,67 +1,57 @@
-const typeDefs = `
-    type Review {
-        _id: ID
-        rating: Float
-        store: Store
-        text: String
-        username: String
-        createdAt: String
-        comments: [Comment]
-    }
+const { gql } = require('apollo-server-express'); // Use 'apollo-server-express' for CommonJS
 
-    type Comment {
-        _id: ID
-        commentText: String
-        username: String
-        createdAt: String
-    }
-    
-    type Store {
-        _id: ID
-        name: String
-        zipcode: String
-        website: String
-        address: String
-        contact: String
-        reviews: [Review]
-    }
-    
-    type User {
-        _id: ID
-        username: String
-        firstName: String
-        email: String
-        password: String
-        reviews: [Review]!
-    }
-    
-    type Auth {
-        token: ID!
-        user: User
-    }
-    
-    type Query {
-        reviews: [Review]!
-        review(reviewID: ID!): Review
-        stores: [Store]!
-        store(storeID: ID!): Store
-        users: [User]
-        userProfile(username: String!): User
-        reviewsByUser(username: String): [Review]
-        reviewsByZipcode(zipcode: String!): [Review]
-    }
+// Define your GraphQL schema
+const typeDefs = gql`
+  type User {
+    _id: ID
+    username: String
+    password: String
+    reviews: [Review]!
+  }
 
-    type Mutation {
-        addReview(username: String!, storeId: String!, text: String!): Review
-        addComment(reviewId: ID!, username: String! commentText: String!): Review
-        addUser(username: String!, firstName: String, email: String!, password: String!): Auth
-        login(email: String!, password: String!): Auth
-        deleteReview(reviewId: ID!): Review
-        deleteComment(reviewId: ID!, commentId: ID!): Review
-        deleteUser(userID: ID!): User
-    }
-`
-// addBusiness(name: String!, zipcode: String!, website: String!): Business
-// deleteBusiness(businessID: ID!): Business
+  type Auth {
+    token: ID!
+    user: User
+  }
+
+  type Message {
+    message: String
+  }
+
+  type Store {
+    _id: ID
+    name: String
+    zipcode: String
+    website: String
+    address: String
+    contact: String
+    reviews: [Review]
+  }
+
+  type Review {
+    _id: ID
+    rating: Float
+    store: Store
+    text: String
+    username: String
+    createdAt: String
+  }
+
+  type Query {
+    getAllStores: [Store]
+    getStore(storeId: ID!): Store
+    getReviewsForStore(storeId: ID!): [Review]
+    getReviewsByUser(username: String!): [Review]
+  }
+
+  type Mutation {
+    addUser(username: String!, password: String!): Auth
+    login(username: String!, password: String!): Auth
+    addReview(rating: Float!, text: String!): Review
+    editReview(reviewId: ID!, rating: Float!, text: String!): Review
+    deleteReview(reviewId: ID!): Review
+    logout: Message
+  }
+`;
 
 module.exports = typeDefs;
