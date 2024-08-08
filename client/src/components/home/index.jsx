@@ -1,22 +1,20 @@
 import Restaurant from './restaurant';
+import { GET_ALL_STORES } from '../../utils/queries';
+import { useQuery } from '@apollo/client';
+
 function Home() {
-    const data = [
-        {
-            id: 1,
-            name: "Pizza Planet",
-            rating: 4
-        },
-        {
-            id: 2,
-            name: "Burger King",
-            rating: 5
-        },
-        {
-            id: 3,
-            name: "Pizza Planet 2",
-            rating: 4
-        },
-    ]
+    const {loading, data} = useQuery(GET_ALL_STORES)
+
+    const storesData = data?.getAllStores;
+
+
+        if(loading) {
+            return (
+                <>
+                <h1>STILL LOADING</h1>
+                </>
+            )
+        }
     return (<main className="background relative">
         <header className="fixed top-0 z-20 w-full">
     <nav className="2lg:px-12 mx-auto max-w-7xl px-6 py-12 lg:px-12 xl:px-6 2xl:px-0">
@@ -153,10 +151,10 @@ function Home() {
                 </form>
             </div>
             <div className="relative mt-20 gap-20 gap-x-6 space-y-20 sm:grid sm:grid-cols-2 sm:space-y-0 md:mt-72 lg:mt-60">
-            {data.map(item => (
+            {storesData.map(item => (
                             <Restaurant {...item}key={item.id} />
                         ))}
-                <a href="/store/:storeId" data-rellax-speed="1" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" data-rellax-tablet-speed="0" className="rellax group block">
+                {/* <a href="/store/:storeId" data-rellax-speed="1" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" data-rellax-tablet-speed="0" className="rellax group block">
                     <div className="relative before:absolute before:inset-0 before:origin-top before:bg-gradient-to-t before:from-black/5 before:opacity-50 before:backdrop-grayscale before:transition before:duration-500 group-hover:before:origin-bottom group-hover:before:scale-y-0">
                         <img className="transition duration-500" src="../../../../images/bk.jpg" alt="project description" width="1380" height="920" />
                     </div>
@@ -164,7 +162,7 @@ function Home() {
                         <h3 className="text-2xl font-normal text-white">Kurger Bing</h3>
                         <span className="h-max rounded-full border border-white/30 px-2 py-1 text-xs tracking-wider text-white">4.0</span>
                     </div>
-                </a>
+                </a> */}
             </div>
         </section>
 

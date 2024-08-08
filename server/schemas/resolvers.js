@@ -1,32 +1,55 @@
 const { User, Review, Store } = require('../models'); // Use CommonJS require
+const { generateToken } = require('../utils/Auth'); 
 
 const resolvers = {
   Query: {
-    stores: async () => {
+    getAllStores: async () => {
       const allStores = await Store.find();
       return allStores;
     },
-    store: async (parent, { storeId }) => {
-      const store = await Store.findById(storeId);
+    getStore: async (parent, { storeId }) => {
+      try {
+        const store = await Store.findById(storeId);
       return store;
+      } catch (err) {
+        console.log(err);
+        return null
+      }
     },
-    reviewsByStore: async (parent, { storeId }) => {
+    getReviewsForStore: async (parent, { storeId }) => {
       const reviews = await Review.find({ store: storeId });
       return reviews;
     },
-    reviewsByUser: async (parent, { username }) => {
+    getReviewsByUser: async (parent, { username }) => {
       const reviews = await Review.find({ username });
       return reviews;
     },
   },
   Mutation: {
     addUser: async (parent, { username, password }) => {
+      if (!username || !password) {
+        throw new Error('Username and password are required');
+      }
+    
       try {
         const newUser = await User.create({ username, password });
         const token = generateToken(newUser);
         return { token, user: newUser };
       } catch (error) {
+        console.error('Error creating user:', error);
         throw new Error('Failed to create user');
+      }
+    },
+    addReview: async (parent, { rating, text }, context) => {
+      try {
+        // Logic to create a new review with the provided rating, text, username, and createdAt
+        const newReview = await Review.create({ 
+          rating, 
+          text, 
+          username:  context.user.username});
+        return newReview;
+      } catch (error) {
+        throw new Error('Failed to add review');
       }
     },
   },
@@ -44,15 +67,7 @@ const resolvers = {
   //     throw new Error('Failed to log in');
   //   }
   // },
-  // addReview: async (parent, { rating, text, username, createdAt }) => {
-  //   try {
-  //     // Logic to create a new review with the provided rating, text, username, and createdAt
-  //     const newReview = await Review.create({ rating, text, username, createdAt });
-  //     return newReview;
-  //   } catch (error) {
-  //     throw new Error('Failed to add review');
-  //   }
-  // },
+
   // editReview: async (parent, { reviewId, rating, text }, context) => {
   //   try {
   //     // Find the review by ID

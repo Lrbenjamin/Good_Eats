@@ -1,27 +1,27 @@
 import  { gql } from '@apollo/client';
 
 export const GET_ALL_STORES = gql`
-  query {
-    stores {
-      _id
-      name
-      zipcode
-      website
-      address
-      contact
-    }
+query GetAllStores {
+  getAllStores {
+    _id
+    address
+    contact
+    name
+    website
+    zipcode
   }
+}
 `;
 
 export const GET_STORE = gql`
   query GetStore($storeId: ID!) {
-    store(storeId: $storeId) {
+    getStore(storeId: $storeId) {
       _id
-      name
-      zipcode
-      website
       address
       contact
+      name
+      website
+      zipcode
     }
   }
 `;
@@ -45,7 +45,7 @@ export const GET_REVIEWS_BY_USER = gql`
       rating
       text
       createdAt
-      // Add any other fields you want to retrieve for each review
+     
     }
   }
 `;

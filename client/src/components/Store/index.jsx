@@ -1,23 +1,47 @@
 import Review from '../Review';
-// import StoreInfo from '../storeInfo';
+import StoreInfo from '../storeInfo';
+import { useQuery, useMutation } from '@apollo/client';
+import { GET_STORE } from '../../utils/queries';
+import { useParams } from 'react-router';
+import { ADD_REVIEW } from '../../utils/mutations';
+
 function Store() {
-    const data = [
-        {
-            id: 2,
-            rating: 5,
-            message: "I love burgers"
-        },
-        {
-            id: 3,
-            rating: 3,
-            message: "I love pizza with a Z"
-        },
-        {
-            storeId: 3,
-            rating: 3,
-            message: "I love pizza with a Z"
-        },
-    ]
+    const params = useParams()
+
+    console.log(params.storeId)
+
+    const {loading, data} = useQuery(GET_STORE, {
+        variables: {
+            "storeId": params.storeId
+        }
+    })
+
+    const [addReview] = useMutation(ADD_REVIEW)
+
+
+    const storeData = data?.getStore
+
+    async function submitReview (event) {
+        event.preventDefault();
+
+        // mutation for adding Review
+        await addReview({
+            variables: {
+                rating: "",
+                text: ""
+            }
+        }) 
+
+    }
+
+    if(loading) {
+        return (
+            <>
+            <h1>Still loading, please wait....</h1>
+            </>
+        )
+    }
+
     return <main>
 
         <header className="fixed top-0 z-20 w-full">
@@ -43,15 +67,15 @@ function Store() {
         <section className=" bg-gradient-to-b from-black via-black/80 to-black pt-32 backdrop-blur-3xl lg:pb-32 lg:pt-0">
             <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-6 2xl:px-0">
                 <div className="flex flex-wrap items-center gap-6">
-                    <h2 className="text-7xl font-bold text-white xl:text-8xl">Store Name</h2>
+                    <h2 className="text-7xl font-bold text-white xl:text-8xl">{storeData.name}</h2>
                 </div>
                 <div className="mt-24">
                     <div className="grid gap-6 border-t border-white/30 pt-24 lg:grid-cols-3 lg:gap-24">
                         <div className="lg:col-span-2">
-                            <form action="" className="mx-auto space-y-8 md:w-3/4">
+                            <form onSubmit={submitReview} className="mx-auto space-y-8 md:w-3/4">
                                 <div>
-                                    <label htmlFor="email" className="tracking-wide text-white">Your Rating</label>
-                                    <input type="email" id="email" name="email" placeholder="Your rating 1-5" className="mt-3 w-full border border-white/20 bg-transparent px-4 py-3 text-white/70 outline-none focus:ring-1 focus:ring-primary" />
+                                    <label htmlFor="username" className="tracking-wide text-white">Your Rating</label>
+                                    <input type="username" id="username" name="username" placeholder="Your rating 1-5" className="mt-3 w-full border border-white/20 bg-transparent px-4 py-3 text-white/70 outline-none focus:ring-1 focus:ring-primary" />
                                 </div>
                                 <div>
                                     <label htmlFor="message" className="tracking-wide text-white">Your Message (optional)</label>
@@ -62,9 +86,7 @@ function Store() {
                                 </button>
                             </form>
                         </div>
-                        {/* {data.map(item => (
-                            <StoreInfo {...item} key={item.id} />
-                        ))} */}
+                            <StoreInfo {...storeData} key={storeData._id} />
                     </div>
                 </div>
             </div>
@@ -76,9 +98,9 @@ function Store() {
                 </div>
                 <div className="mt-24">
                     <div className="grid gap-6 border-t border-white/30 pt-24 lg:grid-cols-3 lg:gap-24">
-                        {data.map(item => (
+                        {/* {data.map(item => (
                             <Review {...item} key={item.id} />
-                        ))}
+                        ))} */}
                     </div>
                 </div>
             </div>

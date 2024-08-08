@@ -4,10 +4,6 @@ export const ADD_USER = gql`
   mutation addUser($username: String!, $password: String!) {
     addUser(username: $username, password: $password) {
       token
-      user {
-        _id
-        username
-      }
     }
   }
 `;
@@ -24,15 +20,15 @@ export const LOGIN = gql`
 `;
 
 export const ADD_REVIEW = gql`
-  mutation addReview($rating: Float!, $text: String!, $username: String!, $createdAt: String!) {
-    addReview(rating: $rating, text: $text, username: $username, createdAt: $createdAt) {
-      _id
-      rating
-      text
-      username
-      createdAt
-    }
+mutation addReview($rating: Float!, $text: String!) {
+  addReview(rating: $rating, text: $text) {
+    _id
+    createdAt
+    rating
+    text
+    username
   }
+}
 `;
 
 export const EDIT_REVIEW = gql`

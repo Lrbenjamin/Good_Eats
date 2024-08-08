@@ -11,22 +11,16 @@ const userSchema = new Schema({
         minlength: 5,
         maxlength: 15,
         trim: true,
+        unique: true, // Ensure username is unique
     },
     password: {
         type: String,
         required: true,
-        unique: true,
         match: [
             new RegExp("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$"),
-            "Password must include letters, number(s) and be at least 8 characters",
+            "Password must include letters, numbers, and be at least 8 characters",
         ],
     },
-    reviews: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: "Review",
-        },
-    ],
 }, { timestamps: true });
 
 // Set up pre-save middleware to hash password
@@ -46,5 +40,4 @@ userSchema.methods.isCorrectPassword = async function (password) {
 // Create and export the User model
 const User = model('User', userSchema);
 
-module.exports = User; // Use CommonJS export
-
+module.exports = User;
