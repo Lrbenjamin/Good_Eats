@@ -1,11 +1,11 @@
 const db = require ('../config/connection');
 const  Store = require('../models/Store');
 const Profile = require('../models/Profile');
-const Review = require('../models/Review');
+// const Review = require('../models/Review');
 
 const storeSeeds = require('./storeSeeds.json');
 const profileSeeds = require('./profileSeeds.json')
-const reviewSeeds = require('./reviewSeeds.json');
+// const reviewSeeds = require('./reviewSeeds.json');
 
 db.once('open', async () => {
     try {
@@ -31,10 +31,10 @@ db.once('open', async () => {
         }
         console.log('Seeded stores successfully!')
 
-        for (const review of reviewSeeds ) {
-            await Review.create(review);
-            console.log(`Seeded review with a rating of ${review.rating} for the user ${review.username} `)
-        }
+        // for (const review of reviewSeeds ) {
+        //     await Review.create(review);
+        //     console.log(`Seeded review with a rating of ${review.rating} for the user ${review.username} `)
+        // }
 
     } catch (error) {
         console.error('Error seeding profiles:', error);
