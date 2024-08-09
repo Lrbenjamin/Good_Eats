@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from './Card';
-
+import Auth from '../../utils/auth';
 
 function Profile() {
     const [formData, setFormData] = useState({
@@ -10,6 +10,15 @@ function Profile() {
         message: ''
     });
 
+    const [username, setUsername] = useState('');
+
+    useEffect(() => {
+        // Assuming Auth.getProfile() returns the user's data with the username
+        const userData = Auth.getProfile();
+        if (userData) {
+            setUsername(userData.data.username);
+        }
+    }, []);
 
     const handleChange = (e) => {
         setFormData({
@@ -17,7 +26,6 @@ function Profile() {
             [e.target.name]: e.target.value
         });
     };
-
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -46,7 +54,6 @@ function Profile() {
         }
     };
 
-
     const data = [
         {
             id: 1,
@@ -67,7 +74,6 @@ function Profile() {
             message: "I love pizza with a Z"
         },
     ];
-
 
     return (
         <main>
@@ -94,7 +100,7 @@ function Profile() {
             <section id="contact" className="relative z-10 bg-gradient-to-b from-black via-black/80 to-black pt-32 backdrop-blur-3xl lg:pb-32 lg:pt-0">
                 <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-6 2xl:px-0">
                     <div className="flex flex-wrap items-center gap-6">
-                        <h2 className="text-7xl font-bold text-white xl:text-8xl">Your Profile</h2>
+                        <h2 className="text-7xl font-bold text-white xl:text-8xl" style={{ paddingTop: '20px' }}> {username ? `${username}'s Profile` : 'Your Profile'}</h2>
                     </div>
                     <div className="mt-24">
                         <div className="grid gap-6 border-t border-white/30 pt-24 lg:grid-cols-3 lg:gap-24">
@@ -165,7 +171,7 @@ function Profile() {
                                 <div>
                                     <h3 className="font-light uppercase tracking-widest text-white">To add your own local restaurant, please complete this form and include its name, address, phone number, and an image link. To manage your reviews, scroll down to view, edit, or delete them.</h3>
                                     <a data-rellax-speed="1" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" href="#storeReviews" className="rellax relative inline-block py-1.5 text-white before:absolute before:inset-0 before:origin-bottom before:scale-y-[.03] before:bg-white/60 before:transition before:duration-300 hover:before:scale-y-100 hover:before:scale-x-125 hover:before:bg-white/10">
-                                        <span className="relative">Your Reviews</span>
+                                        <span className="relative">{username ? `${username}'s Reviews` : 'Your Reviews'}</span>
                                     </a>
                                 </div>
                             </div>
@@ -176,7 +182,7 @@ function Profile() {
             <section id="contact" className="relative z-10 bg-gradient-to-b from-black via-black/80 to-black pt-32 backdrop-blur-3xl lg:pb-32 lg:pt-0">
                 <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-6 2xl:px-0">
                     <div className="flex flex-wrap items-center gap-6">
-                        <h2 id="storeReviews" className="text-7xl font-bold text-white xl:text-8xl">Your Reviews</h2>
+                        <h2 id="storeReviews" className="text-7xl font-bold text-white xl:text-8xl">{username ? `${username}'s Reviews` : 'Your Reviews'}</h2>
                     </div>
                     <div className="mt-24">
                         <div className="grid gap-6 border-t border-white/30 pt-24 lg:grid-cols-3 lg:gap-24">
@@ -190,6 +196,5 @@ function Profile() {
         </main>
     );
 }
-
 
 export default Profile;
