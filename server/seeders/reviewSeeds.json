@@ -1,0 +1,72 @@
+[
+    {
+        "rating": 4.5,
+        "text": "Great product! Very satisfied with the quality and service.",
+        "username": "johndoe"
+    },
+    {
+        "rating": 2.0,
+        "text": "Not as expected. The product did not match the description.",
+        "username": "janedoe"
+    },
+    {
+        "rating": 5.0,
+        "text": "Excellent experience! Highly recommend to others.",
+        "username": "janedoe"
+    },
+    {
+        "rating": 3.5,
+        "text": "It was okay, but there are better options available.",
+        "username": "johndoe"
+    },
+    {
+        "rating": 4.0,
+        "text": "Good value for the price.",
+        "username": "johnjoe"
+    },
+    {
+        "rating": 1.5,
+        "text": "Very disappointing.",
+        "username": "janedoe"
+    },
+    {
+        "rating": 4.8,
+        "text": "Absolutely loved it! Exceeded my expectations.",
+        "username": "alice"
+    },
+    {
+        "rating": 3.0,
+        "text": "Average food. Nothing special about it.",
+        "username": "johnjoe"
+    },
+    {
+        "rating": 5.0,
+        "text": "Outstanding! Will definitely be a repeat customer.",
+        "username": "janedoe"
+    },
+    {
+        "rating": 2.5,
+        "text": "The quality was mediocre",
+        "username": "alice"
+    },
+    {
+        "rating": 4.2,
+        "text": "Very pleased with the purchase.",
+        "username": "johnjoe"
+    },
+    {
+        "rating": 3.8,
+        "text": "Good product but slightly overpriced.",
+        "username": "janedoe"
+    },
+    {
+        "rating": 5.0,
+        "text": "Perfect in every way. I am very happy with my purchase.",
+        "username": "alice"
+    },
+    {
+        "rating": 4.1,
+        "text": "The product is great.",
+        "username": "johnjoe"
+    }
+]

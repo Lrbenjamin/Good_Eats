@@ -1,8 +1,11 @@
 const db = require ('../config/connection');
-// const  Store = require('../models/Store');
-const Profile = require('../models/Profile')
+const  Store = require('../models/Store');
+const Profile = require('../models/Profile');
+const Review = require('../models/Review');
+
+const storeSeeds = require('./storeSeeds.json');
 const profileSeeds = require('./profileSeeds.json')
-// const storeSeeds = require('./storeSeeds.json');
+const reviewSeeds = require('./reviewSeeds.json');
 
 db.once('open', async () => {
     try {
@@ -15,10 +18,26 @@ db.once('open', async () => {
                 console.log(`Profile with email ${profile.email} already exists.`);
             }
         }
-        // await Store.insertMany(storeSeeds);
         console.log('Seeded profiles successfully!');
-    } catch (err) {
-        console.error('Error seeding profiles:', err);
+
+        for (const store of storeSeeds) {
+            const existingStore = await Store.findOne({ name: store.name });
+            if (!existingStore) {
+                await Store.create(store);
+                console.log(`Inserted store: ${store.name}`);
+            } else {
+                console.log(`Store with the name ${store.name} already exists.`);
+            }
+        }
+        console.log('Seeded stores successfully!')
+
+        for (const review of reviewSeeds ) {
+            await Review.create(review);
+            console.log(`Seeded review with a rating of ${review.rating} for the user ${review.username} `)
+        }
+
+    } catch (error) {
+        console.error('Error seeding profiles:', error);
         process.exit(1);
     }
 

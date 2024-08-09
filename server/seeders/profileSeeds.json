@@ -1,20 +1,14 @@
 [
   {
     "username": "johndoe",
-    "firstName": "John",
-    "email": "johndoe@example.com",
-    "password": "Password123" 
+    "password": "Password123"
   },
   {
     "username": "janedoe",
-    "firstName": "Jane",
-    "email": "janedoe@example.com",
     "password": "SecurePass1"
   },
   {
     "username": "alice",
-    "firstName": "Alice",
-    "email": "alice@example.com",
-    "password": "Password123"
+    "password": "Password1234"
   }
 ]
