@@ -127,22 +127,27 @@ const resolvers = {
     },
     logout: async () => {
       return { message: 'Logged out successfully' };
-    }
+    },
+    login: async (_, { username, password }) => {
+      try {
+        // Logic to find the user by username and password
+        const user = await User.findOne({ username });
+        if (!user) {
+          throw new Error('Invalid credentials');
+        }
+        const passwordCheck = await user.isCorrectPassword(password)
+        if(!passwordCheck) {
+          throw new Error('Invalid credentials');
+        }
+        // Generate a token for the user
+        const token = generateToken(user);
+
+        return { token, user: { _id: user._id, username: user.username } };
+      } catch (error) {
+        throw new Error('Failed to log in');
+      }
+    },
   },
-  // login: async (_, { username, password }) => {
-  //   try {
-  //     // Logic to find the user by username and password
-  //     const user = await User.findOne({ username, password });
-  //     if (!user) {
-  //       throw new Error('Invalid credentials');
-  //     }
-  //     // Generate a token for the user
-  //     const token = generateToken(user);
-  //     return { token, user: { _id: user._id } };
-  //   } catch (error) {
-  //     throw new Error('Failed to log in');
-  //   }
-  // },
 
   // editReview: async (parent, { reviewId, rating, text }, context) => {
   //   try {
