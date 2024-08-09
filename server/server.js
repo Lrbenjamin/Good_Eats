@@ -3,9 +3,14 @@ const mongoose = require('mongoose');
 const path = require('path');
 const { ApolloServer } = require('apollo-server-express');
 const { authMiddleware } = require('./utils/Auth');
-const typeDefs = require('./schemas/typeDefs'); 
+const typeDefs = require('./schemas/typeDefs');
 const resolvers = require('./schemas/resolvers');
+const bodyParser = require('body-parser'); // Add body-parser
+const emailRoutes = require('./routes/emailRoutes'); // Add emailRoutes
+const cors = require('cors'); // Add cors
+require('dotenv').config(); // Add dotenv for environment variables
 require('./config/connection');
+
 const PORT = process.env.PORT || 3001;
 
 const server = new ApolloServer({
@@ -21,6 +26,15 @@ const startApolloServer = async () => {
 
   app.use(express.urlencoded({ extended: false }));
   app.use(express.json());
+
+  // Add cors middleware
+  app.use(cors());
+
+  // Add body-parser middleware
+  app.use(bodyParser.json());
+
+  // Add email routes
+  app.use('/email', emailRoutes);
 
   server.applyMiddleware({ app, path: '/graphql' }); // Apply Apollo Server middleware to the Express app at '/graphql'
 
