@@ -26,6 +26,9 @@ const StoreSchema = new Schema({
     contact: { 
         type: String 
     },
+    image: { 
+        type: String 
+    },
     reviews: [{ 
         type: Schema.Types.ObjectId, 
         ref: 'Review' 

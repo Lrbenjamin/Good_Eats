@@ -25,6 +25,7 @@ const typeDefs = gql`
     website: String
     address: String
     contact: String
+    image: String
     reviews: [Review]
   }
 

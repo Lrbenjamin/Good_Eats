@@ -9,6 +9,7 @@ query GetAllStores {
     name
     website
     zipcode
+    image
   }
 }
 `;
