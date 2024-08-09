@@ -6,7 +6,7 @@ const { Schema, model } = mongoose;
 // Define the review schema
 const reviewSchema = new Schema({
     rating: {
-        type: Schema.Types.Decimal128,
+        type: Number,
         min: 1,
         max: 5,
         required: true,

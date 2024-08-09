@@ -20,19 +20,19 @@ export const LOGIN = gql`
 `;
 
 export const ADD_REVIEW = gql`
-mutation addReview($rating: Float!, $text: String!) {
-  addReview(rating: $rating, text: $text) {
-    _id
-    createdAt
-    rating
-    text
-    username
+  mutation AddReview($storeId: ID!, $rating: Int!, $text: String!) {
+    addReview(storeId: $storeId, rating: $rating, text: $text) {
+      _id
+      createdAt
+      rating
+      text
+      username
+    }
   }
-}
 `;
 
 export const EDIT_REVIEW = gql`
-  mutation editReview($reviewId: ID!, $rating: Float!, $text: String!) {
+  mutation editReview($reviewId: ID!, $rating: Int!, $text: String!) {
     editReview(reviewId: $reviewId, rating: $rating, text: $text) {
       _id
       rating

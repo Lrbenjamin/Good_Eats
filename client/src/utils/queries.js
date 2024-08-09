@@ -9,6 +9,8 @@ query GetAllStores {
     name
     website
     zipcode
+    image
+    rating
   }
 }
 `;
@@ -22,21 +24,17 @@ export const GET_STORE = gql`
       name
       website
       zipcode
+      reviews {
+        _id
+        text
+        rating
+        username
+        createdAt
+      }
     }
   }
 `;
 
-export const GET_REVIEWS_FOR_STORE = gql`
-  query GetReviewsForStore($storeId: ID!) {
-    reviewsByStore(storeId: $storeId) {
-      _id
-      rating
-      text
-      username
-      createdAt
-    }
-  }
-`;
 
 export const GET_REVIEWS_BY_USER = gql`
   query GetReviewsByUser($username: String!) {
