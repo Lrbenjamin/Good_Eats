@@ -1,27 +1,40 @@
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
+import { useNavigate } from 'react-router-dom';
 import { LOGIN } from '../../utils/mutations';
-import Auth from '../../utils/auth'; 
+import Auth from '../../utils/auth';
 
 function Login(props) {
   const [formState, setFormState] = useState({ username: '', password: '' });
   const [login, { error }] = useMutation(LOGIN);
+  const navigate = useNavigate();
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
+    console.log('Form submitted');
+
     try {
-      // Call the LOGIN mutation
+      // Calls the LOGIN mutation with the username and password from the form state
       const { data } = await login({
         variables: { username: formState.username, password: formState.password }
       });
 
-      // Store the token in Auth utility
+      // Logs the data returned from the login mutation
+      console.log('Login Mutation Response:', data);
+
+      // Check if the login mutation returned the expected data, specifically the token
+      if (!data || !data.login || !data.login.token) {
+        console.error('No token returned from login mutation');
+        return;
+      }
+
+      // Stores the token and redirects the user to the /home page
       Auth.login(data.login.token);
 
-      // Optionally, redirect after successful login
-      window.location.href = '/';
-
+      console.log('Token stored, navigating to /home...');
+      // Redirect to home page after successful login
+      navigate('/home');
     } catch (err) {
       console.error('Login failed:', err);
     }
@@ -124,3 +137,5 @@ function Login(props) {
 }
 
 export default Login;
+
+
