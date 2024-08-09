@@ -52,38 +52,58 @@ const resolvers = {
   },
   Mutation: {
     addUser: async (parent, { username, password }) => {
+      // Validate input fields
       if (!username || !password) {
         throw new Error('Username and password are required');
       }
-    
+
       try {
+        // Create a new user
         const newUser = await User.create({ username, password });
+        
+        // Generate a token for the new user
         const token = generateToken(newUser);
+
+        // Return the token and user details
         return { token, user: newUser };
       } catch (error) {
         console.error('Error creating user:', error);
         throw new Error('Failed to create user');
       }
     },
+
     addReview: async (parent, { storeId, rating, text }, context) => {
+      // Check if the user is authenticated
       if (!context.user) {
         throw new Error('Not authenticated');
       }
-      
+
+      // Validate input fields
+      if (!storeId || !rating || !text) {
+        throw new Error('Store ID, rating, and text are required');
+      }
+
       try {
-        // Create a new review with the provided storeId, rating, text, username, and createdAt
-        const newReview = await Review.create({ 
-          rating, 
-          text, 
+        // Create a new review
+        const newReview = await Review.create({
+          rating,
+          text,
           username: context.user.username,
-          store: storeId // Link review to the store
+          store: storeId,
+          user: context.user._id, // Link review to the user
         });
 
-        // Optionally, you might want to update the store to include this new review
+        // Update the store to include the new review
         await Store.findByIdAndUpdate(storeId, {
-          $push: { reviews: newReview._id }
+          $push: { reviews: newReview._id },
         });
 
+        // Optionally, update the user to include this new review
+        await User.findByIdAndUpdate(context.user._id, {
+          $push: { reviews: newReview._id },
+        });
+
+        // Return the newly created review
         return newReview;
       } catch (error) {
         console.error('Error adding review:', error);

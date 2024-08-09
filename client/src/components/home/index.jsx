@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-const Restaurant = lazy(() => import('./Restaurant'));
+const Restaurant = lazy(() => import('./restaurant'));
 import { GET_ALL_STORES } from '../../utils/queries';
 import { useQuery } from '@apollo/client';
 

@@ -16,11 +16,19 @@ const reviewSchema = new Schema({
         required: true,
         maxLength: 500,
     },
-    username: { type: String, required: true },
+    username: {
+        type: String,
+        required: true,
+    },
     createdAt: {
         type: Date,
         default: Date.now,
         get: (createdAtVal) => formatDate(createdAtVal),
+    },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User', // Reference to User model
+        required: true,
     },
 }, { toJSON: { getters: true } });
 
@@ -28,4 +36,4 @@ const reviewSchema = new Schema({
 const Review = model('Review', reviewSchema);
 
 // Export the Review model
-module.exports = Review; // Use CommonJS export
+module.exports = Review;

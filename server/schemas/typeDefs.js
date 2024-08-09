@@ -6,7 +6,7 @@ const typeDefs = gql`
     _id: ID
     username: String
     password: String
-    reviews: [Review]!
+   reviews: [Review]
   }
 
   type Auth {
