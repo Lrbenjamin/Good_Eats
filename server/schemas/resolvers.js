@@ -14,10 +14,17 @@ const resolvers = {
     },
     getStore: async (parent, { storeId }) => {
       try {
-        const store = await Store.findById(storeId).populate('reviews');
+        // Fetch the store by ID and populate the reviews field with all required details
+        const store = await Store.findById(storeId)
+          .populate({
+            path: 'reviews',
+            select: '_id text rating username createdAt' // Specify the fields you want to include from the reviews
+          });
+
         if (!store) {
           throw new Error('Store not found');
         }
+
         return store;
       } catch (err) {
         console.error('Error fetching store:', err);

@@ -16,7 +16,7 @@ function Home() {
     }
 
     const storesData = data?.getAllStores || []; // Default to an empty array if undefined
-
+debugger
     return (<main className="background relative">
         <header className="fixed top-0 z-20 w-full">
     <nav className="2lg:px-12 mx-auto max-w-7xl px-6 py-12 lg:px-12 xl:px-6 2xl:px-0">

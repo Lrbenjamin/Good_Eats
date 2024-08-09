@@ -11,7 +11,7 @@ function Store() {
     const { loading, error, data } = useQuery(GET_STORE, {
         variables: { storeId: params.storeId }
     });
-
+debugger
     const [addReview] = useMutation(ADD_REVIEW);
     const [rating, setRating] = useState('');
     const [text, setText] = useState('');
