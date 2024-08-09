@@ -26,6 +26,7 @@ const typeDefs = gql`
     address: String
     contact: String
     image: String
+    rating: Float
     reviews: [Review]
   }
 

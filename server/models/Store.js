@@ -29,6 +29,9 @@ const StoreSchema = new Schema({
     image: { 
         type: String 
     },
+    rating: { 
+        type: String 
+    },
     reviews: [{ 
         type: Schema.Types.ObjectId, 
         ref: 'Review' 

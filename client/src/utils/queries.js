@@ -10,6 +10,7 @@ query GetAllStores {
     website
     zipcode
     image
+    rating
   }
 }
 `;
