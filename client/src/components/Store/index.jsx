@@ -11,7 +11,6 @@ function Store() {
     const { loading, error, data } = useQuery(GET_STORE, {
         variables: { storeId: params.storeId }
     });
-debugger
     const [addReview] = useMutation(ADD_REVIEW);
     const [rating, setRating] = useState('');
     const [text, setText] = useState('');
@@ -129,7 +128,7 @@ debugger
                                     <Review {...review} key={review.id} />
                                 ))
                             ) : (
-                                <div>No reviews available</div>
+                                <div className="text-white">No reviews available</div>
                             )}
                         </div>
                     </div>
