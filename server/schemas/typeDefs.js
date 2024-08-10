@@ -33,7 +33,7 @@ const typeDefs = gql`
   type Review {
     _id: ID
     rating: Int
-    store: Store  # Optionally include this if you want to link back to the store
+    store: Store 
     text: String
     username: String
     createdAt: String

@@ -132,8 +132,6 @@ const resolvers = {
         if (!deletedReview) {
           throw new Error('Review not found');
         }
-
-        // Optionally, remove the review from the associated store
         await Store.updateMany(
           { reviews: reviewId },
           { $pull: { reviews: reviewId } }
@@ -168,46 +166,6 @@ const resolvers = {
       }
     },
   },
-
-  // editReview: async (parent, { reviewId, rating, text }, context) => {
-  //   try {
-  //     // Find the review by ID
-  //     const review = await Review.findById(reviewId);
-  //     if (!review) {
-  //       throw new Error('Review not found');
-  //     }
-  //     // Update the review with new rating and text
-  //     review.rating = rating;
-  //     review.text = text;
-  //     await review.save();
-  //     return review;
-  //   } catch (error) {
-  //     throw new Error('Failed to edit review');
-  //   }
-  // },
-  // deleteReview: async (parent, { reviewId }, context) => {
-  //   try {
-  //     // Find the review by ID
-  //     const review = await Review.findById(reviewId);
-  //     if (!review) {
-  //       throw new Error('Review not found');
-  //     }
-  //     // Delete the review
-  //     await review.remove();
-  //     return review;
-  //   } catch (error) {
-  //     throw new Error('Failed to delete review');
-  //   }
-  // },
-  //   logout: async (parent, args, context) => {
-  //     try {
-  //       // Perform logout actions, such as clearing the user's session or token
-  //       // You can add your logout logic here
-  //       return { message: 'User logged out successfully' };
-  //     } catch (error) {
-  //       throw new Error('Failed to log out');
-  //     }
-  //   }
 };
 
 module.exports = resolvers; // Use CommonJS export

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Card from './Card';
+import Card from '../Card/index';
 import Auth from '../../utils/auth';
 
 function Profile() {
