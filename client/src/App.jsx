@@ -8,6 +8,8 @@ import { setContext } from '@apollo/client/link/context';
 import MainContent from './pages/MainContent';
 import Header from './components/Header';
 import React from 'react';
+import { useLocation } from 'react-router-dom';
+
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -34,11 +36,25 @@ const client = new ApolloClient({
 });
 
 function App() {
+  
+  const location = useLocation();
+  const pathname = location.pathname; // Correctly assign pathname
+
+  console.log('Current pathname:', pathname);
+
+  // Define the routes where you want the Header to be shown
+  const staticRoutesWithHeader = ['/home', '/profile', '/donate'];
+
+  // Check if the current route should include the Header
+  const shouldShowHeader = staticRoutesWithHeader.includes(pathname) ||
+    /^\/store\/[^/]+/.test(pathname) || // Matches /store/:storeId
+    /^\/store\/[^/]+\/editReview\/[^/]+/.test(pathname); // Matches /store/:storeId/editReview/:reviewId
+
   return (
     <ApolloProvider client={client}>
       <div className="content">
-        <Header/>
-        <MainContent />
+      {shouldShowHeader && <Header />}
+      <MainContent />
       </div>
     </ApolloProvider>
   );
