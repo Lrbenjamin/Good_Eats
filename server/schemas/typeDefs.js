@@ -6,7 +6,7 @@ const typeDefs = gql`
     _id: ID
     username: String
     password: String
-    reviews: [Review]!
+   reviews: [Review]
   }
 
   type Auth {
@@ -33,7 +33,7 @@ const typeDefs = gql`
   type Review {
     _id: ID
     rating: Int
-    store: Store  # Optionally include this if you want to link back to the store
+    store: Store 
     text: String
     username: String
     createdAt: String
@@ -43,7 +43,7 @@ const typeDefs = gql`
     getAllStores: [Store]
     getStore(storeId: ID!): Store
     getReviewsForStore(storeId: ID!): [Review]
-    getReviewsByUser(username: String!): [Review]
+    getReviewsByUser: [Review]
   }
 
   type Mutation {

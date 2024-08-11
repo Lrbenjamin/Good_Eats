@@ -1,40 +1,27 @@
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import { useNavigate } from 'react-router-dom';
 import { LOGIN } from '../../utils/mutations';
-import Auth from '../../utils/auth';
+import Auth from '../../utils/auth'; 
 
 function Login(props) {
   const [formState, setFormState] = useState({ username: '', password: '' });
   const [login, { error }] = useMutation(LOGIN);
-  const navigate = useNavigate();
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
-    console.log('Form submitted');
-
     try {
-      // Calls the LOGIN mutation with the username and password from the form state
+      // Call the LOGIN mutation
       const { data } = await login({
         variables: { username: formState.username, password: formState.password }
       });
 
-      // Logs the data returned from the login mutation
-      console.log('Login Mutation Response:', data);
-
-      // Check if the login mutation returned the expected data, specifically the token
-      if (!data || !data.login || !data.login.token) {
-        console.error('No token returned from login mutation');
-        return;
-      }
-
-      // Stores the token and redirects the user to the /home page
+      // Store the token in Auth utility
       Auth.login(data.login.token);
 
-      console.log('Token stored, navigating to /home...');
-      // Redirect to home page after successful login
-      navigate('/home');
+      // redirect after successful login
+      window.location.href = '/home';
+
     } catch (err) {
       console.error('Login failed:', err);
     }
@@ -60,11 +47,6 @@ function Login(props) {
               <span className="glow absolute inset-[calc(var(--border-width)*-1)] rounded-[--card-border-radius] border-[length:var(--border-width)] border-transparent ![mask-clip:padding-box,_border-box] ![mask-composite:intersect] [mask:linear-gradient(transparent,transparent),linear-gradient(white,white)]">
                 <span className="absolute inline-block aspect-square h-5 bg-[radial-gradient(circle_at_right,hsl(0_0%_0%/0),transparent_50%),radial-gradient(circle_at_right,hsl(var(--hue)_var(--saturation)_var(--lightness,50%)/1)_50%,transparent)] dark:bg-[radial-gradient(circle_at_right,hsl(0_0%_100%/0.75),transparent_50%),radial-gradient(circle_at_right,hsl(var(--hue)_var(--saturation)_var(--lightness,50%)/1)_50%,transparent)] opacity-[var(--opacity)] [animation:loop_3s_infinite_linear] [offset-anchor:calc(var(--anchor)*1%)_50%] [offset-path:rect(0_100%_100%_0_round_calc(var(--glow)*1px))]"></span>
               </span>
-            </div>
-            <div className="flex">
-              <a href="/" className="ml-4 relative py-1.5 text-white before:absolute before:inset-0 before:origin-bottom before:scale-y-[.03] before:bg-white/60 before:transition before:duration-300 hover:before:scale-y-100 hover:before:scale-x-125 hover:before:bg-white/10">
-                <span className="relative">Temporary button</span>
-              </a>
             </div>
           </div>
         </nav>
@@ -137,5 +119,3 @@ function Login(props) {
 }
 
 export default Login;
-
-

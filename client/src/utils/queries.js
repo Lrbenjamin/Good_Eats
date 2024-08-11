@@ -37,13 +37,16 @@ export const GET_STORE = gql`
 
 
 export const GET_REVIEWS_BY_USER = gql`
-  query GetReviewsByUser($username: String!) {
-    reviewsByUser(username: $username) {
+ query GetReviewsByUser {
+  getReviewsByUser {
+    _id
+    createdAt
+    rating
+    store {
+      name
       _id
-      rating
-      text
-      createdAt
-     
     }
+    text
+    username
   }
-`;
+}`;

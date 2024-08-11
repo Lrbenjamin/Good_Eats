@@ -21,6 +21,7 @@ const userSchema = new Schema({
             "Password must include letters, numbers, and be at least 8 characters",
         ],
     },
+    reviews: [{ type: Schema.Types.ObjectId, ref: 'Review' }], // Add reference to reviews
 }, { timestamps: true });
 
 // Set up pre-save middleware to hash password

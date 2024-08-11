@@ -4,34 +4,42 @@ import StoreInfo from '../storeInfo';
 import { useQuery, useMutation } from '@apollo/client';
 import { GET_STORE } from '../../utils/queries';
 import { useParams } from 'react-router';
-import { ADD_REVIEW } from '../../utils/mutations';
+import { EDIT_REVIEW } from '../../utils/mutations';
 
-function Store() {
+function StoreEdit() {
     const params = useParams();
-    const { loading, error, data } = useQuery(GET_STORE, {
-        variables: { storeId: params.storeId }
-    });
-    const [addReview] = useMutation(ADD_REVIEW, {
-        refetchQueries: [GET_STORE]
-    });
     const [rating, setRating] = useState('');
     const [text, setText] = useState('');
 
+    const { loading, error, data } = useQuery(GET_STORE, {
+        variables: { storeId: params.storeId },
+        onCompleted: (data) => {
+            console.log(data)
+            setRating(data.getStore.reviews.filter(review => {
+                return review._id == params.reviewId
+            })[0].rating)
+
+            setText(data.getStore.reviews.filter(review => {
+                return review._id == params.reviewId
+            })[0].text)
+        }
+    });
+    const [editReview] = useMutation(EDIT_REVIEW);
     const storeData = data?.getStore;
 
     async function submitReview(event) {
         event.preventDefault();
 
         try {
-            await addReview({
+            await editReview({
                 variables: {
-                    storeId: storeData._id,
+                    reviewId: params.reviewId,
                     rating: parseInt(rating, 10),
                     text
                 }
             });
 
-            alert('Review added successfully!');
+            alert('Review edited successfully!');
 
 
             setRating('');
@@ -88,7 +96,7 @@ function Store() {
                                         ></textarea>
                                     </div>
                                     <button type="submit" className="group ml-auto flex h-12 w-auto items-center overflow-hidden bg-white px-5 transition-all duration-300 hover:bg-primary">
-                                        <span className="relative uppercase tracking-wide text-black group-hover:text-white"> Post Review </span>
+                                        <span className="relative uppercase tracking-wide text-black group-hover:text-white"> Edit Review </span>
                                     </button>
                                 </form>
                             </div>
@@ -120,4 +128,4 @@ function Store() {
     );
 }
 
-export default Store;
+export default StoreEdit;
