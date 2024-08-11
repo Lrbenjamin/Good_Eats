@@ -4,18 +4,20 @@ import { GET_ALL_STORES } from '../../utils/queries';
 import { useQuery } from '@apollo/client';
 
 function Home() {
-    const { loading, error, data } = useQuery(GET_ALL_STORES);
+    const { loading, error, data } = useQuery(GET_ALL_STORES, {
+        fetchPolicy: 'cache-and-network', // Allows for cached data with a network request
+    });
 
     if (loading) {
-        return <h1>STILL LOADING</h1>;
+        return <div>Loading stores...</div>;
     }
 
     if (error) {
         console.error('Error fetching stores:', error);
-        return <h1>Error loading stores</h1>;
+        return <div>Error loading stores. Please try again later.</div>;
     }
 
-    const storesData = data?.getAllStores || []; // Default to an empty array if undefined\
+    const storesData = data?.getAllStores || [];
     return (<main className="background relative">
         <header className="fixed top-0 z-20 w-full">
     <nav className="2lg:px-12 mx-auto max-w-7xl px-6 py-12 lg:px-12 xl:px-6 2xl:px-0">
@@ -41,7 +43,7 @@ function Home() {
                     <a href="/donate" className="ml-4 relative py-1.5 text-white before:absolute before:inset-0 before:origin-bottom before:scale-y-[.03] before:bg-white/60 before:transition before:duration-300 hover:before:scale-y-100 hover:before:scale-x-125 hover:before:bg-white/10">
                         <span className="relative">Donate</span>
                     </a>
-                    <a href="/login" className="ml-4 relative py-1.5 text-white before:absolute before:inset-0 before:origin-bottom before:scale-y-[.03] before:bg-white/60 before:transition before:duration-300 hover:before:scale-y-100 hover:before:scale-x-125 hover:before:bg-white/10">
+                    <a href="/" className="ml-4 relative py-1.5 text-white before:absolute before:inset-0 before:origin-bottom before:scale-y-[.03] before:bg-white/60 before:transition before:duration-300 hover:before:scale-y-100 hover:before:scale-x-125 hover:before:bg-white/10">
                         <span className="relative">Sign Out</span>
                     </a>
                 </div>
@@ -133,16 +135,15 @@ function Home() {
             </div>
  <div className="z-200 mx-auto max-w-7xl px-6 lg:px-12 xl:px-6 2xl:px-0 mt-8">
             <div data-rellax-speed="-3" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" className="rellax flex flex-wrap items-center gap-6" style={{ width: "fit-content" }}>
-                    <h2 className="text-7xl font-bold text-white xl:text-8xl">Near You</h2>
-                    <span className="h-max rounded-full border border-white/40 px-2 py-1 text-xs tracking-wider text-white mr-0">4 Restaurants</span>
-                </div>
+                    <h2 className="text-7xl font-bold text-white xl:text-8xl">Near You</h2>               
+                     </div>
                 
                 <form action="" className="space-y-8 md:w-1/2 md:mr-0 md:ml-auto">
                     <div>
                         <label htmlFor="zipcode" className="tracking-wide text-white">Zipcode</label>
                         <input type="text" id="zipcode" name="zipcode" placeholder="Enter your zipcode" className="mt-3 w-full border border-white/20 bg-transparent px-4 py-3 text-white/70 outline-none focus:ring-1 focus:ring-primary" />
                     </div>
-                    <div>
+                    <div> 
                         <label htmlFor="distance" className="tracking-wide text-white">Distance</label>
                         <input type="text" id="distance" name="distance" placeholder="Enter distance" className="mt-3 w-full border border-white/20 bg-transparent px-4 py-3 text-white/70 outline-none focus:ring-1 focus:ring-primary" />
                     </div>

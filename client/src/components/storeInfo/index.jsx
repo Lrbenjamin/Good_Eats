@@ -12,12 +12,12 @@ function StoreInfo({ storeId, address, zipcode, contact, rating }) {
             <h3 className="text-xs font-light uppercase tracking-widest text-white">Contact Info</h3>
             <ul className="relative z-20 mt-4 space-y-2 font-light text-white">
                 <li>
-                    <a href="tel:+243000000000">Phone ------ { contact }</a>
+                    <a href="tel:+243000000000">{ contact }</a>
                 </li>
             </ul>
         </div>
         <div className="mt-16">
-            <h3 className="text-xs font-light uppercase tracking-widest text-white">Store Rating</h3>
+            <h3 className="text-xs font-light uppercase tracking-widest text-white">Store Reviews</h3>
             <ul className="relative z-20 mt-4 space-y-2 font-light text-white">
                 <li>
                     <a href="" target="_blank">{ rating }</a>
