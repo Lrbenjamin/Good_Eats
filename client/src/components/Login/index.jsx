@@ -19,7 +19,7 @@ function Login(props) {
       // Store the token in Auth utility
       Auth.login(data.login.token);
 
-      // Optionally, redirect after successful login
+      // redirect after successful login
       window.location.href = '/home';
 
     } catch (err) {

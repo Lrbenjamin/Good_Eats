@@ -40,7 +40,7 @@ function Signup(props) {
           <div
               className="border-[--ui-light-border-color] relative border-[length:var(--border-width)] [--border-width:calc(var(--border)*1px)] [--border:1] [--glow:60] [--hue:179] [--lightness:55%] dark:[--lightness:14%] [--opacity:1] [--radius:24] [--saturation:78%] dark:[--saturation:97%] [--speed:2]">
               <div>
-                  <a href="/home" className="text-2xl tracking-widest text-white">Good Eats</a>
+                  <a className="text-2xl tracking-widest text-white">Good Eats</a>
               </div>
               <span
                   className="glow absolute inset-[calc(var(--border-width)*-1)] rounded-[--card-border-radius] border-[length:var(--border-width)] border-transparent ![mask-clip:padding-box,_border-box] ![mask-composite:intersect] [mask:linear-gradient(transparent,transparent),linear-gradient(white,white)]">
