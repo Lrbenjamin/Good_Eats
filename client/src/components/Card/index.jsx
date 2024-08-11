@@ -20,8 +20,8 @@ function Card({ _id, store, rating, text }) {
                             reviewId: _id
                         }
                     })
-                    
-                }} data-rellax-speed="1" data-rellax-xs-speed="0" data-rellax-mobile-speed="0"  className="rellax relative inline-block py-1.5 text-white before:absolute before:inset-0 before:origin-bottom before:scale-y-[.03] before:bg-white/60 before:transition before:duration-300 hover:before:scale-y-100 hover:before:scale-x-125 hover:before:bg-white/10">
+
+                }} data-rellax-speed="1" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" className="rellax relative inline-block py-1.5 text-white before:absolute before:inset-0 before:origin-bottom before:scale-y-[.03] before:bg-white/60 before:transition before:duration-300 hover:before:scale-y-100 hover:before:scale-x-125 hover:before:bg-white/10">
                     <span className="relative">Delete</span>
                 </button>
             </div>
@@ -29,7 +29,7 @@ function Card({ _id, store, rating, text }) {
                 <h3 className="text-xs font-light uppercase tracking-widest text-white">Store Name</h3>
                 <ul className="relative z-20 mt-4 space-y-2 font-light text-white">
                     <li>
-                        <a href={`/store/${store?._id}`} target="_blank">{ store?.name }</a>
+                        <a href={`/store/${store?._id}`} target="_blank">{store?.name}</a>
                     </li>
 
 
@@ -40,7 +40,7 @@ function Card({ _id, store, rating, text }) {
                 <h3 className="text-xs font-light uppercase tracking-widest text-white">Your Store Rating</h3>
                 <ul className="relative z-20 mt-4 space-y-2 font-light text-white">
                     <li>
-                        <a href="tel:+243000000000">{ rating }</a>
+                        <a href="tel:+243000000000">{rating}</a>
                     </li>
                 </ul>
             </div>
@@ -48,7 +48,7 @@ function Card({ _id, store, rating, text }) {
                 <h3 className="text-xs font-light uppercase tracking-widest text-white">Your Message</h3>
                 <ul className="relative z-20 mt-4 space-y-2 font-light text-white">
                     <li>
-                        <a href="tel:+243000000000">{ text }</a>
+                        <a href="tel:+243000000000">{text}</a>
                     </li>
                 </ul>
             </div>

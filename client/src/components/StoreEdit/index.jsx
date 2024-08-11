@@ -5,7 +5,6 @@ import { useQuery, useMutation } from '@apollo/client';
 import { GET_STORE } from '../../utils/queries';
 import { useParams } from 'react-router';
 import { EDIT_REVIEW } from '../../utils/mutations';
-import Auth from "../../utils/auth"
 
 function StoreEdit() {
     const params = useParams();
@@ -27,9 +26,6 @@ function StoreEdit() {
     });
     const [editReview] = useMutation(EDIT_REVIEW);
     const storeData = data?.getStore;
-    // const [rating, setRating] = useState(storeData.reviews.filter(review => {
-    //     return review._id == params.reviewId
-    // })[0].rating);
 
     async function submitReview(event) {
         event.preventDefault();

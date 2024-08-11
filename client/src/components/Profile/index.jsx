@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Card from '../Card/index';
 import Auth from '../../utils/auth';
-import { useQuery, useMutation } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import { GET_REVIEWS_BY_USER } from '../../utils/queries';
-import { EDIT_REVIEW } from '../../utils/mutations';
-import { DELETE_REVIEW } from '../../utils/mutations';
-
 
 function Profile() {
 
-const { loading, error, data } = useQuery(GET_REVIEWS_BY_USER);
+    const { loading, error, data } = useQuery(GET_REVIEWS_BY_USER);
 
     const [formData, setFormData] = useState({
         firstname: '',
