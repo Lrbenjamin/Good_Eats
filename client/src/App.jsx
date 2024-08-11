@@ -6,6 +6,7 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import MainContent from './pages/MainContent';
+import Header from './components/Header';
 import React from 'react';
 
 // Construct our main GraphQL API endpoint
@@ -36,6 +37,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <div className="content">
+        <Header/>
         <MainContent />
       </div>
     </ApolloProvider>
