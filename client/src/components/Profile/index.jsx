@@ -1,8 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import Card from '../Card/index';
 import Auth from '../../utils/auth';
+import { useQuery, useMutation } from '@apollo/client';
+import { GET_REVIEWS_BY_USER } from '../../utils/queries';
+import { EDIT_REVIEW } from '../../utils/mutations';
+import { DELETE_REVIEW } from '../../utils/mutations';
+
 
 function Profile() {
+
+const { loading, error, data } = useQuery(GET_REVIEWS_BY_USER);
+
     const [formData, setFormData] = useState({
         firstname: '',
         lastname: '',
@@ -54,26 +62,34 @@ function Profile() {
         }
     };
 
-    const data = [
-        {
-            id: 1,
-            name: "Pizza Planet",
-            rating: 4,
-            message: "I love pizza"
-        },
-        {
-            id: 2,
-            name: "Burger King",
-            rating: 5,
-            message: "I love burgers"
-        },
-        {
-            id: 3,
-            name: "Pizza Planet 2",
-            rating: 4,
-            message: "I love pizza with a Z"
-        },
-    ];
+    if (loading) {
+        return <div>Loading stores...</div>;
+    }
+
+    if (error) {
+        console.error('Error fetching stores:', error);
+        return <div>Error loading stores. Please try again later.</div>;
+    }
+    // const data = [
+    //     {
+    //         id: 1,
+    //         name: "Pizza Planet",
+    //         rating: 4,
+    //         message: "I love pizza"
+    //     },
+    //     {
+    //         id: 2,
+    //         name: "Burger King",
+    //         rating: 5,
+    //         message: "I love burgers"
+    //     },
+    //     {
+    //         id: 3,
+    //         name: "Pizza Planet 2",
+    //         rating: 4,
+    //         message: "I love pizza with a Z"
+    //     },
+    // ];
 
     return (
         <main>
@@ -90,9 +106,11 @@ function Profile() {
                             <a href="/donate" className="ml-4 relative py-1.5 text-white before:absolute before:inset-0 before:origin-bottom before:scale-y-[.03] before:bg-white/60 before:transition before:duration-300 hover:before:scale-y-100 hover:before:scale-x-125 hover:before:bg-white/10">
                                 <span className="relative">Donate</span>
                             </a>
-                            <a href="/" className="ml-4 relative py-1.5 text-white before:absolute before:inset-0 before:origin-bottom before:scale-y-[.03] before:bg-white/60 before:transition before:duration-300 hover:before:scale-y-100 hover:before:scale-x-125 hover:before:bg-white/10">
+                            <button onClick={() => {
+                                Auth.logout()
+                            }} className="ml-4 relative py-1.5 text-white before:absolute before:inset-0 before:origin-bottom before:scale-y-[.03] before:bg-white/60 before:transition before:duration-300 hover:before:scale-y-100 hover:before:scale-x-125 hover:before:bg-white/10">
                                 <span className="relative">Sign Out</span>
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </nav>
@@ -186,7 +204,7 @@ function Profile() {
                     </div>
                     <div className="mt-24">
                         <div className="grid gap-6 border-t border-white/30 pt-24 lg:grid-cols-3 lg:gap-24">
-                            {data.map(item => (
+                            {data.getReviewsByUser.map(item => (
                                 <Card {...item} key={item.id} />
                             ))}
                         </div>

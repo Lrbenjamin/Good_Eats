@@ -30,6 +30,11 @@ const reviewSchema = new Schema({
         ref: 'User', // Reference to User model
         required: true,
     },
+    store: {
+        type: Schema.Types.ObjectId,
+        ref: 'Store', // Reference to User model
+        required: true,
+    },
 }, { toJSON: { getters: true } });
 
 // Create the Review model

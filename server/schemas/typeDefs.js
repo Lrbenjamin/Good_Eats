@@ -43,7 +43,7 @@ const typeDefs = gql`
     getAllStores: [Store]
     getStore(storeId: ID!): Store
     getReviewsForStore(storeId: ID!): [Review]
-    getReviewsByUser(username: String!): [Review]
+    getReviewsByUser: [Review]
   }
 
   type Mutation {

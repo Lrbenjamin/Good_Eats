@@ -40,9 +40,9 @@ const resolvers = {
         throw new Error('Failed to fetch reviews');
       }
     },
-    getReviewsByUser: async (parent, { username }) => {
+    getReviewsByUser: async (parent, args, context) => {
       try {
-        const reviews = await Review.find({ username });
+        const reviews = await Review.find({ username: context.user.username }).populate("store");
         return reviews;
       } catch (err) {
         console.error('Error fetching reviews by user:', err);
@@ -50,6 +50,7 @@ const resolvers = {
       }
     },
   },
+
   Mutation: {
     addUser: async (parent, { username, password }) => {
       // Validate input fields
