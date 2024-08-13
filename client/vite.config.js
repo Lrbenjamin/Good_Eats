@@ -18,8 +18,9 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist', 
-    external: id => id.startsWith('/@components/'), // Match all components under /@components/
-
+    rollupOptions: {
+      external: ['/@components/Home'], // Add the problematic module to external
+    },
   },
   resolve: {
     alias: {
