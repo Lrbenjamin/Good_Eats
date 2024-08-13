@@ -40,11 +40,11 @@ const startApolloServer = async () => {
 
   if (process.env.NODE_ENV === 'production') {
     // Update the path to point to the correct location on the Render server
-    app.use(express.static(path.join(__dirname, '../../../client/dist')));
+    app.use(express.static(path.join(__dirname, 'client/dist')));
     
     app.get('*', (req, res) => {
       // Update the path to point to the correct location of index.html on the Render server
-      res.sendFile(path.join(__dirname, '../../../client/dist/index.html'));
+      res.sendFile(path.join(__dirname, 'client/dist/index.html'));
     });
   }
 
