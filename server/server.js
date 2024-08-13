@@ -44,7 +44,7 @@ const startApolloServer = async () => {
     
     app.get('*', (req, res) => {
       // Update the path to point to the correct location of index.html on the Render server
-      res.sendFile(path.join(__dirname, 'client/dist/index.html'));
+      res.sendFile(path.join(__dirname, '/opt/render/project/src/server/client/dist/index.html'));
     });
   }
 
