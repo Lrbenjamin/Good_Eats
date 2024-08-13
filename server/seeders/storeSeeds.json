@@ -2,6 +2,8 @@
     {
         "name": "The Arrogant Butcher",
         "zipcode": "85004",
+        "latitude": 33.4505,
+        "longitude": -112.0735,
         "website": "https://www.thearrogantbutcher.com",
         "address": "2 E Jefferson St #150",
         "contact": "https://www.thearrogantbutcher.com/contact"
@@ -9,6 +11,8 @@
     {
         "name": "The Vig",
         "zipcode": "85003",
+        "latitude": 33.4529,
+        "longitude": -112.0762,
         "website": "https://www.thevig.us/",
         "address": " 606 N 4th Ave",
         "contact": "https://www.thevig.us/contact"
@@ -16,6 +20,8 @@
     {
         "name": "Palma",
         "zipcode": "85004",
+        "latitude": 33.4542,
+        "longitude": -112.0729,
         "website": "https://www.palmaphx.com",
         "address": "903 N 2nd St",
         "contact": "hello@palmaphx.com"
@@ -23,6 +29,8 @@
     {
         "name": "Chico Malo",
         "zipcode": "85003",
+        "latitude": 33.4481,
+        "longitude": -112.0745,
         "website": "https://www.chicomalo.com/",
         "address": "50 W Jefferson St Suite 100",
         "contact": ""
@@ -30,6 +38,8 @@
     {
         "name": "Adams Table",
         "zipcode": "85003",
+        "latitude": 33.4484,
+        "longitude": -112.0738,
         "website": "https://www.eatatadams.com/",
         "address": "50 W Jefferson St",
         "contact": "https://www.eatatadams.com/contact"
@@ -37,6 +47,8 @@
     {
         "name": "Taco Boy's",
         "zipcode": "85004",
+        "latitude": 33.4588,
+        "longitude": -112.0676,
         "website": "https://aztacoboys.com/",
         "address": "620 E Roosevelt St",
         "contact": "https://www.facebook.com/aztacoboys"
@@ -44,6 +56,8 @@
     {
         "name": "The Duce",
         "zipcode": "85004",
+        "latitude": 33.4457,
+        "longitude": -112.0733,
         "website": "https://www.theducephx.com/",
         "address": "525 S Central Ave",
         "contact": "https://www.theducephx.com/contact-us"
@@ -51,6 +65,8 @@
     {
         "name": "Topaz Bar and Lounge",
         "zipcode": "85004",
+        "latitude": 33.4581,
+        "longitude": -112.0709,
         "website": "https://food.orders.co/topazmexicankitchenandbar",
         "address": "801 N 3rd St",
         "contact": "602-478-4540"
@@ -58,6 +74,8 @@
     {
         "name": "Centrico",
         "zipcode": "85004",
+        "latitude": 33.4516,
+        "longitude": -112.0737,
         "website": "https://www.centricophx.com/",
         "address": "202 N Central Ave",
         "contact": "info@centricophx.com"
@@ -65,6 +83,8 @@
     {
         "name": "Hanny's",
         "zipcode": "85004",
+        "latitude": 33.4505,
+        "longitude": -112.0730,
         "website": "https://www.hannys.net/home",
         "address": "40 N 1st St, Phoenix",
         "contact": "602-252-2285"
@@ -72,6 +92,8 @@
     {
         "name": "Barrel & Bushel",
         "zipcode": "85004",
+        "latitude": 33.4514,
+        "longitude": -112.0726,
         "website": "https://barrelandbushelphoenix.com/",
         "address": "122 N 2nd St",
         "contact": "https://barrelandbushelphoenix.com/contact/"
@@ -79,6 +101,8 @@
     {
         "name": "Wren & Wolf",
         "zipcode": "85004",
+        "latitude": 33.4508,
+        "longitude": -112.0734,
         "website": "https://www.wrenandwolf.com/",
         "address": "2 N Central Ave #101",
         "contact": "602-562-3510"
@@ -86,6 +110,8 @@
     {
         "name": "SoSoBa Phoenix",
         "zipcode": "85003",
+        "latitude": 33.4585,
+        "longitude": -112.0760,
         "website": "https://www.sosobaphx.com/",
         "address": "214 W Roosevelt St",
         "contact": "https://www.facebook.com/sosobaphx"
@@ -93,6 +119,8 @@
     {
         "name": "Gus's World Famous fried chicken",
         "zipcode": "85003",
+        "latitude": 33.4528,
+        "longitude": -112.0780,
         "website": "https://www.gusfriedchicken.com/",
         "address": "341 W Van Buren St",
         "contact": "https://www.gusfriedchicken.com/contact-us"
@@ -100,6 +128,8 @@
     {
         "name": "Harumi Sushi Bar",
         "zipcode": "85003",
+        "latitude": 33.4518,
+        "longitude": -112.0757,
         "website": "https://harumisushiaz.com/",
         "address": "101 N 1st Ave,",
         "contact": "602-258-0131"

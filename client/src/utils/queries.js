@@ -47,3 +47,14 @@ export const GET_REVIEWS_BY_USER = gql`
     }
   }
 `;
+
+export const GET_ZIPCODE = gql`
+  query searchZipcodes($zipcode: String!, $distance: Float) {
+    searchZipcodes(zipcode: $zipcode, distance: $distance) {
+      zipcode
+      latitude
+      longitude
+      distance
+    }
+  }
+`;

@@ -1,6 +1,10 @@
 const { User, Review, Store } = require('../models'); // Use CommonJS require
 const { generateToken } = require('../utils/Auth'); 
 
+// map imports
+const calcDistance = require('../utils/map');
+const zipData = require('../seeders/storeSeeds.json');
+
 const resolvers = {
   Query: {
     getAllStores: async () => {
@@ -49,6 +53,33 @@ const resolvers = {
         throw new Error('Failed to fetch reviews');
       }
     },
+    searchZipcodes: async (parent, { zipcode, distance }) => {
+      // find coords for the input zipcode
+      const origin = zipData.find(z => z.zipcode === zipcode);
+      if (!origin) throw new Error('Zipcode not found');
+
+      const originCoords = {
+        lat1: origin.latitude,
+        lon1: origin.longitude
+      };
+      // filter and calculate distance radius
+      const results = zipData.map(z => {
+        const targetCoords = { lat2: z.latitude, lon2: z.longitude };
+        const dist = calcDistance(originCoords.lat1, originCoords.lon1, targetCoords.lat1, targetCoords.lon2);
+
+        if (dist <= distance) {
+          return {
+            zipcode: z.zipcode,
+            latitude: z.latitude,
+            longitude: z.longitude,
+            distance: dist
+          };
+        }
+        return null;
+      })
+      .filter(result => result !== null);
+      return results;
+    }
   },
   Mutation: {
     addUser: async (parent, { username, password }) => {

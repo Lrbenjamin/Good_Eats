@@ -1,12 +1,57 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy, useState } from 'react';
+import { GET_ALL_STORES, GET_ZIPCODE } from '../../utils/queries';
+import { useQuery, useLazyQuery } from '@apollo/client';
+
 const Restaurant = lazy(() => import('./Restaurant'));
-import { GET_ALL_STORES } from '../../utils/queries';
-import { useQuery } from '@apollo/client';
+
+function SearchForm({ zipcode, setZipcode, distance, setDistance, formSubmit, loading, data }) {
+    return (
+    <form onSubmit={formSubmit} className="space-y-8 md:w-1/2 md:mr-0 md:ml-auto">
+        <div>
+            <label htmlFor="zipcode" className="tracking-wide text-white">Zipcode</label>
+            <input type="text" id="zipcode" name="zipcode" placeholder="Enter your zipcode" 
+            className="mt-3 w-full border border-white/20 bg-transparent px-4 py-3 text-white/70 outline-none focus:ring-1 focus:ring-primary"
+            value={zipcode} onChange={(e) => setZipcode(e.target.value)} />
+        </div>
+        <div>
+            <label htmlFor="distance" className="tracking-wide text-white">Distance</label>
+            <input type="text" id="distance" name="distance" placeholder="Enter distance" 
+            className="mt-3 w-full border border-white/20 bg-transparent px-4 py-3 text-white/70 outline-none focus:ring-1 focus:ring-primary"
+            value={distance} onChange={(e) => setDistance(e.target.value)} />
+        </div>
+        <button type="submit" className="group ml-auto flex h-12 w-auto items-center overflow-hidden bg-white px-5 transition-all duration-300 hover:bg-primary">
+            <span className="relative uppercase tracking-wide text-black group-hover:text-white">Search Local</span>
+        </button>
+        {loading && <p>Loading...</p>}
+        {data && (
+            <div>
+                {data.searchZipcodes.map((result) => (
+                    <div key={result.zipcode}>
+                        <p>Zipcode: {result.zipcode}</p>
+                        <p>Latitude: {result.latitude}</p>
+                        <p>Longitude: {result.longitude}</p>
+                        <p>Distance: {result.distance} miles</p>
+                    </div>
+                ))}
+            </div>
+        )}
+    </form>
+    );
+}
 
 function Home() {
-    const { loading, error, data } = useQuery(GET_ALL_STORES);
+    const { loading: storesLoading, error } = useQuery(GET_ALL_STORES);
+    const [zipcode, setZipcode] = useState('');
+    const [distance, setDistance] = useState('');
+    const [searchZipcodes, { loading, data }] = useLazyQuery(GET_ZIPCODE);
 
-    if (loading) {
+    const formSubmit = (event) => {
+        event.preventDefault();
+        searchZipcodes({
+            variables: { zipcode, distance: parseFloat(distance) }
+        });
+    };
+    if (storesLoading) {
         return <h1>STILL LOADING</h1>;
     }
 
@@ -16,6 +61,7 @@ function Home() {
     }
 
     const storesData = data?.getAllStores || []; // Default to an empty array if undefined\
+
     return (<main className="background relative">
         <header className="fixed top-0 z-20 w-full">
     <nav className="2lg:px-12 mx-auto max-w-7xl px-6 py-12 lg:px-12 xl:px-6 2xl:px-0">
@@ -137,19 +183,36 @@ function Home() {
                     <span className="h-max rounded-full border border-white/40 px-2 py-1 text-xs tracking-wider text-white mr-0">4 Restaurants</span>
                 </div>
                 
-                <form action="" className="space-y-8 md:w-1/2 md:mr-0 md:ml-auto">
+                {/* <form onSubmit={formSubmit} className="space-y-8 md:w-1/2 md:mr-0 md:ml-auto">
                     <div>
                         <label htmlFor="zipcode" className="tracking-wide text-white">Zipcode</label>
-                        <input type="text" id="zipcode" name="zipcode" placeholder="Enter your zipcode" className="mt-3 w-full border border-white/20 bg-transparent px-4 py-3 text-white/70 outline-none focus:ring-1 focus:ring-primary" />
+                        <input type="text" id="zipcode" name="zipcode" placeholder="Enter your zipcode" 
+                        className="mt-3 w-full border border-white/20 bg-transparent px-4 py-3 text-white/70 outline-none focus:ring-1 focus:ring-primary"
+                        value={zipcode} onChange={(e) => setZipcode(e.target.value)} />
                     </div>
                     <div>
                         <label htmlFor="distance" className="tracking-wide text-white">Distance</label>
-                        <input type="text" id="distance" name="distance" placeholder="Enter distance" className="mt-3 w-full border border-white/20 bg-transparent px-4 py-3 text-white/70 outline-none focus:ring-1 focus:ring-primary" />
+                        <input type="text" id="distance" name="distance" placeholder="Enter distance" 
+                        className="mt-3 w-full border border-white/20 bg-transparent px-4 py-3 text-white/70 outline-none focus:ring-1 focus:ring-primary"
+                        value={distance} onChange={(e) => setDistance(e.target.value)} />
                     </div>
                     <button type="submit" className="group ml-auto flex h-12 w-auto items-center overflow-hidden bg-white px-5 transition-all duration-300 hover:bg-primary">
                         <span className="relative uppercase tracking-wide text-black group-hover:text-white">Search Local</span>
                     </button>
-                </form>
+                    {loading && <p>Loading...</p>}
+                    {data && (
+                        <div>
+                            {data.searchZipcodes.map((result) => (
+                                <div key={result.zipcode}>
+                                    <p>Zipcode: {result.zipcode}</p>
+                                    <p>Latitude: {result.latitude}</p>
+                                    <p>Longitude: {result.longitude}</p>
+                                    <p>Distance: {result.distance} miles</p>
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                </form> */}
             </div>
             <div className="relative mt-20 gap-20 gap-x-6 space-y-20 sm:grid sm:grid-cols-2 sm:space-y-0 md:mt-72 lg:mt-60">
                 <Suspense fallback={<div>Loading...</div>}>

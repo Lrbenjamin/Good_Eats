@@ -39,11 +39,19 @@ const typeDefs = gql`
     createdAt: String
   }
 
+  type ZipcodeResult {
+    zipcode: String
+    lat: Float
+    lon: Float
+    distance: Float
+  }
+
   type Query {
     getAllStores: [Store]
     getStore(storeId: ID!): Store
     getReviewsForStore(storeId: ID!): [Review]
     getReviewsByUser(username: String!): [Review]
+    searchZipcodes(zipcode: String!, distance: Float): [ZipcodeResult]
   }
 
   type Mutation {
