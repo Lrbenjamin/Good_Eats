@@ -24,8 +24,8 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      // Add any path aliases here if needed
-      '@': path.resolve(__dirname, 'src'),
+      // Add path aliases for components directory
+      '/components': path.resolve(__dirname, 'src/components'),
     },
   },
 });
