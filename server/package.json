@@ -1,26 +1,28 @@
 {
-    "name": "server",
-    "version": "1.0.0",
-    "description": "",
-    "main": "server.js",
-    "scripts": {
-      "start": "node server.js",
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "seed": "node seeders/seed.js"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-      "@apollo/server": "^4.10.5",
-      "express": "^4.19.2",
-      "graphql": "^16.9.0",
-      "mongodb": "^6.8.0",
-      "mongoose": "^8.0.0",
-      "bcrypt": "^5.1.0",
-      "jsonwebtoken": "^8.5.1",
-      "nodemailer": "^6.6.3",
-      "dotenv": "^10.0.0"
-    }
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "npm run build --prefix client && node server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "node seeders/seed.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server-express": "^3.6.6",
+    "express": "^4.19.2",
+    "graphql": "^16.9.0",
+    "mongodb": "^6.8.0",
+    "mongoose": "^8.0.0",
+    "bcrypt": "^5.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "nodemailer": "^6.6.3",
+    "dotenv": "^10.0.0"
   }
+}
+
+
   
