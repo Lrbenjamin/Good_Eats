@@ -19,7 +19,7 @@ export default defineConfig({
   build: {
     outDir: 'dist', 
     rollupOptions: {
-      external: ['/@components/Home', '/@components/Profile', '/@components/Signup', '/@components/Login', '/@components/ErrorPage', '/@components/Donate', '/@components/Store', '/@components/StoreEdit',], // Add the problematic module to external
+      external: ['../components/Home', '../components/Profile', '../components/Signup', '../components/Login', '../components/ErrorPage', '../components/Donate', '../components/Store', '../components/StoreEdit',], // Add the problematic module to external
     },
   },
   resolve: {
