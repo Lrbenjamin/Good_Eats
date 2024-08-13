@@ -4,21 +4,8 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build --debug",
     "preview": "vite preview"
-  },
-  "devDependencies": {
-    "@apollo/client": "^3.4.1",
-    "@vitejs/plugin-react": "^1.0.0",
-    "autoprefixer": "^10.4.7",
-    "postcss": "^8.4.14",
-    "prettier": "^2.7.1",
-    "prettier-plugin-tailwindcss": "^0.1.11",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-router-dom": "^6.26.0",
-    "tailwindcss": "^3.1.4",
-    "vite": "^4.1.4"
   },
   "main": "main.js",
   "keywords": [
@@ -30,6 +17,19 @@
   "dependencies": {
     "@apollo/client": "^3.11.2",
     "jwt-decode": "^3.1.2",
-    "rellax": "^1.12.1"
+    "rellax": "^1.12.1",
+    "vite": "^4.1.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^1.0.0",
+    "autoprefixer": "^10.4.7",
+    "postcss": "^8.4.14",
+    "prettier": "^2.7.1",
+    "prettier-plugin-tailwindcss": "^0.1.11",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.0",
+    "tailwindcss": "^3.1.4"
   }
 }
+
