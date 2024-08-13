@@ -18,7 +18,7 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist', 
-    external: ['/@components/'], // Add the problematic module to external
+    external: id => id.startsWith('/@components/'), // Match all components under /@components/
 
   },
   resolve: {
