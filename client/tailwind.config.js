@@ -3,7 +3,7 @@ const plugin = require("tailwindcss/plugin");
 
 module.exports = {
     content: [
-        "./index.html",
+        "index.html",
         "./pages/**/*.{js,jsx,ts,tsx,vue,html}",
         "./src/components/**/*.{js,jsx,ts,tsx}", // Include component files
     ],
