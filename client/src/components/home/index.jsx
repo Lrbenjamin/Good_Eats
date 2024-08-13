@@ -38,11 +38,11 @@ function Home() {
             <img src="../../../../images/background.jpg" className="fixed inset-0 h-full w-full object-cover" alt="Restaurant Aesthetic" width="4160" height="6240" />
             <div className="relative z-10 mx-auto max-w-7xl px-6 pb-40 pt-60 lg:px-12 xl:px-6 2xl:px-0">
                 <div className="pb-12 media-h:md:pb-32 media-h:lg:pb-12 xl:pb-12">
-                    <h1 data-rellax-speed="-3" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" className="rellax text-6xl font-bold text-white sm:text-8xl md:text-9xl xl:leading-tight">Local Restuarants</h1>
+                    <h1 data-rellax-speed="-3" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" className="rellax text-6xl font-bold text-white sm:text-8xl md:text-9xl xl:leading-tight">AZ Restuarants</h1>
                 </div>
                 <div>
                     <div className="ml-auto md:w-2/3 md:pt-12 lg:w-1/2">
-                        <p className="mb-20 text-lg font-light text-white sm:text-2xl xl:leading-normal"> Welcome to Good Eats! Discover and support the best local dining spots in your area. Our platform showcases hidden gems and beloved favorites, allowing you to explore, review, and share your experiences with fellow food enthusiasts. Dive in and help others find their next favorite meal!</p>
+                        <p className="mb-20 text-lg font-light text-white sm:text-2xl xl:leading-normal"> Welcome to Good Eats! Discover and support the best local dining spots in AZ. Our platform showcases hidden gems and beloved favorites, allowing you to explore, review, and share your experiences with fellow food enthusiasts. Dive in and help others find their next favorite meal!</p>
                         <a data-rellax-speed="1" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" href="#services" className="rellax relative inline-block py-1.5 text-white before:absolute before:inset-0 before:origin-bottom before:scale-y-[.03] before:bg-white/60 before:transition before:duration-300 hover:before:scale-y-100 hover:before:scale-x-125 hover:before:bg-white/10">
                             <span className="relative">How To</span>
                         </a>
@@ -55,13 +55,13 @@ function Home() {
                             <a href="https://github.com/Lrbenjamin/Good_Eats" target="_blank">001 ------ Github</a>
                         </li>
                         <li>
-                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">002 ------ LinkedIn</a>
+                            <a id="services" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">002 ------ LinkedIn</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </section>
-        <section id="services" className="relative bg-black pb-20 pt-32 md:pb-0 lg:pb-0 xl:pt-96">
+        <section  className="relative bg-black pb-20 pt-16 md:pb-0 lg:pb-0 xl:pt-40">
             <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-6 2xl:px-0">
                 <div className="flex flex-wrap items-center gap-6">
                     <h2 className="text-7xl font-bold text-white xl:text-8xl">How To</h2>
@@ -77,10 +77,10 @@ function Home() {
                                 <div className="group border-b border-white/30 pb-8">
                                     <div className="flex flex-col gap-4 divide-y divide-white/30">
                                         <span className="inline-block text-white/60">001</span>
-                                        <h3 className="bg-black pt-6 text-3xl text-white">Search Local</h3>
+                                        <h3 className="bg-black pt-6 text-3xl text-white">View Restaurants</h3>
                                     </div>
                                     <div className="mt-0 overflow-hidden transition-all duration-500 group-hover:mt-8">
-                                        <p className="max-h-0 font-light text-white/70 transition-all duration-500 group-hover:max-h-24 md:text-xl">Enter your ZIP code and desired distance to check out local restaurants.</p>
+                                        <p className="max-h-0 font-light text-white/70 transition-all duration-500 group-hover:max-h-24 md:text-xl">Check out our list of local restaurants in AZ.</p>
                                     </div>
                                 </div>
                             </div>
@@ -111,31 +111,17 @@ function Home() {
                 </div>
             </div>
         </section>
-        <section id="work" className=" relative z-9 bg-black pb-20 lg:pt-0">
-            <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-6 xl:pb-96 2xl:px-0 " >
+        <section className=" relative z-9 bg-black pb-20 lg:pt-0">
+            <div id="work" className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-6 xl:pb-40 2xl:px-0 " >
                
                 
             </div>
- <div className="z-200 mx-auto max-w-7xl px-6 lg:px-12 xl:px-6 2xl:px-0 mt-8">
-            <div data-rellax-speed="-3" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" className="rellax flex flex-wrap items-center gap-6" style={{ width: "fit-content" }}>
-                    <h2 className="text-7xl font-bold text-white xl:text-8xl">Near You</h2>               
+ <div  className="z-200 mx-auto max-w-7xl px-6 lg:px-12  2xl:px-0 mt-8">
+            <div  data-rellax-speed="-3" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" className="rellax flex flex-wrap items-center gap-6" style={{ width: "fit-content" }}>
+                    <h2  className="text-7xl font-bold text-white xl:text-8xl">Near You</h2>               
                      </div>
-                
-                <form action="" className="space-y-8 md:w-1/2 md:mr-0 md:ml-auto">
-                    <div>
-                        <label htmlFor="zipcode" className="tracking-wide text-white">Zipcode</label>
-                        <input type="text" id="zipcode" name="zipcode" placeholder="Enter your zipcode" className="mt-3 w-full border border-white/20 bg-transparent px-4 py-3 text-white/70 outline-none focus:ring-1 focus:ring-primary" />
-                    </div>
-                    <div> 
-                        <label htmlFor="distance" className="tracking-wide text-white">Distance</label>
-                        <input type="text" id="distance" name="distance" placeholder="Enter distance" className="mt-3 w-full border border-white/20 bg-transparent px-4 py-3 text-white/70 outline-none focus:ring-1 focus:ring-primary" />
-                    </div>
-                    <button type="submit" className="group ml-auto flex h-12 w-auto items-center overflow-hidden bg-white px-5 transition-all duration-300 hover:bg-primary">
-                        <span className="relative uppercase tracking-wide text-black group-hover:text-white">Search Local</span>
-                    </button>
-                </form>
             </div>
-            <div className="relative mt-20 gap-20 gap-x-6 space-y-20 sm:grid sm:grid-cols-2 sm:space-y-0 md:mt-72 lg:mt-60">
+            <div className="relative gap-20 gap-x-6 space-y-10 sm:grid sm:grid-cols-2 sm:space-y-0 md:mt-72 lg:mt-5">
                 <Suspense fallback={<div>Loading...</div>}>
                 {storesData.map(item => (
                             <Restaurant {...item}key={item.id} />
