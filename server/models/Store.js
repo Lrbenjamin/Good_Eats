@@ -30,8 +30,8 @@ const StoreSchema = new Schema({
         type: String 
     },
     rating: { 
-        type: String 
-    },
+        type: Number 
+      }, 
     reviews: [{ 
         type: Schema.Types.ObjectId, 
         ref: 'Review' 

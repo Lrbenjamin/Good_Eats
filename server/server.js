@@ -5,10 +5,10 @@ const { ApolloServer } = require('apollo-server-express');
 const { authMiddleware } = require('./utils/Auth');
 const typeDefs = require('./schemas/typeDefs');
 const resolvers = require('./schemas/resolvers');
-const bodyParser = require('body-parser'); // Add body-parser
-const emailRoutes = require('./routes/emailRoutes'); // Add emailRoutes
-const cors = require('cors'); // Add cors
-require('dotenv').config(); // Add dotenv for environment variables
+const bodyParser = require('body-parser');
+const emailRoutes = require('./routes/emailRoutes');
+const cors = require('cors');
+require('dotenv').config();
 require('./config/connection');
 
 const PORT = process.env.PORT || 3001;
@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 3001;
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  context: authMiddleware // Include authMiddleware in the context of ApolloServer
+  context: authMiddleware,
 });
 
 const app = express();
@@ -24,27 +24,23 @@ const app = express();
 const startApolloServer = async () => {
   await server.start();
 
-  app.use(express.urlencoded({ extended: false }));
-  app.use(express.json());
-
-  // Add cors middleware
+  // Add cors middleware first
   app.use(cors());
 
-  // Add body-parser middleware
+  // Add other middleware
+  app.use(express.urlencoded({ extended: false }));
+  app.use(express.json());
   app.use(bodyParser.json());
 
   // Add email routes
   app.use('/email', emailRoutes);
 
-  server.applyMiddleware({ app, path: '/graphql' }); // Apply Apollo Server middleware to the Express app at '/graphql'
+  server.applyMiddleware({ app, path: '/graphql' });
 
   if (process.env.NODE_ENV === 'production') {
-    // Update the path to point to the correct location on the Render server
     app.use(express.static(path.join(__dirname, 'client/dist')));
-    
     app.get('*', (req, res) => {
-      // Update the path to point to the correct location of index.html on the Render server
-      res.sendFile(path.join(__dirname, '../dist/index.html'));
+      res.sendFile(path.join(__dirname, 'client/dist', 'index.html'));
     });
   }
 

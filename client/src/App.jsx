@@ -46,11 +46,10 @@ function App() {
   // Define the routes where you want the Header to be shown
   const staticRoutesWithHeader = ['/home', '/profile', '/donate'];
 
-  // Check if the current route should include the Header
-  const shouldShowHeader = staticRoutesWithHeader.includes(pathname) ||
-    /^\/store\/[^/]+/.test(pathname) || // Matches /store/:storeId
-    /^\/store\/[^/]+\/editReview\/[^/]+/.test(pathname); // Matches /store/:storeId/editReview/:reviewId
-
+const shouldShowHeader = staticRoutesWithHeader.includes(pathname) ||
+  /^\/store\/[^/]+/.test(pathname) || // Matches /store/:storeId
+  /^\/store\/[^/]+\/editReview\/[^/]+/.test(pathname); // Matches /store/:storeId/editReview/:reviewId 
+  
   return (
     <ApolloProvider client={client}>
       <div className="content">

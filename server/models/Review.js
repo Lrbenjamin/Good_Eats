@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
-const formatDate = require('../utils/formatDate'); // Adjust path if necessary
-
+const formatDate = require('../utils/formatDate'); 
 const { Schema, model } = mongoose;
 
 // Define the review schema
