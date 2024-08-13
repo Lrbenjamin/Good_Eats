@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -16,8 +17,15 @@ export default defineConfig({
     },
   },
   build: {
+    outDir: 'dist', // Ensure that the build output directory is 'dist'
     rollupOptions: {
-      external: ['apollo-server'], // Add any other server-side dependencies here
+      external: ['apollo-server'], // Exclude server-side dependencies from the client build
+    },
+  },
+  resolve: {
+    alias: {
+      // Add any path aliases here if needed
+      '@': path.resolve(__dirname, 'src'),
     },
   },
 });
