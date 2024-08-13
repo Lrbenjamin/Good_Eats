@@ -2,23 +2,17 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  base: './', 
   plugins: [react()],
-  server: {
-    port: 3000,
-    open: true,
-    proxy: {
-      '/graphql': {
-        target: 'http://localhost:3001',
-        changeOrigin: true,
-        secure: false,
+  base: './',  // Ensure relative paths for assets
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    rollupOptions: {
+      input: './index.html',  // Ensure this points to the correct index.html
+      output: {
+        // Let Vite handle the file names automatically
       },
     },
   },
-  build: {
-    rollupOptions: {
-      external: ['apollo-server'],
-    },
-  },
+  root: './',  // Point to the current directory where the vite.config.js resides
 });
-
