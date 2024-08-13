@@ -4,13 +4,13 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [react()],
     server: {
-      port: 3000,
-      open: true,
+      port: 3000,  // Specifies the port for the dev server
+      open: true,  // Automatically opens the browser when the server starts
       proxy: isProduction
-        ? undefined // No proxy in production, assuming your frontend and backend are deployed separately
+        ? undefined  // No proxy in production
         : {
             '/graphql': {
-              target: 'http://localhost:3001',
+              target: 'http://localhost:3001',  // Proxy /graphql to your backend during development
               changeOrigin: true,
               secure: false,
             },
@@ -18,7 +18,7 @@ export default defineConfig(({ mode }) => {
     },
     build: {
       rollupOptions: {
-        external: ['apollo-server'],
+        external: ['apollo-server'],  // Externalizes 'apollo-server' so it's not included in the frontend bundle
       },
     },
   };
