@@ -24,7 +24,7 @@ const app = express();
 const startApolloServer = async () => {
   await server.start();
 
-  // Add cors middleware first
+  // Add CORS middleware first
   app.use(cors());
 
   // Add other middleware
@@ -43,6 +43,7 @@ const startApolloServer = async () => {
       res.sendFile(path.join(__dirname, 'client/dist', 'index.html'));
     });
   }
+  
 
   mongoose.connection.once('open', () => {
     app.listen(PORT, () => {

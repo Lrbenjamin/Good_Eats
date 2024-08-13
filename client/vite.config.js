@@ -17,14 +17,11 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: 'dist', // Ensure that the build output directory is 'dist'
-    rollupOptions: {
-      external: ['apollo-server'], // Exclude server-side dependencies from the client build
-    },
+    outDir: 'dist', 
   },
   resolve: {
     alias: {
       'components': path.resolve(__dirname, 'src/components'),
     },
-  }, 
+  },
 });
