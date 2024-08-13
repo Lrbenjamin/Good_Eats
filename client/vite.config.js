@@ -18,7 +18,7 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist', 
-    external: ['/@components/Home'], // Add the problematic module to external
+    external: ['/@components/'], // Add the problematic module to external
 
   },
   resolve: {
