@@ -1,3 +1,4 @@
+// Page that wraps our Main Content page with apollo client and exports as app
 import {
   ApolloClient,
   InMemoryCache,

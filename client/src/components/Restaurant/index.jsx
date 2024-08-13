@@ -1,3 +1,4 @@
+// This component renders store information onto the homepage whenever it's called
 import React from 'react';
 
 function Restaurant({ StoreId, name, rating, address, zipcode, phone, image, _id }) {

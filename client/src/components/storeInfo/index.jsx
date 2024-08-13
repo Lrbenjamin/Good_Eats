@@ -1,3 +1,4 @@
+// A component that renders store information such as contact info and address
 import React from 'react'
 
 function StoreInfo({ storeId, address, zipcode, contact, rating }) {

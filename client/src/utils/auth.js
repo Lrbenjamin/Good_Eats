@@ -1,3 +1,4 @@
+// JS file for implementing auth on the client side
 import decode from 'jwt-decode';
 
 class AuthService {

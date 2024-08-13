@@ -1,3 +1,4 @@
+// The header component that contains href's to the website's different routes
 import React from 'react';
 import Auth from '../../utils/auth';
 const Header = () => {

@@ -1,3 +1,4 @@
+// This component is used to render user reviews onto the store page 
 import React from 'react'
 
 function Review({ id, rating, text }) {

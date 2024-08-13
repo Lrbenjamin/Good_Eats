@@ -1,3 +1,4 @@
+// This page allows users to complete a form if they'd like us to add their business, and also allows them to view, edit, delete any of their reviews
 import React, { useState, useEffect } from 'react';
 import Card from '../Card/index';
 import Auth from '../../utils/auth';
@@ -5,7 +6,7 @@ import { useQuery } from '@apollo/client';
 import { GET_REVIEWS_BY_USER } from '../../utils/queries';
 
 function Profile() {
-
+// Get reviews for user 
     const { loading, error, data } = useQuery(GET_REVIEWS_BY_USER);
 
     const [formData, setFormData] = useState({
@@ -18,13 +19,12 @@ function Profile() {
     const [username, setUsername] = useState('');
 
     useEffect(() => {
-        // Assuming Auth.getProfile() returns the user's data with the username
         const userData = Auth.getProfile();
         if (userData) {
             setUsername(userData.data.username);
         }
     }, []);
-
+// Form functionality that allows email to be sent
     const handleChange = (e) => {
         setFormData({
             ...formData,
@@ -77,6 +77,7 @@ function Profile() {
                     <div className="mt-24">
                         <div className="grid gap-6 border-t border-white/30 pt-24 lg:grid-cols-3 lg:gap-24">
                             <div className="lg:col-span-2">
+                                {/* Form for requesting to add a store */}
                                 <form onSubmit={handleSubmit} className="mx-auto space-y-8 md:w-3/4">
                                     <div className="grid gap-8 sm:grid-cols-2 sm:gap-4">
                                         <div>
@@ -151,6 +152,7 @@ function Profile() {
                     </div>
                 </div>
             </section>
+            {/* Section that maps over the card component, presenting the user with all their reviews and the ability to mutate them */}
             <section id="contact" className="relative z-10 bg-gradient-to-b from-black via-black/80 to-black pt-32 backdrop-blur-3xl lg:pb-32 lg:pt-0">
                 <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-6 2xl:px-0">
                     <div className="flex flex-wrap items-center gap-6">

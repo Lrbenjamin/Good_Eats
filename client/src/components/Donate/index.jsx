@@ -1,3 +1,4 @@
+// A page that encourages people on the website to donate to us and links to stripe payment
 import React, { useEffect } from 'react';
 import Rellax from 'rellax';
 

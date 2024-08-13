@@ -1,3 +1,4 @@
+// Card component that will display a user's reviews on the /profile route
 import React from 'react'
 import { useMutation } from '@apollo/client'
 import { DELETE_REVIEW } from '../../utils/mutations'

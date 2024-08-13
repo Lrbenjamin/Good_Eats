@@ -1,3 +1,4 @@
+// The main and only page in the website which imports components and establishes routes for the website
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from '../components/Home';

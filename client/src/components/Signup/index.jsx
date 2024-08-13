@@ -1,3 +1,4 @@
+// This component allows a new user to create a new account so that they have the auth to access our website
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import Auth from '../../utils/auth';
@@ -33,6 +34,7 @@ function Signup(props) {
   };
 
   return (
+    // Good Eats logo with animated border
       <div className="bg-black min-h-screen selection:bg-white/10">
     <header className="flex justify-center fixed top-0 z-20 w-full">
   <nav className="2lg:px-12 mx-auto max-w-7xl px-6 py-12 lg:px-12 xl:px-6 2xl:px-0">
@@ -56,7 +58,7 @@ function Signup(props) {
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
         <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-white">Create Your Account</h2>
       </div>
-
+      {/* Form for creating account  */}
       <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
         <form onSubmit={handleFormSubmit} className="space-y-6">
           <div>

@@ -1,3 +1,4 @@
+// Creates main router / root of application which will be send to our index
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 

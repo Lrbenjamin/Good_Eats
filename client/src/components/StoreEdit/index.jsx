@@ -1,3 +1,4 @@
+// This page is essentially a copy of the store component, however, it takes in the reviewId parameter to edit a specific review based off the params in the url.
 import React, { useState } from 'react';
 import Review from '../Review';
 import StoreInfo from '../storeInfo';
@@ -7,6 +8,7 @@ import { useParams } from 'react-router';
 import { EDIT_REVIEW } from '../../utils/mutations';
 
 function StoreEdit() {
+    // Code to take the params of the review and use the edit review mutation to change the storeData, aka reviews associated with the store
     const params = useParams();
     const [rating, setRating] = useState('');
     const [text, setText] = useState('');

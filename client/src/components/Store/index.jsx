@@ -1,3 +1,4 @@
+// This component is our store page which will render a store's information, reviews, and allow you to add your own review using queries / mutations
 import React, { useState } from 'react';
 import Review from '../Review';
 import StoreInfo from '../storeInfo';
@@ -54,11 +55,13 @@ function Store() {
             <section className="bg-gradient-to-b from-black via-black/80 to-black pt-32 backdrop-blur-3xl lg:pb-32 lg:pt-0">
                 <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-6 2xl:px-0">
                     <div className="flex flex-wrap items-center gap-6">
+                        {/* Store Name here */}
                         <h2 className="text-7xl font-bold text-white xl:text-8xl">{storeData.name}</h2>
                     </div>
                     <div className="mt-24">
                         <div className="grid gap-6 border-t border-white/30 pt-24 lg:grid-cols-3 lg:gap-24">
                             <div className="lg:col-span-2">
+                                {/* Form for adding a review to the store */}
                                 <form onSubmit={submitReview} className="mx-auto space-y-8 md:w-3/4">
                                     <div>
                                         <label htmlFor="rating" className="tracking-wide text-white">Your Rating</label>
@@ -92,6 +95,7 @@ function Store() {
                                     </button>
                                 </form>
                             </div>
+                            {/* Display store information */}
                             <StoreInfo {...storeData} key={storeData._id} />
                         </div>
                     </div>
@@ -101,6 +105,7 @@ function Store() {
             <section id="contact" className="relative z-10 bg-gradient-to-b from-black via-black/80 to-black pt-32 backdrop-blur-3xl lg:pb-32 lg:pt-0">
                 <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-6 2xl:px-0">
                     <div className="flex flex-wrap items-center gap-6">
+                        {/* Display store reviews */}
                         <h2 id="storeReviews" className="text-7xl font-bold text-white xl:text-8xl">Store Reviews</h2>
                     </div>
                     <div className="mt-24">

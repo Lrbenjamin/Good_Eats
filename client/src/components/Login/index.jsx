@@ -1,7 +1,8 @@
+// The route component of the application which will allow the user to log in 
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { LOGIN } from '../../utils/mutations';
-import Auth from '../../utils/auth'; 
+import Auth from '../../utils/auth';
 
 function Login(props) {
   const [formState, setFormState] = useState({ username: '', password: '' });
@@ -36,6 +37,7 @@ function Login(props) {
   };
 
   return (
+    // Animated Good Eats border
     <div className="bg-black min-h-screen selection:bg-white/10">
       <header className="flex justify-center fixed top-0 z-20 w-full">
         <nav className="2lg:px-12 mx-auto max-w-7xl px-6 py-12 lg:px-12 xl:px-6 2xl:px-0">
@@ -58,6 +60,7 @@ function Login(props) {
           </div>
 
           <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+            {/* Form for logging in */}
             <form onSubmit={handleFormSubmit} className="space-y-6">
               <div>
                 <label htmlFor="username" className="block text-sm font-medium leading-6 text-white">Username</label>

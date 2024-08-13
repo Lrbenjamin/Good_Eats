@@ -1,9 +1,11 @@
+// The main page of the website which displays an array of AZ restaurants
 import React, { Suspense, lazy } from 'react';
 const Restaurant = lazy(() => import('../Restaurant/index'));
 import { GET_ALL_STORES } from '../../utils/queries';
 import { useQuery } from '@apollo/client';
 
 function Home() {
+    // Query for loading all stores in the MongoDB onto the page
     const { loading, error, data } = useQuery(GET_ALL_STORES, {
         fetchPolicy: 'cache-and-network', // Allows for cached data with a network request
     });
@@ -19,28 +21,31 @@ function Home() {
 
     const storesData = data?.getAllStores || [];
     return (<main className="background relative">
-      <div className="fixed top-0 left-0 w-full z-10 bg-transparent">
-      <div className="2lg:px-12 mx-auto max-w-7xl px-6 py-12 lg:px-12 xl:px-6 2xl:px-0">
-        <div className="flex items-center justify-between">
-          <div className="relative border-[--ui-light-border-color] border-[length:var(--border-width)] [--border-width:calc(var(--border)*1px)] [--border:1] [--glow:60] [--hue:179] [--lightness:55%] dark:[--lightness:14%] [--opacity:1] [--radius:24] [--saturation:78%] dark:[--saturation:97%] [--speed:2]">
-            <div>
-              <p className="text-2xl tracking-widest text-white">Good Eats</p>
+        {/* Good Eats logo with border animation */}
+        <div className="fixed top-0 left-0 w-full z-10 bg-transparent">
+            <div className="2lg:px-12 mx-auto max-w-7xl px-6 py-12 lg:px-12 xl:px-6 2xl:px-0">
+                <div className="flex items-center justify-between">
+                    <div className="relative border-[--ui-light-border-color] border-[length:var(--border-width)] [--border-width:calc(var(--border)*1px)] [--border:1] [--glow:60] [--hue:179] [--lightness:55%] dark:[--lightness:14%] [--opacity:1] [--radius:24] [--saturation:78%] dark:[--saturation:97%] [--speed:2]">
+                        <div>
+                            <p className="text-2xl tracking-widest text-white">Good Eats</p>
+                        </div>
+                        <span className="glow absolute inset-[calc(var(--border-width)*-1)] rounded-[--card-border-radius] border-[length:var(--border-width)] border-transparent ![mask-clip:padding-box,_border-box] ![mask-composite:intersect] [mask:linear-gradient(transparent,transparent),linear-gradient(white,white)]">
+                            <span className="absolute inline-block aspect-square h-5 bg-[radial-gradient(circle_at_right,hsl(0_0%_0%/0),transparent_50%),radial-gradient(circle_at_right,hsl(var(--hue)_var(--saturation)_var(--lightness,50%)/1)_50%,transparent)] dark:bg-[radial-gradient(circle_at_right,hsl(0_0%_100%/0.75),transparent_50%),radial-gradient(circle_at_right,hsl(var(--hue)_var(--saturation)_var(--lightness,50%)/1)_50%,transparent)] opacity-[var(--opacity)] [animation:loop_3s_infinite_linear] [offset-anchor:calc(var(--anchor)*1%)_50%] [offset-path:rect(0_100%_100%_0_round_calc(var(--glow)*1px))]"></span>
+                        </span>
+                    </div>
+                </div>
             </div>
-            <span className="glow absolute inset-[calc(var(--border-width)*-1)] rounded-[--card-border-radius] border-[length:var(--border-width)] border-transparent ![mask-clip:padding-box,_border-box] ![mask-composite:intersect] [mask:linear-gradient(transparent,transparent),linear-gradient(white,white)]">
-              <span className="absolute inline-block aspect-square h-5 bg-[radial-gradient(circle_at_right,hsl(0_0%_0%/0),transparent_50%),radial-gradient(circle_at_right,hsl(var(--hue)_var(--saturation)_var(--lightness,50%)/1)_50%,transparent)] dark:bg-[radial-gradient(circle_at_right,hsl(0_0%_100%/0.75),transparent_50%),radial-gradient(circle_at_right,hsl(var(--hue)_var(--saturation)_var(--lightness,50%)/1)_50%,transparent)] opacity-[var(--opacity)] [animation:loop_3s_infinite_linear] [offset-anchor:calc(var(--anchor)*1%)_50%] [offset-path:rect(0_100%_100%_0_round_calc(var(--glow)*1px))]"></span>
-            </span>
-          </div>
         </div>
-      </div>
-    </div>
         <section id="home" className="relative flex min-h-screen items-center">
             <div aria-hidden="true" className="absolute inset-0 z-[1] bg-gradient-to-b from-black/10 via-black/20 to-black"></div>
+            {/* Background image */}
             <img src="../../../../images/background.jpg" className="fixed inset-0 h-full w-full object-cover" alt="Restaurant Aesthetic" width="4160" height="6240" />
             <div className="relative z-10 mx-auto max-w-7xl px-6 pb-40 pt-60 lg:px-12 xl:px-6 2xl:px-0">
                 <div className="pb-12 media-h:md:pb-32 media-h:lg:pb-12 xl:pb-12">
                     <h1 data-rellax-speed="-3" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" className="rellax text-6xl font-bold text-white sm:text-8xl md:text-9xl xl:leading-tight">AZ Restuarants</h1>
                 </div>
                 <div>
+                    {/* Brief Description of website and "How To" href */}
                     <div className="ml-auto md:w-2/3 md:pt-12 lg:w-1/2">
                         <p className="mb-20 text-lg font-light text-white sm:text-2xl xl:leading-normal"> Welcome to Good Eats! Discover and support the best local dining spots in AZ. Our platform showcases hidden gems and beloved favorites, allowing you to explore, review, and share your experiences with fellow food enthusiasts. Dive in and help others find their next favorite meal!</p>
                         <a data-rellax-speed="1" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" href="#services" className="rellax relative inline-block py-1.5 text-white before:absolute before:inset-0 before:origin-bottom before:scale-y-[.03] before:bg-white/60 before:transition before:duration-300 hover:before:scale-y-100 hover:before:scale-x-125 hover:before:bg-white/10">
@@ -48,6 +53,7 @@ function Home() {
                         </a>
                     </div>
                 </div>
+                {/* Follow us here section */}
                 <div data-rellax-speed="-5" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" className="rellax relative mt-16 ml-auto w-max md:mt-32 md:ml-0 xl:-mt-16">
                     <span className="text-xs font-light uppercase tracking-widest text-white">Follow us</span>
                     <ul className="relative z-20 mt-4 space-y-2 text-sm font-light text-white">
@@ -61,9 +67,10 @@ function Home() {
                 </div>
             </div>
         </section>
-        <section  className="relative bg-black pb-20 pt-16 md:pb-0 lg:pb-0 xl:pt-40">
+        <section className="relative bg-black pb-20 pt-16 md:pb-0 lg:pb-0 xl:pt-40">
             <div className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-6 2xl:px-0">
                 <div className="flex flex-wrap items-center gap-6">
+                    {/* Component explaining what the user can do on the website */}
                     <h2 className="text-7xl font-bold text-white xl:text-8xl">How To</h2>
                     <span className="h-max rounded-full border border-white/40 px-2 py-1 text-xs tracking-wider text-white">3 Steps</span>
                     <a href="#work" className="ml-4 relative py-1.5 text-white before:absolute before:inset-0 before:origin-bottom before:scale-y-[.03] before:bg-white/60 before:transition before:duration-300 hover:before:scale-y-100 hover:before:scale-x-125 hover:before:bg-white/10">
@@ -111,28 +118,27 @@ function Home() {
                 </div>
             </div>
         </section>
-        <section className=" relative z-9 bg-black pb-20 lg:pt-0">
-            <div id="work" className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-6 xl:pb-40 2xl:px-0 " >
-               
-                
-            </div>
- <div  className="z-200 mx-auto max-w-7xl px-6 lg:px-12  2xl:px-0 mt-8">
-            <div  data-rellax-speed="-3" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" className="rellax flex flex-wrap items-center gap-6" style={{ width: "fit-content" }}>
-                    <h2  className="text-7xl font-bold text-white xl:text-8xl">Near You</h2>               
-                     </div>
+        <section className="relative z-9 bg-black pb-20 lg:pt-0">
+            {/* Component that will map over Restaurants and return a list of our seeded restaurants */}
+            <div id="work" className="mx-auto max-w-7xl px-6 lg:px-12 xl:px-6 xl:pb-40 2xl:px-0 " > </div>
+            <div className="z-200 mx-auto max-w-7xl px-6 lg:px-12  2xl:px-0 mt-8">
+                <div data-rellax-speed="-3" data-rellax-xs-speed="0" data-rellax-mobile-speed="0" className="rellax flex flex-wrap items-center gap-6" style={{ width: "fit-content" }}>
+                    <h2 className="text-7xl font-bold text-white xl:text-8xl">Near You</h2>
+                </div>
             </div>
             <div className="relative gap-20 gap-x-6 space-y-10 sm:grid sm:grid-cols-2 sm:space-y-0 md:mt-72 lg:mt-5">
                 <Suspense fallback={<div>Loading...</div>}>
-                {storesData.map(item => (
-                            <Restaurant {...item}key={item.id} />
-                        ))}
-        </Suspense>
+                    {storesData.map(item => (
+                        <Restaurant {...item} key={item.id} />
+                    ))}
+                </Suspense>
             </div>
         </section>
 
         <footer className="padding-top: 4000px; relative bg-black pt-32 backdrop-opacity-0">
             <section id="about" className="relative z-10 bg-black pb-20 pt-32 md:pb-0 md:pt-0 lg:pb-0">
                 <section>
+                    {/* Meet our team section */}
                     <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
                         <h2 className="text-7xl font-bold text-white xl:text-8xl">Our Team</h2>
                         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
@@ -211,6 +217,7 @@ function Home() {
             <div className="mx-auto max-w-7xl px-6 pb-12 lg:px-12 xl:px-6 2xl:px-0">
                 <div className="mt-12 md:mt-16 lg:mt-24">
                     <div className="space-y-8 md:space-y-12">
+                        {/* Links to navigate to different elements on the /home page */}
                         <nav>
                             <ul className="flex flex-wrap gap-6 text-sm uppercase tracking-wider text-white">
                                 <li>
