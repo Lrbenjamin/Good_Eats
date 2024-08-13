@@ -1,16 +1,19 @@
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
 export default defineConfig(({ mode }) => {
   const isProduction = mode === 'production';
 
   return {
     plugins: [react()],
     server: {
-      port: 3000,  // Specifies the port for the dev server
-      open: true,  // Automatically opens the browser when the server starts
+      port: 3000,
+      open: true,
       proxy: isProduction
-        ? undefined  // No proxy in production
+        ? undefined
         : {
             '/graphql': {
-              target: 'http://localhost:3001',  // Proxy /graphql to your backend during development
+              target: 'http://localhost:3001',
               changeOrigin: true,
               secure: false,
             },
@@ -18,7 +21,7 @@ export default defineConfig(({ mode }) => {
     },
     build: {
       rollupOptions: {
-        external: ['apollo-server'],  // Externalizes 'apollo-server' so it's not included in the frontend bundle
+        external: ['apollo-server'],
       },
     },
   };
