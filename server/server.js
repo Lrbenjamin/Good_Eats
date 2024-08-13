@@ -39,10 +39,12 @@ const startApolloServer = async () => {
   server.applyMiddleware({ app, path: '/graphql' }); // Apply Apollo Server middleware to the Express app at '/graphql'
 
   if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, '../client/dist')));
-
+    // Update the path to point to the correct location on the Render server
+    app.use(express.static(path.join(__dirname, '../../../client/dist')));
+    
     app.get('*', (req, res) => {
-      res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+      // Update the path to point to the correct location of index.html on the Render server
+      res.sendFile(path.join(__dirname, '../../../client/dist/index.html'));
     });
   }
 
