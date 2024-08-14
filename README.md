@@ -37,13 +37,33 @@ Please begin by running `npm i` ( Downloads the packages needed to run the websi
 
 ## Usage
 
-First, you could sign in or sign up. ![Screenshot 2024-08-13 163628](https://github.com/user-attachments/assets/deb52b24-61b6-42bd-9121-68b35b4b9fb8)
-Once you are logged in it takes you to the home screen where you can enter your Zip Code. ![homepage](https://github.com/user-attachments/assets/eeafa31a-cac5-4144-91b9-6a7581fe2cc7)
-Once entered, we search for family-owned restaurants in your area. ![Restraunts](https://github.com/user-attachments/assets/3c4a4e82-64b1-4a7c-b38c-49af07d18c90)
-Once you click on a business it takes you to the review page where you can see other people's reviews for the store or leave your own. ![User Reviews](https://github.com/user-attachments/assets/5af7cc60-375d-4a7d-9ed8-695cf6067fcf)
-This is also where you can find information about that store. ![Screenshot 2024-08-13 164438](https://github.com/user-attachments/assets/65f31326-2b34-476f-b940-542bdbfb049a)
-Now lets say you want your website to be added to the website. All you do is fill out the information on the profile page. ![Screenshot 2024-08-13 164438](https://github.com/user-attachments/assets/2ebf94cc-bf80-44fb-9e4e-52f68436ed7a)
-This will shoot an email to one of us that lets us manually add your business. Finally, we have the donate tab that simply lets you donate to the people who worked hard on this project. ![Screenshot 2024-08-13 163613](https://github.com/user-attachments/assets/f235b5b0-e5c2-4c27-8f0f-3f8bc067cc55)
+First, you could sign in or sign up. 
+
+![Screenshot 2024-08-13 163628](https://github.com/user-attachments/assets/deb52b24-61b6-42bd-9121-68b35b4b9fb8)  
+
+Once you are logged in it takes you to the home screen where you can enter your Zip Code. 
+
+![homepage](https://github.com/user-attachments/assets/eeafa31a-cac5-4144-91b9-6a7581fe2cc7)  
+
+Once entered, we search for family-owned restaurants in your area. 
+
+![Restraunts](https://github.com/user-attachments/assets/3c4a4e82-64b1-4a7c-b38c-49af07d18c90)  
+
+Once you click on a business it takes you to the review page where you can see other people's reviews for the store or leave your own. 
+
+![User Reviews](https://github.com/user-attachments/assets/5af7cc60-375d-4a7d-9ed8-695cf6067fcf)  
+
+This is also where you can find information about that store. 
+
+![Screenshot 2024-08-13 164438](https://github.com/user-attachments/assets/65f31326-2b34-476f-b940-542bdbfb049a)  
+
+Now lets say you want your website to be added to the website. All you do is fill out the information on the profile page. 
+
+ ![Screenshot 2024-08-13 174104](https://github.com/user-attachments/assets/0d8b0811-b86d-4921-ba3c-a1a141f251ea)  
+ 
+This will shoot an email to one of us that lets us manually add your business. Finally, we have the donate tab that simply lets you donate to the people who worked hard on this project. 
+
+![Screenshot 2024-08-13 163613](https://github.com/user-attachments/assets/f235b5b0-e5c2-4c27-8f0f-3f8bc067cc55)  
 
 If you hit sign out then you will be signed out and will need to log back in to see the site again. 
 
