@@ -35,7 +35,7 @@ function Profile() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:3001/email/send', {
+            const response = await fetch('https://good-eats.onrender.com/email/send', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
